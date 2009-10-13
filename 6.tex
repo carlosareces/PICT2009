@@ -1,0 +1,121 @@
+\MySubSection{6. Descripci\'on Detallada del Plan de Investigaci\'on Propuesto}
+
+\vspace*{.2cm}%
+
+\MySubSubSection{6.1. Definici\'on del Problema.}
+
+well-known systems include FaCT~\citep{horr:fact99},
+DLP~\citep{pate:dlps98} and RACE~\citep{haar:race99}.
+
+
+\MySubSubSection{6.2. Resultados Espec\'ificos Esperados.}
+Los resultados esperados pueden clasificarse usando los
+tres temas principales que articulan el proyecto.
+
+
+\MySubParagraph{Interacci\'on.}
+
+\emph{Generaci\'on de expresiones referenciales}. Un problema importante en
+s\'intesis de lenguaje natural es el de la generaci\'on de expresiones referenciales. Esto quiere decir, producir una frase nominal que describa un\'ivocamente a un objeto (e.g. ``el jarr\'on que est\'a sobre la mesa''). Estas expresiones, para ser aceptables, deben ser similares a las que podr\'ia producir una persona en condiciones normales (no ser\'ia aceptable, en lugar del ejemplo anterior, ``el jarr\'on que no est\'a arriba de la silla ni arriba del sof\'a ni abajo de la mesa'').  En~\cite{AKS08} se propone utilizar la minimizaci\'on simb\'olica del modelo que representa
+el estado del mundo para as\'i obtener f\'ormulas l\'ogicas que describan
+un\'ivocamente a cada objeto. En particular se observa que con un
+lenguaje l\'ogico sin negaci\'on, no se pueden obtener resultados poco
+naturales como el anteriormente expuesto. Esta \'area de aplicaci\'on se
+investigar\'a en conjunto con el grupo TALARIS~\cite{TALARIS} (INRIA,
+Nancy, Francia).
+
+\MySubParagraph{Inferencia.}
+\citep{arec:logi00}.
+
+
+\MySubParagraph{Evaluaci\'on.}
+
+
+\MySubSubSection{6.3. M\'etodo Scient\'ifico a Utilizar.}
+\fixme{Mencionar Corpus}
+
+Describimos a continuaci\'on el m\'etodo cient\'ifico a utilizar
+respecto a los aspectos te\'oricos, pr\'acticos y emp\'iricos
+que conciernen al proyecto.
+
+\MySubParagraph{Aspectos Te\'oricos.}
+La metodolog\'a de trabajo a utilizar para investigar los aspectos
+te\'oricos del proyecto es el estandard en investigaci\'on de base.
+Comenzaremos con el estudio de la bibliograf\'ia existente, para luego
+familiarizarnos con las t\'ecnicas de demostraci\'on espec\'ificas de esta
+\'area y poder con ellas demostrar los resultados deseados. El grupo
+responsable esta formado por expertos en las tres \'areas principales
+que el proyecto planea investigar: Benotti es experta en el \'area de
+pragm\'atica de la interacci\'on y sistemas de di\'alogos (e.g., \citep{benotti09c,benotti09b}; Areces es
+experto en m\'etodos de inferencia (e.g., \citep{}); y Estrella es experta en t\'ecnicas
+de evaluci\'on de sistemas de procesamiento natural (e.g., \citep{}).  Los tres han desarrollado extensa investigaci\'on previa en sus respectivas \'areas
+de experiencia.
+
+\MySubParagraph{Aspectos Pr\'acticos.}
+Una vez se haya avanzado con las tareas de investigaci\'on te\'orica,
+estas dar\'an origen al dise\~no de t\'ecnicas y algoritmos que se
+implementar\'an en el framework de GIVE. Para ello se utilizar\'a la metodolog\'ia
+usual en ingenier\'ia del software (desarrollo por
+m\'odulos con interfaces claras y bien documentadas,
+que garanticen alta cohesi\'on y bajo acoplamiento).
+Al finalizar la implementaci\'on
+se espera tambi\'en tener un documento al estilo de manual de
+desarrollador, en donde queden expl\'icitas las principales interfaces
+de los m\'odulos desarrollados y la forma de interacci\'on con la
+herramienta.
+
+
+\MySubParagraph{An\'alisis Em\'irico.}
+Una vez
+implementados los algoritmos, se proceder\'a a realizar tests
+completos de unidad y de integraci\'on.
+
+MAS SOBRE TESTING AQUI.
+
+\MySubSubSection{6.4. Cronograma de trabajo}
+
+El cronograma de trabajo se estructura de la siguiente manera:
+
+XXX
+
+\MyParagraph{A\~no 1.} Durante los meses 1--12
+
+
+\MyParagraph{A\~no 2.} Los meses 13--24
+
+\MyParagraph{A\~no 3.} El \'ultimo a\~no
+
+
+
+A continuaci\'on se presentan las tareas a desarrollar en los tres a\~nos de trabajo (organizadas trimestralmente):
+
+{\footnotesize
+\begin{center}
+\begin{tabular}{|p{7cm}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||}
+\hline
+ \rowcolor[rgb]{0.8,0.8,0.8}\hspace{3.5cm}Tarea & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4\\
+\hline 1. Relevamiento bibliogr\'afico
+& $\times$ & $\times$ &&&&&&&&&&\\
+\hline 2. Estudio del material bibliogr\'afico
+& $\times$ & $\times$ & $\times$ &  &&&&&&&&\\
+\hline 3. Estudio de la plataforma GIVE
+& & $\times$ & &&&&&&&&&\\
+\hline 7. Implementaci\'on de algoritmos
+& & & $\times$ & $\times$&&&$\times$&$\times$&&&$\times$&$\times$\\
+\hline 8. Testing
+&&&&&&&&&&&&\\
+\hline 9. Documentaci\'on
+&&&&&&&&&&&&\\
+\hline 10. Elaborac.\ y presentaci\'on de resultados te\'oricos
+&&&&$\times$&$\times$&&&$\times$&$\times$&&&$\times$\\
+\hline 11. Elaborac.\ y presentaci\'on de resultados aplicados
+&&&&$\times$&$\times$&&&$\times$&$\times$&&&$\times$\\\hline
+\end{tabular}\end{center}
+}
+
+Se comienza con el relevamiento bibliogr\'afico (1) y estudio del
+material (2). A continuaci\'on se desarrollan las investigaciones
+te\'oricas en c\'alculo de complejidades y desarrollo de algoritmos para
+extensiones de la l\'ogica modal b\'asica, en particular la l\'ogica
+h\'ibrida (3 y 4) y para l\'ogicas modales sub-booleanas (5 y 6). Hacia los finales del primer a\~no (y una vez obtenidos avances te\'oricos sustanciales) se empieza paralelamente con la implementaci\'on de los algoritmos (7). Una vez que esta tarea termina, se procede con la etapa del testing (8). Se dedicar\'an tres meses a la documentaci\'on del software (9). El final del proyecto est\'a reservado para la elaboraci\'on y presentaci\'on final de los resultados te\'oricos (10) y aplicados (11).
+
