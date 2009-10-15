@@ -1,145 +1,111 @@
 \MySubSection{4. Objetivos Generales}
+El objetivo \'ultimo de este proyecto es dise\~nar un sistema de di\'alogo hombre-computadora con soporte para interacci\'on en tres dimensiones (3D) que generare autom\'aticamente instrucciones en lenguaje natural para guiar  al usuario durante la ejecuci\'on de una tarea determinada. Esta propuesta apunta
+a obtener un balance entre un sistema de uso general, aplicable en
+diferentes \'ambitos, y un sitema lo suficientemente espec\'ifico
+como para permitir el uso efectivo de las t\'ecnicas actuales de
+administraci\'on del conocimiento, planneamiento y procesamiento de lenguaje natural (PLN).
 
-El objetivo te\'orico principal del proyecto es el estudio de
-tres temas fundamentales que posibilitan el desarrollo
-de sistemas de di\'alogo en entornos virtuales:
+El sistema resultante podr\'ia utilizarse en distintas situaciones, a modo de ejemplo:
+en comercio electr\'onico  al usarse como avatar de asistencia en la web, en soporte t\'ecnico al proveer ayuda al usuario no experto, en
+control de dispositivos por voz al usarse en sistemas de di\'alogo embebidos,
+en la ense\~nanza a distancia al constituir tutores de lenguas extranjeras.  Una vez obtenido
+un prototipo, se planea aplicarlo  como
+tutor virtual para el aprendizaje de idiomas; para estimar la eficacia del prototipo  en esta tarea, se podr\'ia realizar una evaluaci\'on comparativa (compar\'andolo con otros sistemas existentes) o una evaluaci\'on orientada al usuario al ser utilizado, por ejemplo, estudiantes de FaMAF. 
+
+
+A fin de obtener un sistema como el descripto anteriormente, este proyecto propone estudiar las tres \'areas fundamentales detalladas a continuaci\'on, las cuales posibilitan el desarrollo de este tipo de sistemas:
 \begin{myitemize}
-  \item \emph{Interacci\'on:} La interacci\'on humano-humano esta gobernada
+  \item \emph{Interacci\'on:} La interacci\'on humano-humano est\'a gobernada
   por numerosas reglas pragm\'aticas que definen nociones b\'asicas como
-  las obligaciones conversacionales de los participantes (e.g., quien puede hablar en cada momento), o las implicaciones de un enunciado (e.g., si se
+  las obligaciones conversacionales de los participantes (qui\'en puede hablar en cada momento), o las implicaciones de un enunciado (por ejemplo, si se
   hizo una pregunta se espera una respuesta).
-  Estas reglas aplican tambi\'en a la interacci\'on humano-computadora en
-  entornos virtuales, cuando el objetivo del sistema de di\'alogo es
+  Estas reglas se aplican tambi\'en a la interacci\'on humano-computadora en
+  entornos virtuales cuando el objetivo del sistema de di\'alogo es
   simular, en la medida de lo posible, el comportamiento humano.
 
-  Modelar formalmente estas reglas pragm\'aticas, para un sistema de di\'alogo
-  dado, es uno de los desaf\'ios que condicionan la efectividad del sistema.
+  Modelar formalmente estas reglas pragm\'aticas para un sistema de di\'alogo es uno de los desaf\'ios que condicionan la efectividad del mismo.
 
   \item \emph{Inferencia:} En t\'erminos generales, podemos entender como
-  inferencia toda operaci\'on que transforme informaci\'on impl\'icita en
-  expl\'icita.  Bajo esta amplia definici\'on, es posible considerar como
-  inferencia tanto inferencia cl\'asica (e.g., consequencia l\'ogica) como
-  tareas habituales en inteligencia artificial (e.g., planning), o operaciones estad\'isitcas (e.g., obtener la media de un conjunto de datos).  Un sistema de di\'alogo realiza continuamente operaciones de inferencia, por un lado,
-  para interpretar la informaci\'on recibida e incorporarla a su repositorio de informacion; y por otro, para decidir qu\'e parte de la informaci\'on disponible transmitir.
+  inferencia toda operaci\'on que transforme informaci\'on \textit{impl\'icita} en
+  \textit{expl\'icita}.  Bajo esta amplia definici\'on, es posible considerar como
+  inferencia tanto la cl\'asica (por caso
+  tareas habituales en inteligencia artificial como la planificaci\'on) u operaciones estad\'isticas (por ejemplo para obtener estimadores sobre un conjunto de datos).  Un sistema de di\'alogo realiza continuamente operaciones de inferencia, por un lado   para interpretar la informaci\'on recibida e incorporarla a su repositorio de datos, y por otro, para decidir qu\'e parte de la informaci\'on disponible transmitir.
 
-  El problema mismo de decidir qu\'e tarea de inferencia utilizar en una determinada situaci\'on es complejo, y las tareas de inferencia en s\'i son
-  computacionalmente costosas.  El desaf\'io en este caso es encontrar el compromiso adecuado entre representaci\'on de la informaci\'on y m\'etodo
-  de inferencia a utilizar.
-
-  \item \emph{Evaluaci\'on:} Cuando podemos decir que una interacci\'on dada
-  es correcta. Cuando podemos decir que es mejor que otra?  Que p\'arametros podemos utilizar para medir el buen desempe\~no de un sistema de di\'alogo?  Estas son preguntas abiertas que actualmente el \'area de evaluaci\'on sistemas de di\'alogo intenta contestar. \fixme{Paula, algo m\'as ac\'a?}
-
+  El problema mismo de decidir qu\'e tipo de inferencia utilizar en una determinada situaci\'on es complejo, y las tareas de inferencia en s\'i son computacionalmente costosas (Relacion con lo anterior??).  El desaf\'io en este caso es encontrar el compromiso adecuado entre representaci\'on de la informaci\'on y el m\'etodo de inferencia a utilizar.
+\fixme{El item inferencia no me parece muy claro pero ...}
+  \item \emph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del Procesamiento de Lenguaje Natural (PLN) dado que una idea puede expresarse de muchas formas, todas ellas correctas, y, en general, determinar la calidad de tales frases no puede hacerse de manera simple y directa, por ejemplo comparando el resultado del sistema con un patr\'on (en Ingl\'es ``gold stadard"). El problema de la falta de patrones es compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la cual se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas de forma directa (es decir, aplicando alguna m\'etrica al texto generado por un sistema) o indirecta (o sea, evaluando la perfomance del sistema a trav\'es de la utilizaci\'on del texto generado para realizaci\'on de laguna tarea). Sin embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como est\'andar y demostrada eficaz de manera general.
+En esta propuesta, dado que el objeto a evaluar es un sistema que interact\'ua via la generaci\'on de instrucciones en lenguaje natural, es necesario determinar su performance por medio de evaluaciones cuantitativas (como el tiempo de finalizaci\'on de la tarea), cualitativas (por ejemplo, la calidad de las interacciones) y basadas en el contexto (evaluaciones orientadas al usuario y sus necesidades en una situaci\'on particular). Dada la experiencia de los participantes es de especial inter\'es estudiar la  portabilidad y aplicaci\'on de t\'ecnicas de evaluaci\'on del dominio de la TA y la interacci\'on multimodal humano-computadora al sistema (en su totalidad y por componentes) planteado en este proyecto.
 \end{myitemize}
 
-En el proyecto dise\~naremos un sistema de di\'alogo hombre-computadora con
-soporte de interacci\'on 3D.  El sistema generar\'a autom\'aticamente
-instrucciones en lenguaje natural para ayudar al usuario a cumplir una tarea determinada.
+El presente proyecto se focalizar\'a en el  m\'odulo del sistema encargado de generar las instrucciones, el cual deber\'a ser capaz de interactuar naturalmente con el usuario y adaptarse a posibles errores de interpretaci\'on o ejecuci\'on de las instrucciones, dando instrucciones correctivas en consecuencia. Adem\'as, el usuario se encontrar\'a en un universo en el que podr\'a interactuar con objetos y explorar el ambiente virtual provisto. As\'i, el usuario intentar\'a seguir las instrucciones provistas por el sistema, 
+realizando acciones f\'isicas en un mundo 3D.  
 
-En nuestro proyecto nos concentraremos en el estudio del m\'odulo generador de instrucciones que deber\'a ser capaz de interactuar naturalmente
-con el usuario y adaptarse a posibles errores de interpretaci\'on o
-ejecuci\'on de las instrucciones.  En una primera etapa, trabajaremos
-con un modelo donde el flujo de informaci\'on ling\"u\'istica ser\'a unidireccional:
-desde el sistema hacia el usuario.  El usuario se encontrar\'a en un entorno 3D
-en el que puede interactuar con objetos y explorar un mundo virtual. El sistema
-le dar\'a instrucciones generadas autom\'aticamente describiendo la tarea que el usuario debe llevar a cabo.  El usuario intentar\'a seguir estas instrucciones
-realizando acciones f\'isicas en el mundo virtual.  El sistema ser\'a capaz de detectar errores y proveer correcciones (pero, en esta primera etapa,
-el usuario no podr\'a pedir ayuda espec\'ifica).  La restricci\'on a un
-modelo de flujo unidireccional de la informaci\'on tiene como objetivo
+
+En una primera etapa, el modelo a utilizar permitir\'a el flujo de informaci\'on ling\"u\'istica de manera unidireccional, es decir,
+desde el sistema hacia el usuario, por lo que
+el usuario no podr\'a pedir ningu\'n tipo de ayuda.  La restricci\'on a un
+modelo unidireccional tiene como objetivo
 simplificar la representaci\'on y manejo del contexto de la interacci\'on.
-En las \'ultimas etapas del proyecto, el modelo ser\'a extendido para
+
+En etapas m\'as avanzadas del proyecto, el modelo unidireccional ser\'a extendido para
 permitir intercambio ling\"u\'istico bidireccional: por ejemplo, el usuario podr\'a
-pedir clarificaciones o redefinir el objetivo a alcanzar usando lenguaje natural.
+pedir clarificaciones o redefinir el objetivo a alcanzar, en ambos casos usando lenguaje natural.
 
-La generaci\'on de instrucciones requiere de informacion ling\"u\'istica a
-distintos niveles. A nivel morfol\'ogico y sint\'actico se requiere una
-gr\'amatica de lenguaje natural (e.g., espa\~nol) adaptada a la tarea.
-A nivel sem\'antico se necesita un repositorio
-de informaci\'on l\'exica organizada en t\'erminos de una ontolog\'ia.
-Finalmente, el nivel pragm\'atico se utilizar\'a una representaci\'on de las
-acciones posibles con sus precondiciones y efectos en el el mundo virtual,
-junto con informaci\'on contextual que describe el estado de la interacci\'on.
+La generaci\'on de instrucciones para un dominio espec\'ifico requiere la adquisici\'on del conocimiento relevante y la compilaci\'on del mismo debe incluir cierta informaci\'on  ling\"u\'istica que permita su posterior procesamiento: en los aspectos morfol\'ogico y sint\'actico se requiere una gr\'amatica de lenguaje seleccionado (Espa\~nol en este caso), en el aspecto sem\'antico se necesita un repositorio de informaci\'on l\'exica organizada en forma ontol\'ogica y en lo pragm\'atico es necesaria una descripci\'on formal de las
+acciones posibles en un universo dado (incluyendo precondiciones, efectos e informaci\'on contextual del estado de cada interacci\'on).
 
-Esta informaci\'on ser\'a utilizada por distintos procesos que
-gestionar\'an la interacci\'on entre el usuario y el sistema en los
-distintos niveles ling\"u\'isticos. En una direcci\'on, un sistema de
-planning generar\'a una secuencia de acciones relevantes en ese momento
-de la interacci\'on, un sistema de administraci\'on del conocimiento
-mantendr\'a la informaci\'on contextual actualizada, y un sistema de
-generaci\'on finalmente transmitir\'a las instrucciones como expresiones
-en lenguaje natural.  En la otra direcci\'on, un discretizador
-transformar\'a el flujo continuo de comportamiento del usuario
-en el mundo virtual en acciones relevantes al dominio, mientras que
-los sistemas de planning y administraci\'on del conocimiento se ocupan
-de mantener el contexto al d\'ia y detectar errores.
+Esta informaci\'on relacionada al conocimiento de un dominio es utilizada por distintos componentes del sistema de di\'alogo que
+gestionar\'an la interacci\'on con el usuario. En un sistema t\'ipico, esto sucede como se detalla a continuaci\'on: en la direcci\'on sistema $\rightarrow$ usuario, el componente encargado de \textit{planificar} genera una secuencia de acciones relevantes al momento de la interacci\'on, luego el componente encargado de  \textit{administrar el conocimiento} actualiza la informaci\'on contextual y,  finalmente, el componente encargado de 
+\textit{generar instrucciones}  transmite las mismas como expresiones
+del lenguaje natural.  En la direcci\'on opuesta, es decir usuario $\rightarrow$ sistema,  el componente denominado \textit{discretizador}
+transforma el flujo continuo de informaci\'on derivada del comportamiento del usuario, en acciones relevantes al universo en cuesti\'on, mientras que
+los componentes de planeamiento y administraci\'on del conocimiento se ocupan
+de mantener el contexto actualizado y de detectar posibles errores.
 
 
-El dise\~no de una arquitectura como la que acabamos de describir presenta
-desaf\'ios te\'oricos y pr\'acticos.  En lo te\'orico, necesita
-heur\'isticas que gu\'ien la interacci\'on con el usuario (i.e., qu\'e decir,
-cu\'ando, y c\'omo, teniendo en cuenta el contexto actual) y debe contar con m\'etodos
-de inferencia que le permitan no s\'olo describir la situaci\'on actual, sino
-tambi\'en indicar como cambiarla para alcanzar un objetivo.
-La calidad de cada una de estas capacidades afectar\'a la percepci\'on que
-el usuario tendr\'a del sistema, y por lo tanto se necesitan m\'etricas que
-permitan evaluar su desempe\~no.  La complejidad del problema te\'orico se
-refleja, en lo pr\'actico, en un sistema de m\'ultiples componentes: un
-generador de lenguaje natural, un sistema de planeamiento, un entorno 3D, etc.
+El dise\~no de una tal arquitectura presenta
+desaf\'ios tanto te\'oricos como pr\'acticos.  En lo te\'orico, la necesidad de 
+ guiar la interacci\'on con el usuario (qu\'e decir,
+cu\'ando y c\'omo, en un contexto dado) motiva la creaci\'on, adaptaci\'on o mejora de heur\'isticas pretinentes y, por otro lado,  la necesidad de describir la situaci\'on actual as\' como tambi\'en  de indicar c\'omo alterarla para alcanzar un objetivo pre-establecido, incentivan el estudio de diversos m\'etodos
+para la inferencia eficiente y precisa.
+La calidad de cada una de estas capacidades afecta la percepci\'on que
+el usuario tiene del sistema, y por lo tanto, es imperativo aplicar m\'etricas pertinentes que permitan evaluar cada uno de estos aspectos del sistema.  La complejidad del problema te\'orico se
+refleja, en lo pr\'actico, en el desarrollo de un sistema de m\'ultiples componentes: un
+generador de lenguaje natural, un componente de planeamiento, un entorno 3D, etc.
 
-Dise\~nar e implementar todos estos componentes requerir\'ia un esfuerzo prohibitivo.
-En este proyecto utilizaremos la plataforma GIVE (\url{http://www.give-challenge.org}) que
-provee un prototipo basico para este tipo de sistemas.
-%Concretamente, exploraremos estos tres temas en el contexto del
-%Challenge on Generating Instructions in Virtual Environments
-%(GIVE, \url{http://www.give-challenge.org}).
-El objetivo puntual
-de GIVE es actuar como medio de evaluacion de sistemas de generaci\'on
-de lenguaje natural. Aunque desde un punto de vista m\'as general, la evaluaci\'on
-tambi\'en tiene en cuenta el problema b\'asico de la interaccion en
-entornos virtuales.  En el escenario provisto por GIVE, el usuario
+Dise\~nar e implementar todos estos componentes requerir\'ia un esfuerzo prohibitivo, por lo que proponemos utilizar recursos disponibles de forma libre y gratuita. En particular, se propone el uso de la plataforma desarrollada com parte de la competencia \textit{Generating Instructions in Virtual Environments} (GIVE) (\footnote{Disponible libremente en \url{http://www.give-challenge.org}}) que
+provee un prototipo b\'asico de este tipo de sistemas. En este contexto ``competencia" (del Ingl\'es ``evaluation campaign" o ``evaluation challenge") se refiere a la organizaci\'on de un evento en el que participan distintos grupos de investigaci\'on, realizando todos el mismo ejercicio con sus sistemas propios y comparando al final los resultados obtenidos por cada grupo. Este tipo de eventos es muy popular en distinas \'areas del PLN (TA, reconocimiento del habla, recuperaci\'on de informac\'on, entre otras) y benefician ampliamente cada \'area generando y compartiendo con la comunidad de investigadores nuevas tecnolog\'ias.
+
+El objetivo principal de GIVE es actuar como medio de evaluaci\'on de sistemas de generaci\'on
+de lenguaje natural, donde \'estos se eval\'uan de forma m\'as precisa y homog\'enea dado que todos los sistemas participantes utilizan los mismos recursos provistos por los organizadores. Adem\'as, desde un punto de vista general, la evaluaci\'on
+tambi\'en tiene en cuenta el problema b\'asico de la interacci\'on en
+entornos virtuales.  En el escenario propuesto por GIVE, el usuario
 humano lleva acabo una tarea de `b\'usqueda del tesoro' en un entorno
-virtual 3D.  El trabajo del sistema de di\'alogo es proveer, en tiempo
+virtual 3D y el trabajo del sistema participante es proveer, en tiempo
 real, instrucciones en lenguaje natural que ayuden al usuario
-a llevar a cabo la tarea.
+a encontrar el tesoro escondido.
 
 \fixme{GIVE tiene el apoyo de SIGSEM SIGDIAL SIGGEN grupos de interes de
 ACL, la Asociacion de Ling\"u\'istica Computacional.}
 
-Por su dise\~no, GIVE provee un framework interesante para investigar
-distintos aspectos de la interacci\'on situada en un entorno virtual:
+Por su dise\~no, el prototipo GIVE es una herramienta muy propicia para investigar distintos aspectos de la interacci\'on situada en un entorno virtual:
 el problema de realizaci\'on sint\'actica y morfo\'ogica de las
-instrucciones (\emph{surface realization}),
+instrucciones (en Ingl\'es \emph{surface realization}),
 la representaci\'on del conocimiento existente en el contexto de
 interacci\'on (contexto del discurso, ontolog\'ias, acciones posibles),
 el tipo de inferencia requerido por las tareas involucradas
-(planning, model checking, construcci\'on de modelos),
+(planeamiento, construcci\'on y chequeo de modelos),
 las reglas pragm\'aticas de interacci\'on requeridas por la tarea
-(administraci\'on de la carga cognitiva, actualizaci\'on y uso de la informaci\'on contextual), etc.
+(administraci\'on de la carga cognitiva, actualizaci\'on y uso de la informaci\'on contextual), entre otras. Adicionalmente, GIVE provee herramientas para registrar todos los detalles de la
+interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de interacci\'on en entornos virtuales anotado autom\'aticamente. \fixme{agregar la importancia de tales corpora}
 
-Finalmente, la calidad de la interacci\'on con un
-sistema de di\'alogo dado puede medirse en esta tarea en t\'erminos
-quantitativos (e.g., tiempo m\'aximo necesitado para completar la tarea)
-y qualitativos (e.g., relevancia de la instrucci\'on dada en cada momento).
-GIVE provee la infraestructura para loguear todos los detalles de la
-interacci\'on y permite, de esta forma, obtener facilmente un corpus
-de interacci\'on en entornos virtuales anotado autom\'aticamente con
-datos medibles.
+
+%Finalmente, la calidad de la interacci\'on con un
+%sistema de di\'alogo dado puede medirse en esta tarea en t\'erminos
+%cuantitativos (por ejemplo el tiempo m\'aximo para completar la tarea)
+%y cualitativos (como la relevancia de una instrucci\'on dada).
 \medskip
 
 \noindent
-El objetivo concreto del proyecto es obtener un sistema de di\'alogo
-situado, para entornos virtuales.  Los par\'ametros del proyecto apuntan
-a obtener un balance entre un sistema de uso general, aplicable en
-diferentes \'ambitos pero, a la vez, lo suficientemente espec\'ifico,
-como para permitir el uso efectivo de las t\'ecnicas actuales de
-administraci\'on del conocimiento, planning y procesamiento de lenguaje
-natural.
-
-Un sistema de este tipo puede utilizarse en distintas situaciones:
-comercio electr\'onico (e.g., avatares de asistencia en la web),
-soporte t\'ecnico      (e.g., ayuda al usuario no experto),
-control de dispositivos por voz (e.g., sistemas de di\'alogo embebidos),
-ense\~nanza a distancia (e.g., tutores de lenguas extranjeras),
-etc.  Una vez obtenido
-un prototipo, planeamos investigar el uso del sistema como
-tutores virtuales para el aprendizaje de idiomas.\fixme{Se puede agregar algo mas aca.}
+%\fixme{Se puede agregar algo mas aca.}
 
