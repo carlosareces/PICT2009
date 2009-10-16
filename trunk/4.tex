@@ -10,7 +10,7 @@ en comercio electr\'onico  al usarse como avatar de asistencia en la web, en sop
 control de dispositivos por voz al usarse en sistemas de di\'alogo embebidos,
 en la ense\~nanza a distancia al constituir tutores de lenguas extranjeras.  Una vez obtenido
 un prototipo, se planea aplicarlo  como
-tutor virtual para el aprendizaje de idiomas; para estimar la eficacia del prototipo  en esta tarea, se podr\'ia realizar una evaluaci\'on comparativa (compar\'andolo con otros sistemas existentes) o una evaluaci\'on orientada al usuario al ser utilizado, por ejemplo, estudiantes de FaMAF. 
+tutor virtual para el aprendizaje de idiomas; para estimar la eficacia del prototipo  en esta tarea, se podr\'ia realizar una evaluaci\'on comparativa (compar\'andolo con otros sistemas existentes) o una evaluaci\'on orientada al usuario al ser utilizado, por ejemplo, estudiantes de FaMAF.
 
 
 A fin de obtener un sistema como el descripto anteriormente, este proyecto propone estudiar las tres \'areas fundamentales detalladas a continuaci\'on, las cuales posibilitan el desarrollo de este tipo de sistemas:
@@ -31,14 +31,14 @@ A fin de obtener un sistema como el descripto anteriormente, este proyecto propo
   inferencia tanto la cl\'asica (por caso
   tareas habituales en inteligencia artificial como la planificaci\'on) u operaciones estad\'isticas (por ejemplo para obtener estimadores sobre un conjunto de datos).  Un sistema de di\'alogo realiza continuamente operaciones de inferencia, por un lado   para interpretar la informaci\'on recibida e incorporarla a su repositorio de datos, y por otro, para decidir qu\'e parte de la informaci\'on disponible transmitir.
 
-  El problema mismo de decidir qu\'e tipo de inferencia utilizar en una determinada situaci\'on es complejo, y las tareas de inferencia en s\'i son computacionalmente costosas (Relacion con lo anterior??).  El desaf\'io en este caso es encontrar el compromiso adecuado entre representaci\'on de la informaci\'on y el m\'etodo de inferencia a utilizar.
-\fixme{El item inferencia no me parece muy claro pero ...}
-  \item \emph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del Procesamiento de Lenguaje Natural (PLN) dado que una idea puede expresarse de muchas formas, todas ellas correctas, y, en general, determinar la calidad de tales frases no puede hacerse de manera simple y directa, por ejemplo comparando el resultado del sistema con un patr\'on (en Ingl\'es ``gold stadard"). El problema de la falta de patrones es compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la cual se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas de forma directa (es decir, aplicando alguna m\'etrica al texto generado por un sistema) o indirecta (o sea, evaluando la perfomance del sistema a trav\'es de la utilizaci\'on del texto generado para realizaci\'on de laguna tarea). Sin embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como est\'andar y demostrada eficaz de manera general.
+  El problema mismo de decidir qu\'e tipo de representaci\'on l\'ogica y que tipo de inferencia utilizar en una determinada situaci\'on (e.g., l\'ogica proposicional vs. l\'ogica de primer orden, validez vs.\ chequeo de modelos) es complejo, y las tareas de inferencia en s\'i son computacionalmente costosas.  El desaf\'io en este caso es encontrar el compromiso adecuado entre representaci\'on de la informaci\'on y el m\'etodo de inferencia a utilizar.
+
+\item \emph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del Procesamiento de Lenguaje Natural (PLN) dado que una idea puede expresarse de muchas formas, todas ellas correctas, y, en general, determinar la calidad de tales frases no puede hacerse de manera simple y directa, por ejemplo comparando el resultado del sistema con un patr\'on (en Ingl\'es ``gold stadard"). El problema de la falta de patrones es compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la cual se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas de forma directa (es decir, aplicando alguna m\'etrica al texto generado por un sistema) o indirecta (o sea, evaluando la perfomance del sistema a trav\'es de la utilizaci\'on del texto generado para realizaci\'on de alguna tarea). Sin embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como est\'andar y demostrada eficaz de manera general.
 En esta propuesta, dado que el objeto a evaluar es un sistema que interact\'ua via la generaci\'on de instrucciones en lenguaje natural, es necesario determinar su performance por medio de evaluaciones cuantitativas (como el tiempo de finalizaci\'on de la tarea), cualitativas (por ejemplo, la calidad de las interacciones) y basadas en el contexto (evaluaciones orientadas al usuario y sus necesidades en una situaci\'on particular). Dada la experiencia de los participantes es de especial inter\'es estudiar la  portabilidad y aplicaci\'on de t\'ecnicas de evaluaci\'on del dominio de la TA y la interacci\'on multimodal humano-computadora al sistema (en su totalidad y por componentes) planteado en este proyecto.
 \end{myitemize}
 
-El presente proyecto se focalizar\'a en el  m\'odulo del sistema encargado de generar las instrucciones, el cual deber\'a ser capaz de interactuar naturalmente con el usuario y adaptarse a posibles errores de interpretaci\'on o ejecuci\'on de las instrucciones, dando instrucciones correctivas en consecuencia. Adem\'as, el usuario se encontrar\'a en un universo en el que podr\'a interactuar con objetos y explorar el ambiente virtual provisto. As\'i, el usuario intentar\'a seguir las instrucciones provistas por el sistema, 
-realizando acciones f\'isicas en un mundo 3D.  
+El presente proyecto se focalizar\'a en el  m\'odulo del sistema encargado de generar las instrucciones, el cual deber\'a ser capaz de interactuar naturalmente con el usuario y adaptarse a posibles errores de interpretaci\'on o ejecuci\'on de las instrucciones, dando instrucciones correctivas en consecuencia. Adem\'as, el usuario se encontrar\'a en un universo en el que podr\'a interactuar con objetos y explorar el ambiente virtual provisto. As\'i, el usuario intentar\'a seguir las instrucciones provistas por el sistema,
+realizando acciones f\'isicas en un mundo 3D.
 
 
 En una primera etapa, el modelo a utilizar permitir\'a el flujo de informaci\'on ling\"u\'istica de manera unidireccional, es decir,
@@ -55,7 +55,7 @@ La generaci\'on de instrucciones para un dominio espec\'ifico requiere la adquis
 acciones posibles en un universo dado (incluyendo precondiciones, efectos e informaci\'on contextual del estado de cada interacci\'on).
 
 Esta informaci\'on relacionada al conocimiento de un dominio es utilizada por distintos componentes del sistema de di\'alogo que
-gestionar\'an la interacci\'on con el usuario. En un sistema t\'ipico, esto sucede como se detalla a continuaci\'on: en la direcci\'on sistema $\rightarrow$ usuario, el componente encargado de \textit{planificar} genera una secuencia de acciones relevantes al momento de la interacci\'on, luego el componente encargado de  \textit{administrar el conocimiento} actualiza la informaci\'on contextual y,  finalmente, el componente encargado de 
+gestionar\'an la interacci\'on con el usuario. En un sistema t\'ipico, esto sucede como se detalla a continuaci\'on: en la direcci\'on sistema $\rightarrow$ usuario, el componente encargado de \textit{planificar} genera una secuencia de acciones relevantes al momento de la interacci\'on, luego el componente encargado de  \textit{administrar el conocimiento} actualiza la informaci\'on contextual y,  finalmente, el componente encargado de
 \textit{generar instrucciones}  transmite las mismas como expresiones
 del lenguaje natural.  En la direcci\'on opuesta, es decir usuario $\rightarrow$ sistema,  el componente denominado \textit{discretizador}
 transforma el flujo continuo de informaci\'on derivada del comportamiento del usuario, en acciones relevantes al universo en cuesti\'on, mientras que
@@ -64,16 +64,16 @@ de mantener el contexto actualizado y de detectar posibles errores.
 
 
 El dise\~no de una tal arquitectura presenta
-desaf\'ios tanto te\'oricos como pr\'acticos.  En lo te\'orico, la necesidad de 
+desaf\'ios tanto te\'oricos como pr\'acticos.  En lo te\'orico, la necesidad de
  guiar la interacci\'on con el usuario (qu\'e decir,
-cu\'ando y c\'omo, en un contexto dado) motiva la creaci\'on, adaptaci\'on o mejora de heur\'isticas pretinentes y, por otro lado,  la necesidad de describir la situaci\'on actual as\' como tambi\'en  de indicar c\'omo alterarla para alcanzar un objetivo pre-establecido, incentivan el estudio de diversos m\'etodos
+cu\'ando y c\'omo, en un contexto dado) motiva la creaci\'on, adaptaci\'on o mejora de heur\'isticas pertinentes y, por otro lado,  la necesidad de describir la situaci\'on actual as\'i como tambi\'en  de indicar c\'omo alterarla para alcanzar un objetivo pre-establecido, incentivan el estudio de diversos m\'etodos
 para la inferencia eficiente y precisa.
 La calidad de cada una de estas capacidades afecta la percepci\'on que
 el usuario tiene del sistema, y por lo tanto, es imperativo aplicar m\'etricas pertinentes que permitan evaluar cada uno de estos aspectos del sistema.  La complejidad del problema te\'orico se
 refleja, en lo pr\'actico, en el desarrollo de un sistema de m\'ultiples componentes: un
 generador de lenguaje natural, un componente de planeamiento, un entorno 3D, etc.
 
-Dise\~nar e implementar todos estos componentes requerir\'ia un esfuerzo prohibitivo, por lo que proponemos utilizar recursos disponibles de forma libre y gratuita. En particular, se propone el uso de la plataforma desarrollada com parte de la competencia \textit{Generating Instructions in Virtual Environments} (GIVE) (\footnote{Disponible libremente en \url{http://www.give-challenge.org}}) que
+Dise\~nar e implementar todos estos componentes requerir\'ia un esfuerzo prohibitivo, por lo que proponemos utilizar recursos disponibles de forma libre y gratuita. En particular, se propone el uso de la plataforma desarrollada com parte de la competencia \textit{Generating Instructions in Virtual Environments} (GIVE\footnote{Disponible libremente en  \fnturl{http://www.give-challenge.org}}) que
 provee un prototipo b\'asico de este tipo de sistemas. En este contexto ``competencia" (del Ingl\'es ``evaluation campaign" o ``evaluation challenge") se refiere a la organizaci\'on de un evento en el que participan distintos grupos de investigaci\'on, realizando todos el mismo ejercicio con sus sistemas propios y comparando al final los resultados obtenidos por cada grupo. Este tipo de eventos es muy popular en distinas \'areas del PLN (TA, reconocimiento del habla, recuperaci\'on de informac\'on, entre otras) y benefician ampliamente cada \'area generando y compartiendo con la comunidad de investigadores nuevas tecnolog\'ias.
 
 El objetivo principal de GIVE es actuar como medio de evaluaci\'on de sistemas de generaci\'on
@@ -104,8 +104,6 @@ interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de inter
 %sistema de di\'alogo dado puede medirse en esta tarea en t\'erminos
 %cuantitativos (por ejemplo el tiempo m\'aximo para completar la tarea)
 %y cualitativos (como la relevancia de una instrucci\'on dada).
-\medskip
 
-\noindent
-%\fixme{Se puede agregar algo mas aca.}
+\fixme{Terminar con un comentario sobre tutoring!!!.}
 
