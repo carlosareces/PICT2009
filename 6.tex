@@ -13,7 +13,14 @@ tres temas principales que articulan el proyecto.
 \paragraph{Interacci\'on:}
 
 \emph{Generaci\'on de expresiones referenciales}. Un problema importante en
-s\'intesis de lenguaje natural es el de la generaci\'on de expresiones referenciales. Esto quiere decir, producir una frase nominal que describa un\'ivocamente a un objeto (e.g. ``el jarr\'on que est\'a sobre la mesa''). Estas expresiones, para ser aceptables, deben ser similares a las que podr\'ia producir una persona en condiciones normales (no ser\'ia aceptable, en lugar del ejemplo anterior, ``el jarr\'on que no est\'a arriba de la silla ni arriba del sof\'a ni abajo de la mesa'').  En~\cite{AKS08} se propone utilizar la minimizaci\'on simb\'olica del modelo que representa
+s\'intesis de lenguaje natural es el de la generaci\'on de expresiones
+referenciales. Esto quiere decir, producir una frase nominal que describa
+un\'ivocamente a un objeto (e.g. ``el jarr\'on que est\'a sobre la mesa'').
+Estas expresiones, para ser aceptables, deben ser similares a las que podr\'ia
+producir una persona en condiciones normales (no ser\'ia aceptable, en lugar del
+ejemplo anterior, ``el jarr\'on que no est\'a arriba de la silla ni arriba del
+sof\'a ni abajo de la mesa'').  En~\cite{AKS08} se propone utilizar la
+minimizaci\'on simb\'olica del modelo que representa
 el estado del mundo para as\'i obtener f\'ormulas l\'ogicas que describan
 un\'ivocamente a cada objeto. En particular se observa que con un
 lenguaje l\'ogico sin negaci\'on, no se pueden obtener resultados poco
@@ -46,13 +53,15 @@ que el proyecto planea investigar: Benotti es experta en el \'area de
 pragm\'atica de la interacci\'on y sistemas de di\'alogos; Areces es
 experto en m\'etodos de inferencia; y Estrella es experta en t\'ecnicas
 de evaluci\'on de sistemas de procesamiento natural.
-Los tres han desarrollado extensa investigaci\'on previa en sus respectivas \'areas
+Los tres han desarrollado extensa investigaci\'on previa en sus respectivas
+\'areas
 de experiencia.
 
 \paragraph{Aspectos Pr\'acticos.}
 Una vez se haya avanzado con las tareas de investigaci\'on te\'orica,
 estas dar\'an origen al dise\~no de t\'ecnicas y algoritmos que se
-implementar\'an en el framework de GIVE. Para ello se utilizar\'a la metodolog\'ia
+implementar\'an en el framework de GIVE. Para ello se utilizar\'a la
+metodolog\'ia
 usual en ingenier\'ia del software (desarrollo por
 m\'odulos con interfaces claras y bien documentadas,
 que garanticen alta cohesi\'on y bajo acoplamiento).
@@ -116,7 +125,7 @@ en ciertas aplicaciones, ninguno provee servicios como la generaci\'on de
 planes alternativos, o la generaci\'on de planes incompletos en caso de
 absencia de plan.
 
-Una vez que obtengamos una sistema version del sistema con su
+Una vez que obtengamos una version del sistema con su
 correspondiente testeo y documentaci\'on, podemos comenzar con
 su evaluaci\'on.  Debe notarse de todas formas que es preciso tener en cuenta
 el tipo de evaluaci\'on a realizar (que por lo tanto debe estar definido
@@ -127,20 +136,48 @@ es capaz de prover la informaci\'on necesaria requerida durante la evaluaci\'on
 Al final del a\~no comenzar\'a la preparaci\'on de articulos y reportes para
 la presentaci\'on de los resultados obtenidos hasta el momento.
 
-\paragraph{A\~no 2.} Los meses 13--24
+\paragraph{A\~no 2.} El objetivo principal del segundo a\~no del proyecto es, 
+por un lado, extender y completar el prototipo de sistema con informaci\'on 
+unidireccional en base a la evaluaci\'on realizada al fin del a\~no anterior,  
+y utilizando el feedback obtenido de la 
+participaci\'on en el GIVE challenge.  Por otro lado, se comenzar\'a a agregar 
+capacidades de interacci\'on ling\"u\'istica bidireccional.  Un sistema 
+bidireccional es mucho m\'as complejo que un sistema unidireccional.  Por 
+empezar, deberemos integrar al sistema un m\'odulo de interpretaci\'on de 
+lenguaje natural (e.g., parser, construcci\'on sem\'antica, etc.).  Nos 
+concentraremos en dos tipos espec\'ificos de instrucciones que el usuario 
+podr\'a dar al sistema: a) pedidos de aclaraci\'on de la \'ultima 
+instrucci\'on dada, y b) redefinici\'on del goal de la interacci\'on.  Estos 
+dos tipos de instrucci\'on son representativos de `reparaciones' a corto y 
+largo plazo.  Cada uno de ellos requerir\'a la redefinici\'on adecuada de 
+las reglas pragm\'aticas que gobiernan la interacci\'on (e.g., XXX), \fixme{resolver 
+tareas pragmaticas bidireccionales} y de servicios 
+de infer\'encia a medida (e.g., interpretaci\'on de expresiones referenciales, 
+redefinici\'on del plan en ejecuci\'on, etc.).  Una vez m\'as, a medida que 
+estas nuevas capacidades sean agregadas al sistema, deberemos llevar a 
+cabo testeo y documentaci\'on, para finalmente dar paso a la evaluaci\'on. 
 
-\paragraph{A\~no 3.} El \'ultimo a\~no
+
+
+\paragraph{A\~no 3.} El objetivo del \'ultimo a\~no es transformar el prototipo 
+de sistema de di\'alogo bidireccional obtenido durante el a\~no anterior, en un 
+tutor virtual para el aprendizaje de idiomas.  Adem\'as del beneficio claro de 
+obtener un sistema para una aplicaci\'on concreta que pueda ser utilizado 
+m\'as alla del \'ambito acad\'emico, XXX \fixme{terminar.}
 
 \medskip
 
 \noindent
-A continuaci\'on se sumarizan las tareas a desarrollar en los tres a\~nos de trabajo (organizadas trimestralmente):
+A continuaci\'on se sumarizan las tareas a desarrollar en los tres a\~nos de
+trabajo (organizadas trimestralmente):
 
 {\footnotesize
 \begin{center}
-\begin{tabular}{|p{7cm}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||}
+\begin{tabular}{|p{7cm}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||p{2mm}|p{2mm}|p{2mm}|p{2mm
+}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||}
 \hline
- \rowcolor[rgb]{0.8,0.8,0.8}\hspace{3.5cm}Tarea & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4\\
+ \rowcolor[rgb]{0.8,0.8,0.8}\hspace{3.5cm}Tarea & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4
+& 1 & 2 & 3 & 4\\
 \hline 1. Relevamiento bibliogr\'afico
 & $\times$ & $\times$ &&&&&&&$\times$&&&\\
 \hline 2. Estudio del material bibliogr\'afico
@@ -172,5 +209,11 @@ A continuaci\'on se sumarizan las tareas a desarrollar en los tres a\~nos de tra
 %material (2). A continuaci\'on se desarrollan las investigaciones
 %te\'oricas en c\'alculo de complejidades y desarrollo de algoritmos para
 % extensiones de la l\'ogica modal b\'asica, en particular la l\'ogica
-% h\'ibrida (3 y 4) y para l\'ogicas modales sub-booleanas (5 y 6). Hacia los finales del primer a\~no (y una vez obtenidos avances te\'oricos sustanciales) se empieza paralelamente con la implementaci\'on de los algoritmos (7). Una vez que esta tarea termina, se procede con la etapa del testing (8). Se dedicar\'an tres meses a la documentaci\'on del software (9). El final del proyecto est\'a reservado para la elaboraci\'on y presentaci\'on final de los resultados te\'oricos (10) y aplicados (11).
+% h\'ibrida (3 y 4) y para l\'ogicas modales sub-booleanas (5 y 6). Hacia los
+% finales del primer a\~no (y una vez obtenidos avances te\'oricos sustanciales)
+% se empieza paralelamente con la implementaci\'on de los algoritmos (7). Una vez
+% que esta tarea termina, se procede con la etapa del testing (8). Se dedicar\'an
+% tres meses a la documentaci\'on del software (9). El final del proyecto est\'a
+% reservado para la elaboraci\'on y presentaci\'on final de los resultados
+% te\'oricos (10) y aplicados (11).
 
