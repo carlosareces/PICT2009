@@ -16,15 +16,51 @@ tutor virtual para el aprendizaje de idiomas; para estimar la eficacia del proto
 
 A fin de obtener un sistema como el descripto anteriormente, este proyecto propone estudiar las tres \'areas fundamentales detalladas a continuaci\'on, las cuales posibilitan el desarrollo de este tipo de sistemas:
 \begin{myitemize}
-  \item \emph{Interacci\'on:} La interacci\'on humano-humano est\'a gobernada
-  por numerosas reglas pragm\'aticas que definen nociones b\'asicas como
-  las obligaciones conversacionales de los participantes (qui\'en puede hablar en cada momento), o las implicaciones de un enunciado (por ejemplo, si se
-  hizo una pregunta se espera una respuesta).
-  Estas reglas se aplican tambi\'en a la interacci\'on humano-computadora en
-  entornos virtuales cuando el objetivo del sistema de di\'alogo es
-  simular, en la medida de lo posible, el comportamiento humano.
+  \item \emph{Pragm\'atica:} La pragm\'atica es un \'area interdisciplinaria a
+la que contribuyen teor\'ias ling\"u\'isticas (e.g. implicaturas
+conversacionales~\citep{Grice75}), sociol\'ogicas (e.g. analisis
+conversacional~\citep{schegloff87b}) y filos\'oficas (e.g. teor\'ia de los actos
+de habla~\citep{austin62}). Su objetivo es estudiar c\'omo el contexto
+contribuye al significado; la transmisi\'on de significado depende no s\'olo del
+conocimiento ling\"u\'istico (e.g. reglas gramaticales y morfol\'ogicas), sino
+tambien extraling\"u\'istico (e.g. situaci\'on f\'isica donde la comunicaci\'on
+est\'a situada, experiencias previas de los hablantes, objetivo de la
+conversaci\'on, etc.). Todos sabemos que una misma oraci\'on puede significar
+cosas diferentes en distintos contextos; el \'area de pragm\'atica estudia el
+proceso por el cual una oraci\'on es desambiguada usando su contexto. En
+pragm\'atica se distingue entre oraci\'on (forma
+gramatical que toma el acto del habla) y enunciado (oraci\'on mas su contexto).
+La habilidad de entender una oraci\'on usando su contexto, es decir, la
+habilidad de entender un enunciado, se conoce como competencia pragm\'atica.
+Explicar la competencia pragm\'atica implica explicar como una persona hace
+inferencias sobre una oraci\'on y su contexto para interpretar adecuadamente el
+enunciado que el emisor intenta transmitir. 
 
-  Modelar formalmente estas reglas pragm\'aticas para un sistema de di\'alogo es uno de los desaf\'ios que condicionan la efectividad del mismo.
+Un sistema de di\'alogo cuyo objetivo sea interactuar de una forma natural debe
+demostrar habilidad pragm\'atica. Por lo tanto es responsabilidad del area de
+pragm\'atica definir 1) qu\'e tipo de informacion contextual el sistema de
+di\'alogo debe representar y 2) qu\'e tareas de inferencia sobre la oraci\'on y
+la informaci\'on contextual son necesarias para interpretar un enunciado. Hacer
+estas dos tareas de forma correcta tendr\'a un impacto crucial sobre el
+desempe\~no de un sistema que da instrucciones en tiempo real. En dicho sistema
+es indispensable que las oraciones hagan explicita la cantidad de informaci\'on
+justa; si la informacion es demasiada, se retrasar\'a y aburrir\'a al usuario,
+si la informacion es muy poca, el usuario no sabr\'a c\'omo llevar a cabo la
+tarea y cometer\'a errores.  
+
+
+% 
+% La interacci\'on humano-humano est\'a gobernada
+%   por numerosas reglas pragm\'aticas que definen nociones b\'asicas como
+%   las obligaciones conversacionales de los participantes (qui\'en puede hablar
+% en cada momento), o las implicaciones de un enunciado (por ejemplo, si se 
+%   hizo una pregunta se espera una respuesta).
+%   Estas reglas se aplican tambi\'en a la interacci\'on humano-computadora en
+%   entornos virtuales cuando el objetivo del sistema de di\'alogo es
+%   simular, en la medida de lo posible, el comportamiento humano.
+% 
+%   Modelar formalmente estas reglas pragm\'aticas para un sistema de di\'alogo
+% es uno de los desaf\'ios que condicionan la efectividad del mismo.
 
   \item \emph{Inferencia:} En t\'erminos generales, podemos entender como
   inferencia toda operaci\'on que transforme informaci\'on \textit{impl\'icita} en
