@@ -11,25 +11,29 @@ en comercio electr\'onico  al usarse como avatar de asistencia en la web, en sop
 control de dispositivos por voz al usarse en sistemas de di\'alogo embebidos,
 en la ense\~nanza a distancia al constituir tutores de lenguas extranjeras.  Una vez obtenido
 un prototipo, se planea aplicarlo  como
-tutor virtual para el aprendizaje de idiomas; para estimar la eficacia del prototipo  en esta tarea, se podr\'ia realizar una evaluaci\'on comparativa (compar\'andolo con otros sistemas existentes) o una evaluaci\'on orientada al usuario al ser utilizado, por ejemplo, estudiantes de FaMAF.
+tutor virtual para el aprendizaje de idiomas; para estimar la eficacia del prototipo  en esta tarea, se podr\'ia realizar una evaluaci\'on comparativa (compar\'andolo con otros sistemas existentes) o una evaluaci\'on orientada al usuario al ser utilizado, por ejemplo, por estudiantes de la universidad donde se desarrolla el proyecto.
 
 
 A fin de obtener un sistema como el descripto anteriormente, este proyecto propone estudiar las tres \'areas fundamentales detalladas a continuaci\'on, las cuales posibilitan el desarrollo de este tipo de sistemas:
-\begin{myitemize}
-  \item \emph{Pragm\'atica:} La pragm\'atica es un \'area interdisciplinaria a
-la que contribuyen teor\'ias ling\"u\'isticas (e.g. implicaturas
-conversacionales~\citep{Grice75}), sociol\'ogicas (e.g. analisis
-conversacional~\citep{schegloff87b}) y filos\'oficas (e.g. teor\'ia de los actos
+
+%\begin{myitemize}
+
+%\item
+
+\paragraph{Pragm\'atica:} La pragm\'atica es un \'area interdisciplinaria a
+la que contribuyen teor\'ias ling\"u\'isticas (e.g., implicaturas
+conversacionales~\citep{Grice75}), sociol\'ogicas (e.g., an\'alisis
+conversa\-cio\-nal~\citep{schegloff87b}) y filos\'oficas (e.g., teor\'ia de los actos
 de habla~\citep{austin62}). Su objetivo es estudiar c\'omo el contexto
 contribuye al significado; la transmisi\'on de significado depende no s\'olo del
-conocimiento ling\"u\'istico (e.g. reglas gramaticales y morfol\'ogicas), sino
-tambien extraling\"u\'istico (e.g. situaci\'on f\'isica donde la comunicaci\'on
+conocimiento ling\"u\'istico (e.g., reglas gramaticales y morfol\'ogicas), sino
+tambien extraling\"u\'istico (e.g., situaci\'on f\'isica donde la comunicaci\'on
 est\'a situada, experiencias previas de los hablantes, objetivo de la
-conversaci\'on, etc.). Todos sabemos que una misma oraci\'on puede significar
+conversaci\'on, etc.). Una misma oraci\'on puede significar
 cosas diferentes en distintos contextos; el \'area de pragm\'atica estudia el
 proceso por el cual una oraci\'on es desambiguada usando su contexto. En
 pragm\'atica se distingue entre oraci\'on (forma
-gramatical que toma el acto del habla) y enunciado (oraci\'on mas su contexto).
+gramatical que toma el acto del habla) y enunciado (oraci\'on m\'as su contexto).
 La habilidad de entender una oraci\'on usando su contexto, es decir, la
 habilidad de entender un enunciado, se conoce como competencia pragm\'atica.
 Explicar la competencia pragm\'atica implica explicar como una persona hace
@@ -62,15 +66,17 @@ tarea y cometer\'a errores.
 %   Modelar formalmente estas reglas pragm\'aticas para un sistema de di\'alogo
 % es uno de los desaf\'ios que condicionan la efectividad del mismo.
 
-  \item \emph{Inferencia:} En t\'erminos generales, podemos entender como
+  %\item
+  \paragraph{Inferencia:} En t\'erminos generales, podemos entender como
   inferencia toda operaci\'on que transforme informaci\'on \textit{impl\'icita} en
   \textit{expl\'icita}.  Bajo esta amplia definici\'on, es posible considerar como
   inferencia tanto la cl\'asica (por caso
   tareas habituales en inteligencia artificial como la planificaci\'on) u operaciones estad\'isticas (por ejemplo para obtener estimadores sobre un conjunto de datos).  Un sistema de di\'alogo realiza continuamente operaciones de inferencia, por un lado   para interpretar la informaci\'on recibida e incorporarla a su repositorio de datos, y por otro, para decidir qu\'e parte de la informaci\'on disponible transmitir.
 
-  El problema mismo de decidir qu\'e tipo de representaci\'on l\'ogica y que tipo de inferencia utilizar en una determinada situaci\'on (e.g., l\'ogica proposicional vs.\ l\'ogica de primer orden, validez vs.\ chequeo de modelos) es complejo, y las tareas de inferencia en s\'i son computacionalmente costosas.  El desaf\'io en este caso es encontrar el compromiso adecuado entre representaci\'on de la informaci\'on y el m\'etodo de inferencia a utilizar.
+  El problema mismo de decidir qu\'e tipo de representaci\'on l\'ogica y que tipo de inferencia utilizar en una determinada situaci\'on (e.g., l\'ogica proposicional vs.\ l\'ogica de primer orden, validez vs.\ chequeo de modelos, inferencia l\'ogica vs. inferencia estad\'istica) es complejo, y las tareas de inferencia en s\'i son computacionalmente costosas.  El desaf\'io en este caso es encontrar el compromiso adecuado entre representaci\'on de la informaci\'on y el m\'etodo de inferencia a utilizar.
 
-\item \emph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del Procesamiento de Lenguaje Natural (PLN) dado que una idea puede expresarse de muchas formas, todas ellas correctas, y, en general, determinar la calidad de tales frases no puede hacerse de manera simple y directa, por ejemplo comparando el resultado del sistema con un patr\'on (en Ingl\'es ``gold stadard"). El problema de la falta de patrones es compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la cual se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas de forma directa (es decir, aplicando alguna m\'etrica al texto generado por un sistema) o indirecta (o sea, evaluando la perfomance del sistema a trav\'es de la utilizaci\'on del texto generado para realizaci\'on de alguna tarea). Sin embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como est\'andar y demostrada eficaz de manera general.
+\paragraph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del Procesamiento de Lenguaje Natural (PLN) dado que una idea puede expresarse de muchas formas, todas ellas correctas. En general, determinar la calidad de una frase generada no puede hacerse de manera simple y directa, por ejemplo comparando el resultado del sistema con un patr\'on (en Ingl\'es ``gold stadard"). El problema de la falta de patrones es compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la cual se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas de forma directa (es decir, aplicando alguna m\'etrica al texto generado por un sistema) o indirecta (o sea, evaluando la perfomance del sistema a trav\'es de la utilizaci\'on del texto generado para realizaci\'on de alguna tarea). Sin embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como est\'andar y demostrada eficaz de manera general.
+
 En esta propuesta, dado que el objeto a evaluar es un sistema que interact\'ua via la generaci\'on de instrucciones en lenguaje natural, es necesario determinar su performance por medio de evaluaciones cuantitativas (como el tiempo de finalizaci\'on de la tarea), cualitativas (por ejemplo, la calidad de las interacciones) y basadas en el contexto (evaluaciones orientadas al usuario y sus necesidades en una situaci\'on particular). Dada la experiencia de los participantes es de especial inter\'es estudiar la  portabilidad y aplicaci\'on de t\'ecnicas de evaluaci\'on del dominio de la TA y la interacci\'on multimodal humano-computadora al sistema (en su totalidad y por componentes) planteado en este proyecto.
-\end{myitemize}
+%\end{myitemize}
 
