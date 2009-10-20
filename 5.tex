@@ -1,123 +1,149 @@
-\MySubSection{5. Composici\'on del Grupo de Investigaci\'on y Areas de Especializaci\'on}
+\MySubSection{5. Objetivos Espec\'ificos}
 
-\begin{center}\small
-    \begin{minipage}{\linewidth}
-        \begin{center}
-        \begin{tabular}{|l|l|}
-        \hline\hline
-        Nombre &  Especializacion \\
-        \hline
-        Dr.\ Carlos Areces &
-          L\'ogica Computacional\\
-        & Representaci\'on de Conocimiento\\
-        & Complejidad Algor\'itmica
-      \\ \hline
-        Dra.\ Paula Estrella &
-          Lingu\'istica Computacional \\
-        & Evaluacion de Sistemas de PLN
-      \\
-		& Traducci\'on Autom\'atica \\ \hline
-        Lic. Luciana Benotti &
-          Pragm\'atica \\
-        & Sistemas de Di\'alogo\\
-        & L\'ogica Computacional\\
-        \hline\hline
-        \end{tabular}
-        \end{center}
-    \end{minipage}
-\end{center}
+El presente proyecto se focalizar\'a en el  m\'odulo del sistema encargado de generar las instrucciones, el cual deber\'a ser capaz de interactuar naturalmente con el usuario y adaptarse a posibles errores de interpretaci\'on o ejecuci\'on de las instrucciones, dando instrucciones correctivas en consecuencia. Adem\'as, el usuario se encontrar\'a en un universo en el que podr\'a interactuar con objetos y explorar el ambiente virtual provisto. As\'i, el usuario intentar\'a seguir las instrucciones provistas por el sistema,
+realizando acciones f\'isicas en un mundo 3D.
 
 
-\MyParagraph{Colaboraci\'on Internacional:}
-Los investigadores del proyecto colaboran actualmente
-con grupos de investigaci\'on internacionales relevantes para
-el los objetivos a obtener.
+En una primera etapa, el modelo a utilizar permitir\'a el flujo de informaci\'on ling\"u\'istica de manera unidireccional, es decir,
+desde el sistema hacia el usuario, por lo que
+el usuario no podr\'a pedir ningu\'n tipo de ayuda.  La restricci\'on a un
+modelo unidireccional tiene como objetivo
+simplificar la representaci\'on y manejo del contexto de la interacci\'on.
 
-Areces y Benotti fueron miembros
-del grupo TALARIS \url{http://talaris.loria.fr}, parte de
-LORIA \url{http://www.loria.fr} el Laboratoire Lorrain de Recherche en Informatique et ses Applications. El principal temas de investigaci\'on de TALARIS es la ling\"u\'istica
-computacional con \'enfasis en sem\'antica e inferencia.  Paula Estrella
-fue miembro del XXX \fixme{completar aca}
+En etapas m\'as avanzadas del proyecto, el modelo unidireccional ser\'a extendido para
+permitir intercambio ling\"u\'istico bidireccional: por ejemplo, el usuario podr\'a
+pedir clarificaciones o redefinir el objetivo a alcanzar, en ambos casos usando lenguaje natural.
 
-Areces colabora actualmente con los siguientes investigadores e instituciones especialistas en el \'area de inferencia y l\'ogica
-computacional
-\begin{myitemize}
-\item Patrick Blackburn \url{http://www.loria.fr/~blackbur} (director de TALARIS) es especialista en el \'area de l\'ogicas modales y aplicaciones
-en ling\"u\'istica computacional.
+La generaci\'on de instrucciones para un dominio espec\'ifico requiere la adquisici\'on del conocimiento relevante y la compilaci\'on del mismo debe incluir cierta informaci\'on  ling\"u\'istica que permita su posterior procesamiento: en los aspectos morfol\'ogico y sint\'actico se requiere una gr\'amatica de lenguaje seleccionado (Espa\~nol en este caso), en el aspecto sem\'antico se necesita un repositorio de informaci\'on l\'exica organizada en forma ontol\'ogica y en lo pragm\'atico es necesaria una descripci\'on formal de las
+acciones posibles en un universo dado (incluyendo precondiciones, efectos e informaci\'on contextual del estado de cada interacci\'on).
 
-\item Jos\'e Casta\~no \url{http://www.cs.brandeis.edu/~jcastano/}
-
-\item GLyC \url{http://www.glyc.dc.uba.ar/} XXX
-
-\item Agust\'in Gravano \url{http://www.glyc.dc.uba.ar/agustin/} y
-\fixme{terminar}
-\end{myitemize}
+Esta informaci\'on relacionada al conocimiento de un dominio es utilizada por distintos componentes del sistema de di\'alogo que
+gestionar\'an la interacci\'on con el usuario. En un sistema t\'ipico, esto sucede como se detalla a continuaci\'on: en la direcci\'on sistema $\rightarrow$ usuario, el componente encargado de \textit{planificar} genera una secuencia de acciones relevantes al momento de la interacci\'on, luego el componente encargado de  \textit{administrar el conocimiento} actualiza la informaci\'on contextual y,  finalmente, el componente encargado de
+\textit{generar instrucciones}  transmite las mismas como expresiones
+del lenguaje natural.  En la direcci\'on opuesta, es decir usuario $\rightarrow$ sistema,  el componente denominado \textit{discretizador}
+transforma el flujo continuo de informaci\'on derivada del comportamiento del usuario, en acciones relevantes al universo en cuesti\'on, mientras que
+los componentes de planeamiento y administraci\'on del conocimiento se ocupan
+de mantener el contexto actualizado y de detectar posibles errores.
 
 
+El dise\~no de una tal arquitectura presenta
+desaf\'ios tanto te\'oricos como pr\'acticos.  En lo te\'orico, la necesidad de
+ guiar la interacci\'on con el usuario (qu\'e decir,
+cu\'ando y c\'omo, en un contexto dado) motiva la creaci\'on, adaptaci\'on o mejora de heur\'isticas pertinentes y, por otro lado,  la necesidad de describir la situaci\'on actual as\'i como tambi\'en  de indicar c\'omo alterarla para alcanzar un objetivo pre-establecido, incentivan el estudio de diversos m\'etodos
+para la inferencia eficiente y precisa.
+La calidad de cada una de estas capacidades afecta la percepci\'on que
+el usuario tiene del sistema, y por lo tanto, es imperativo aplicar m\'etricas pertinentes que permitan evaluar cada uno de estos aspectos del sistema.  La complejidad del problema te\'orico se
+refleja, en lo pr\'actico, en el desarrollo de un sistema de m\'ultiples componentes: un
+generador de lenguaje natural, un componente de planeamiento, un entorno 3D, etc.
 
-Benotti colabora actualmente con los siguientes investigadores e instituciones
-especialistas en generaci\'on de lenguaje natural y sistemas de di\'alogo:
+Dise\~nar e implementar todos estos componentes requerir\'ia un esfuerzo prohibitivo, por lo que proponemos utilizar recursos disponibles de forma libre y gratuita. En particular, se propone el uso de la plataforma desarrollada com parte de la competencia \textit{Generating Instructions in Virtual Environments} (GIVE\footnote{Disponible libremente en  \fnturl{http://www.give-challenge.org}}) que
+provee un prototipo b\'asico de este tipo de sistemas. En este contexto ``competencia" (del Ingl\'es ``evaluation campaign" o ``evaluation challenge") se refiere a la organizaci\'on de un evento en el que participan distintos grupos de investigaci\'on, realizando todos el mismo ejercicio con sus sistemas propios y comparando al final los resultados obtenidos por cada grupo. Este tipo de eventos es muy popular en distinas \'areas del PLN (TA, reconocimiento del habla, recuperaci\'on de informac\'on, entre otras) y benefician ampliamente cada \'area generando y compartiendo con la comunidad de investigadores nuevas tecnolog\'ias.
 
-\begin{myitemize}
-\item Alexander Koller \url{http://www.coli.uni-saarland.de/~koller/}.
-Alexander Koller es uno de los organizadores del GIVE Challenge y el
-coordinador de la implementaci\'on de la plataforma GIVE. 
+El objetivo principal de GIVE es actuar como medio de evaluaci\'on de sistemas de generaci\'on
+de lenguaje natural, donde \'estos se eval\'uan de forma m\'as precisa y homog\'enea dado que todos los sistemas participantes utilizan los mismos recursos provistos por los organizadores. Adem\'as, desde un punto de vista general, la evaluaci\'on
+tambi\'en tiene en cuenta el problema b\'asico de la interacci\'on en
+entornos virtuales.  En el escenario propuesto por GIVE, el usuario
+humano lleva acabo una tarea de `b\'usqueda del tesoro' en un entorno
+virtual 3D y el trabajo del sistema participante es proveer, en tiempo
+real, instrucciones en lenguaje natural que ayuden al usuario
+a encontrar el tesoro escondido.
 
-\item David Traum \url{http://people.ict.usc.edu/~traum/} es, hoy en d\'ia, uno
-de los investigadores mas renombrados del \'area de sistemas de di\'alogo.
-Adem\'as es el director del grupo de sistemas de di\'alogo en el ``Institute
-for Creative Techologies'' \url{http://ict.usc.edu/}. 
+\fixme{GIVE tiene el apoyo de SIGSEM SIGDIAL SIGGEN grupos de interes de
+ACL, la Asociacion de Ling\"u\'istica Computacional.}
 
-\item Ron Petrick \url{http://homepages.inf.ed.ac.uk/rpetrick/} es el
-desarrollador de PKS, uno de los pocos sistemas de planning con informaci\'on
-incompleta funcionales hoy en d\'ia.
+Por su dise\~no, el prototipo GIVE es una herramienta muy propicia para investigar distintos aspectos de la interacci\'on situada en un entorno virtual:
+el problema de realizaci\'on sint\'actica y morfo\'ogica de las
+instrucciones (en Ingl\'es \emph{surface realization}),
+la representaci\'on del conocimiento existente en el contexto de
+interacci\'on (contexto del discurso, ontolog\'ias, acciones posibles),
+el tipo de inferencia requerido por las tareas involucradas
+(planeamiento, construcci\'on y chequeo de modelos),
+las reglas pragm\'aticas de interacci\'on requeridas por la tarea
+(administraci\'on de la carga cognitiva, actualizaci\'on y uso de la informaci\'on contextual), entre otras. Adicionalmente, GIVE provee herramientas para registrar todos los detalles de la
+interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de interacci\'on en entornos virtuales anotado autom\'aticamente. \fixme{agregar la importancia de tales corpora}
 
-\item Claire Gardent \url{http://www.loria.fr/~gardent/} (vice-directora de
-TALARIS) es especialista en generaci\'on de lenguaje natural, adquisici\'on
-lexica y desarrollo de gram\'aticas.
-\fixme{terminar}
-\end{myitemize}
 
-Estrella colabora actualmente con las siguientes instituciones especialistas en las \'areas de HCI y  Ling\"u\'istica Computacional:
-\begin{myitemize}
-    \item  Instituto de investigaci\'on Idiap, Martigny, Suiza -  \url{http://www.idiap.ch/}
-\item Grupo de Tratamiento Inform\'atico Multiling\"ue, Universidad de Ginebra, Suiza - \url{http://www.issco.unige.ch/}
-\item Grupo de inteligencia artificial y pervasiva, Universidad de Friburgo, Suiza - \url{http://diuf.unifr.ch/pai/wiki/doku.php}
-\end{myitemize}
+%Finalmente, la calidad de la interacci\'on con un
+%sistema de di\'alogo dado puede medirse en esta tarea en t\'erminos
+%cuantitativos (por ejemplo el tiempo m\'aximo para completar la tarea)
+%y cualitativos (como la relevancia de una instrucci\'on dada).
 
-\MyParagraph{Publicaciones m\'as relevantes del grupo investigador:}
-\begin{myitemize}
-
-\item El Dr.\ Carlos Areces se especializa en l\'ogica computacional,
-en particular en el estudio te\'orico y aplicado de lenguajes para
-representaci\'on del conocimiento (e.g., l\'ogicas modales, h\'ibridas y
-para la descripci\'on).  Las publicaciones
-m\'as importantes sobre aspectos te\'oricos en estos lenguajes
-son~\citep{ABM01,arec:hybr05b}.  Ha desarrollado tambi\'en demostradores
-autom\'aticos para estos lenguajes~\citep{ANR01,arec:hylo02a,AG06,Hoffmann2007}
-accessibles en \url{http://www.glyc.dc.uba.ar/intohylo/}.
-Ha trabajado tambi\'en en el dise\~no de algoritmos para la generaci\'on de
-expresiones referenciales~\citep{AKS08}, y en el estudio de lenguajes l\'ogicos
-adecuados para la representaci\'on sem\'antica~\citep{AF08}.
+\fixme{Terminar con un comentario sobre tutoring!!!.}
 
 
 
-\item La Dra.\ Paula Estrella ha trabajado en el desarrollo y mejora de sistemas de TA desde y hacia el idioma Espa\~nol~\citep{estr:expe05}, ha realizado su tesis doctoral en la evaluaci\'on contextual de sistemas de TA~\citep{estr:impr08, estr:femt09} y tambi\'en ha participado en proyectos que involucran la creaci\'on y evaluaci\'on de corpora multimodales~\citep{pope:estr07}.
-
-\item La Lic.\ Luciana Benotti ha trabajado en el desarrollo de un sistema de
-di\'alogo completo, llamado Frolog, situado en una aventura de
-texto~\citep{benotti09b} (la implementacion abarca tareas de analisis
-sint\'actico hasta tareas pragmaticas). Tambi\'en ha extendido sistemas de
-dialogo ya existentes con habilidades pragmaticas. Primero extendi\'o un
-sistema desarrollado por Alexander Koller~\citep{koller04} usando un sistema de
-planning clasico~\citep{benotti07} y un sistema de planning con informaci\'on
-incompleta~\citep{benotti08}. Y luego extendi\'o el sistema de di\'alogo
-desarrollado por el grupo de David Traum usando la arquitectura cognitiva
-SOAR~\citep{benotti09a} (para el caso de oraciones comparativas). Finalmente,
-trabaj\'o en el analisis empirico de corpora de dialogo humano-humano utilizando
-diferentes tecnicas de planning para precedir los sub-dialogos de reparacion que
-ocurren en los corpora~\citep{benotti09c}.
+Los resultados esperados pueden clasificarse usando los
+tres temas principales que articulan el proyecto.
 
 
+Al comienzo del proyecto recopilaremos
+un corpus de interacci\'on humano-humano (uni y bidireccional).  El
+corpus contendr\'a la interacci\'on lig\"u\'istica alineada con
+las acciones realizadas en el mundo virtual.  Este corpus
+ser\'a utilizado para guiar el dise\~no de las pol\'iticas
+de interacci\'on a implementar.
 
-\end{myitemize}
+
+\fixme{cosas comentadas en el source aca abajo que pueden usarse}
+% XXX
+%
+% Si se conceptualiza
+% la estructura de la tarea como un \'arbol en el cual
+% la ra\'iz
+%
+% (e.g., s\'olo pr\'oxima
+% instrucci\'on a realizar, objetivo general a alcanzar m\'as
+% proxima instrucci\'on, etc.).
+%
+%
+%
+% La teor\'ia
+% de relevancia ~\citep{} distingue t
+%
+% (premisas implicadas, conclusiones implicadas
+% y explicaturas)
+%
+%
+% Dicho sistema de predicci\'on
+% requerir\'a el uso de distintas tareas de inferencia.
+% El contenido de reparaciones coherentes
+% dentro de una interacci\'on tiene restricciones
+% pragm\'aticas. Podemos clasificar las reparaciones
+% coherentes en premisas implicadas, conclusiones implicadas,
+% y explicaturas. Para predecir premisas implicadas se requiere
+% planning con informaci\'on incompleta y planes alternativos,
+% para predecir las
+% conclusiones implicadas se requieren acciones posibles en
+% un estado dado,
+%
+%
+% Mapping entre tareas pragm\'aticas/cognitivas y servicios
+% de inferencia / representaci\'on de conocimientos del sistema.
+
+
+
+\paragraph{Interacci\'on:}
+
+\emph{Generaci\'on de expresiones referenciales}. Un problema importante en
+s\'intesis de lenguaje natural es el de la generaci\'on de expresiones
+referenciales. Esto quiere decir, producir una frase nominal que describa
+un\'ivocamente a un objeto (e.g. ``el jarr\'on que est\'a sobre la mesa'').
+Estas expresiones, para ser aceptables, deben ser similares a las que podr\'ia
+producir una persona en condiciones normales (no ser\'ia aceptable, en lugar del
+ejemplo anterior, ``el jarr\'on que no est\'a arriba de la silla ni arriba del
+sof\'a ni abajo de la mesa'').  En~\cite{AKS08} se propone utilizar la
+minimizaci\'on simb\'olica del modelo que representa
+el estado del mundo para as\'i obtener f\'ormulas l\'ogicas que describan
+un\'ivocamente a cada objeto. En particular se observa que con un
+lenguaje l\'ogico sin negaci\'on, no se pueden obtener resultados poco
+naturales como el anteriormente expuesto. Esta \'area de aplicaci\'on se
+investigar\'a en conjunto con el grupo TALARIS (INRIA,
+Nancy, Francia).
+
+\paragraph{Inferencia:}
+\citep{arec:logi00}.
+
+
+\paragraph{Evaluaci\'on:}
+
+

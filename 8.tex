@@ -1,74 +1,138 @@
-\MySubSection{8. Impacto Cient\'ifico.}
+\MySubSection{8. Cronograma de trabajo}
 
-Una vez m\'as podemos clasificar el impacto cient\'ifico
-esperado del proyecto en tres grandes areas.
+El cronograma de trabajo se estructura de la siguiente manera:
 
-\paragraph{Interacci\'on:}
-Una de las contribuciones m\'as
-importantes del proyecto ser\'a un `laboratorio virtual' para
-teor\'ias pragm\'aticas. El proyecto proveer\'a de un
-entorno controlado, que permite
-el estudio de interacci\'on situada en un mundo donde
-se entremezclan acciones f\'isicas y acciones ling\"u\'isticas.
+\paragraph{A\~no 1.} El objetivo de los primeros meses es obtener un
+prototimo del sistema unidireccional.  Comenzaremos con un relevamiento
+de la bibliograf\'ia.  Dado que el grupo de investigaci\'on est\'a
+constitu\'io de expertos en las distintas \'areas pertinentes al
+proyecto, nos concentraremos durante los primeros meses en obtener un
+entendimiento com\'un de los distintos aspectos del problema, donde
+cada experto contribuir\'a bibliograf\'ia adecuada de su \'area para los
+dem\'as miembros del grupo.  A continuaci\'on comenzaremos a estudiar
+la plataforma GIVE, y a adaptar sus componentes para nuestro objetivo
+espec\'ifico.  Como parte del proyecto, planeamos participar del GIVE
+challenge, lo que nos impondr\'a deadlines concretos para obtener un
+primer prototipo.  La siguiente tarea es la definici\'on  y el dise\~no,
+por un lado, de los par\'ametros de interacci\'on que queremos incorporar
+en el sistema, y por otro, los esquemas de representaci\'on de la
+informaci\'on que el sistema necesita, y las tareas de inferencia a
+utilizar.
 
-El prototipo unidireccional nos permitir\'a
-investigar el impacto que distintas
-pol\'iticas para dar instrucciones (e.g., post o
-preorden en el \'arbol de acciones de la tarea)
-tienen sobre la realizaci\'on exitosa de la tarea.
-Evaluaciones de este tipo se han realizado anteriormente
-(e.g.,~\citep{foster-etal-ijcai2009}) pero siempre
-asumiendo una tarea prefijada.
-Dado que nuestro prototipo permite la especificaci\'on
-del mundo virtual, las posibles acciones y el objetivo
-a alcanzar, podremos evaluar cu\'ando estas pol\'iticas
-son dependientes o no de la tarea.
-\fixme{Requiere haber definido post y preorden antes.}
+\fixme{Agregar algo concreto aca sobre `parametros de interacci\'on'}
 
-El prototipo bidireccional nos permitir\'a investigar el
-fen\'omeno de reparaciones a corto y largo plazo,
-evaluando un sistema de predicci\'on de reparaciones
-contextualizadas.  Estas reparaciones est\'an usualmente
-causadas por implicaturas conversacionales.  Modelar
-estas implicaturas en un sistema de di\'alogo gen\'erico
-es dif\'icil.  Dado que nuestro prototipo provee una interacci\'on situada
-y restringida al mundo virtual, podremos testear la relaci\'on entre
-estas implicaturas, el tipo de reparaciones a las que
-dan origen, y las tareas de inferencia necesarias para
-predecirlas.
+Respecto de la representaci\'on del conocimiento, en un primer momento
+utilizaremos sistemas de inferencia \emph{of-the-shelf} como
+FaCT++~\citep{horr:fact99},
+RACER~\citep{haar:race99} o Pellet~\citep{XXX}, que soportan tareas de
+definici\'on, mantenimiento y consulta de ontolog\'ias.  Estos sistemas
+han sido utilizados como motores de inferencia
+en numerosas applicaciones en el \'area, y en applicaciones
+dise\~nadas por miembros del equipo de
+investigaci\'on~(e.g., \citep{FROLOG}).  Una vez observado el comportamiento de
+estos motores de inferencia en la tarea, se analizar\'an sus limitaciones
+e investigar\'an extensiones en el segundo a\~no del proyecto.  La tarea
+de inferencia que ser\'a investigada en m\'as detalle durante el primer
+a\~no ser\'a la tarea de planning.  GIVE provee un sistema de plannig muy
+limitado.  Existen, sistemas de planning m\'as avanzandos (en particular,
+que permiten el manejo de infirmaci\'on incompleta sobre el dominio)
+como PKS \url{http://homepages.inf.ed.ac.uk/rpetrick/research/pks/}, pero
+est\'an todav\'ia en periodo de desarrollo.  En general, el estado del
+arte en el \'area de planning no cubre los requerimientos de nuestro
+sistema.  Si bien, existen sistemas optimizados que funcionan adecuadamente
+en ciertas aplicaciones, ninguno provee servicios como la generaci\'on de
+planes alternativos, o la generaci\'on de planes incompletos en caso de
+absencia de plan.
 
-Finalmente,
-el corpus anotado de interacci\'on humano-humano, m\'as
-los corpus de interacci\'on humano-m\'aquina recopilados
-durante el proyecto se har\'an p\'ublicos.  Este tipo de
-corpora servir\'a, por ejemplo, para dise\~nar plataformas
-m\'as generales de evaluaci\'on de sistemas de di\'alogo,
-que van m\'as all\'a de los aspectos evaluados actualmente
-por plataformas existentes como GIVE.
+Una vez que obtengamos una version del sistema con su
+correspondiente testeo y documentaci\'on, podemos comenzar con
+su evaluaci\'on.  Debe notarse de todas formas que es preciso tener en cuenta
+el tipo de evaluaci\'on a realizar (que por lo tanto debe estar definido
+adecuadamente) durante el periodo de desarrollo, para asegurar que el sistema
+es capaz de prover la informaci\'on necesaria requerida durante la evaluaci\'on
+(e.g., logueo de eventos, etc.).
 
-\paragraph{Inferencia:} La principal contribuci\'on del
-proyecto en el \'area de l\'ogica e inferencia es en el
-dise\~no, desarrollo y estudio de algoritmos de planning.
-Un sistema de planning t\'ipico toma tres inputs -- un
-estado inicial, una especificaci\'on de posibles acciones y
-un objetivo esperado -- y retorna una secuencia de acciones (un plan)
-que al ser aplicadas secuencialmente al estado inicial, termina
-en un estado que satisface el objetivo pedido.  Distintos
-m\'etodos para obtener un plan han sido estudiados (e.g.,
-forward chaining, backward chaining, codification as propositional
-satisfiability, etc.); y existen actualmente sistemas
-implementados que pueden resolver esta tarea eficientemente.
+Al final del a\~no comenzar\'a la preparaci\'on de articulos y reportes para
+la presentaci\'on de los resultados obtenidos hasta el momento.
 
-Sin embargo, la mayor\'ia de estos sistemas asumen condiciones
-que simplifican el problema (e.g., tiempo at\'omico y
-determin\'istico, informaci\'on completa, ausencia de una teor\'ia
-background, etc.) y retornan un \'unico plan.  En el transcurso
-del proyecto se investigar\'an algoritmos que eliminan algunas
-de las simplificaciones mencionadas (en particular, investigaremos
-el caso de planning con informaci\'on incompleta y en base a una
-teor\'ia background) y que ofrecen adem\'as servicios de planning
-extendidos (retorno de planes alternativos, planes m\'inimos, planes
-condicionados, planes incompletos, acciones posibles en un estado dado, etc.)
+\paragraph{A\~no 2.} El objetivo principal del segundo a\~no del proyecto es,
+por un lado, extender y completar el prototipo de sistema con informaci\'on
+unidireccional en base a la evaluaci\'on realizada al fin del a\~no anterior,
+y utilizando el feedback obtenido de la
+participaci\'on en el GIVE challenge.  Por otro lado, se comenzar\'a a agregar
+capacidades de interacci\'on ling\"u\'istica bidireccional.  Un sistema
+bidireccional es mucho m\'as complejo que un sistema unidireccional.  Por
+empezar, deberemos integrar al sistema un m\'odulo de interpretaci\'on de
+lenguaje natural (e.g., parser, construcci\'on sem\'antica, etc.).  Nos
+concentraremos en dos tipos espec\'ificos de instrucciones que el usuario
+podr\'a dar al sistema: a) pedidos de aclaraci\'on de la \'ultima
+instrucci\'on dada, y b) redefinici\'on del goal de la interacci\'on.  Estos
+dos tipos de instrucci\'on son representativos de `reparaciones' a corto y
+largo plazo.  Cada uno de ellos requerir\'a la redefinici\'on adecuada de
+las reglas pragm\'aticas que gobiernan la interacci\'on (e.g., XXX), \fixme{resolver
+tareas pragmaticas bidireccionales} y de servicios
+de infer\'encia a medida (e.g., interpretaci\'on de expresiones referenciales,
+redefinici\'on del plan en ejecuci\'on, etc.).  Una vez m\'as, a medida que
+estas nuevas capacidades sean agregadas al sistema, deberemos llevar a
+cabo testeo y documentaci\'on, para finalmente dar paso a la evaluaci\'on.
 
-\paragraph{Evaluaci\'on:}
-\fixme{escribir dos parrafos como los anteriores}
+
+
+\paragraph{A\~no 3.} El objetivo del \'ultimo a\~no es transformar el prototipo
+de sistema de di\'alogo bidireccional obtenido durante el a\~no anterior, en un
+tutor virtual para el aprendizaje de idiomas.  Adem\'as del beneficio claro de
+obtener un sistema para una aplicaci\'on concreta que pueda ser utilizado
+m\'as alla del \'ambito acad\'emico, XXX \fixme{terminar.}
+
+\medskip
+
+\noindent
+A continuaci\'on se sumarizan las tareas a desarrollar en los tres a\~nos de
+trabajo (organizadas trimestralmente):
+
+{\footnotesize
+\begin{center}
+\begin{tabular}{|p{7cm}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||p{2mm}|p{2mm}|p{2mm}|p{2mm
+}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||}
+\hline
+ \rowcolor[rgb]{0.8,0.8,0.8}\hspace{3.5cm}Tarea & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4
+& 1 & 2 & 3 & 4\\
+\hline 1. Relevamiento bibliogr\'afico
+& $\times$ & $\times$ &&&&&&&$\times$&&&\\
+\hline 2. Estudio del material bibliogr\'afico
+& $\times$ & $\times$ & $\times$ &  &&&&&$\times$&&&\\
+\hline 3. Estudio de la plataforma GIVE
+& & $\times$ & &&&&&&&&&\\
+\hline 4. Dise\~no e impl.\ de alg.\ de interacci\'on (unidireccional)
+& & & $\times$ & $\times$&&&$\times$&$\times$&&&&\\
+\hline 5. Dise\~no e impl.\ de alg.\ de interacci\'on (bidireccional)
+& & &  & &&&$\times$&$\times$&&&$\times$&$\times$\\
+\hline 6. Dise\~no e impl.\ de alg.\ de inferencia
+& & & $\times$ & $\times$&&&$\times$&$\times$&&&$\times$&$\times$\\
+\hline 7. Testing
+&&&&$\times$&&&&$\times$&&&&$\times$\\
+\hline 8. Documentaci\'on
+&&&&$\times$&&&&$\times$&&&&$\times$\\
+\hline 9. Evaluaci\'on
+&&&$\times$&$\times$&$\times$&&$\times$&$\times$&$\times$&&$\times$&$\times$\\
+\hline 10. Desarrollo de tutor virtual
+&&&&&&&&&&$\times$&$\times$&$\times$\\
+\hline 11. Elaborac.\ y presentaci\'on de resultados te\'oricos
+&&&&$\times$&$\times$&$\times$&&$\times$&$\times$&$\times$&&$\times$\\
+\hline 12. Elaborac.\ y presentaci\'on de resultados aplicados
+&&&&$\times$&$\times$&$\times$&&$\times$&$\times$&$\times$&&$\times$\\\hline
+\end{tabular}\end{center}
+}
+
+%Se comienza con el relevamiento bibliogr\'afico (1) y estudio del
+%material (2). A continuaci\'on se desarrollan las investigaciones
+%te\'oricas en c\'alculo de complejidades y desarrollo de algoritmos para
+% extensiones de la l\'ogica modal b\'asica, en particular la l\'ogica
+% h\'ibrida (3 y 4) y para l\'ogicas modales sub-booleanas (5 y 6). Hacia los
+% finales del primer a\~no (y una vez obtenidos avances te\'oricos sustanciales)
+% se empieza paralelamente con la implementaci\'on de los algoritmos (7). Una vez
+% que esta tarea termina, se procede con la etapa del testing (8). Se dedicar\'an
+% tres meses a la documentaci\'on del software (9). El final del proyecto est\'a
+% reservado para la elaboraci\'on y presentaci\'on final de los resultados
+% te\'oricos (10) y aplicados (11).
+
