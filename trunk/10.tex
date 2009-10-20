@@ -1,47 +1,74 @@
-\MySubSection{10. Insersi\'on en el Programa de Investigaci\'on.}
+\MySubSection{10. Impacto Cient\'ifico.}
 
-El Procesamiento de Lenguaje Natural (PLN), y en particular el
-desarrollo de Sistemas de Di\'alogo, es un \'area en crecimiento
-en los pa\'ises desarrollados, por su gran aplicabilidad en el
-actual contexto de la Sociedad de la Informaci\'on. Efectivamente,
-dado el gran aumento de la informaci\'on textual en formato
-digital, el procesamiento automatizado de los textos se ha
-convertido en una capacidad estrat\'egica para empresas,
-instituciones y comunidades ling\"u\'isticas. Por esta raz\'on
-el \'area de PLN se encuentra en crecimiento en las principales
-universidades y empresas tecnol\'ogicas del mundo, con un
-presupuesto que crece a\~no a a\~no. Sin embargo, en la Argentina
-este \'area se encuentra muy poco desarrollada. Esto se puede
-atribuir a diferentes factores:
-\begin{myitemize}
-\item la relativa juventud del \'area de PLN, lo que implica una relativa escasez de profesionales bien formados en todo el mundo,
-\item el desarrollo insuficiente de todo el \'area de Ciencias de la Computaci\'on, por razones hist\'oricas y demanda de la industria,
-\item el poco desarrollo del \'area de Inteligencia Artificial y
-Ling\"u\'istica Formal en la Argentina, tambi\'en por razones hist\'oricas
-y acad\'emicas,
-\item la escasa interacci\'on entre los pocos investigadores en PLN que se encuentran en la regi\'on.
-\end{myitemize}
+Una vez m\'as podemos clasificar el impacto cient\'ifico
+esperado del proyecto en tres grandes areas.
 
-Parece claro que el PLN es un \'area de investigaci\'on estrat\'egica
-para la Argentina, en la que se puede alcanzar la excelencia acad\'emica
-e industrial a nivel internacional. Creemos que hay que apoyar el
-desarrollo de este \'area favoreciendo los siguientes aspectos:
-\begin{myitemize}
-\item formaci\'on de recursos humanos, con una fuerte componente de
-formaci\'on en el centros de excelencia extranjeros, ya sea a trav\'es
-de programas de doctorado o de cursos dictados por profesionales de
-reconocido prestigio en la Argentina,
-\item incorporaci\'on de recursos humanos formados, para contribuir
-al aumento y diversificaci\'on de la masa cr\'itica en el \'area,
-\item mejora de la interacci\'on entre los diversos grupos o investigadores aislados en PLN, a
-trav\'es de la organizaci\'on de workshops, cursos de profesores visitantes, co-tutor\'ias,
-programas de especializaci\'on coordinados, etc.
-\end{myitemize}
+\paragraph{Interacci\'on:}
+Una de las contribuciones m\'as
+importantes del proyecto ser\'a un `laboratorio virtual' para
+teor\'ias pragm\'aticas. El proyecto proveer\'a de un
+entorno controlado, que permite
+el estudio de interacci\'on situada en un mundo donde
+se entremezclan acciones f\'isicas y acciones ling\"u\'isticas.
 
-En FaMAF existe un grupo de PLN desde 2005 (\url{http://www.cs.famaf.unc.edu.ar/~pln}). Este
-grupo est\'a desarrollando una importante labor de formaci\'on de recursos humanos, con el dictado de cursos de grado y de postgrado en la FaMAF y otras Universidades del pa\'is.
-Tambi\'en trabaja en el desarrollo de diversos proyectos de investigaci\'on y en la integraci\'on
-con otros grupos de la regi\'on, tanto en Argentina como en Chile, Brasil y Uruguay. Este proyecto de investigaci\'on se integra al programa del grupo PLN de Procesamiento de Lenguaje Natural del
-FaMAF.
+El prototipo unidireccional nos permitir\'a
+investigar el impacto que distintas
+pol\'iticas para dar instrucciones (e.g., post o
+preorden en el \'arbol de acciones de la tarea)
+tienen sobre la realizaci\'on exitosa de la tarea.
+Evaluaciones de este tipo se han realizado anteriormente
+(e.g.,~\citep{foster-etal-ijcai2009}) pero siempre
+asumiendo una tarea prefijada.
+Dado que nuestro prototipo permite la especificaci\'on
+del mundo virtual, las posibles acciones y el objetivo
+a alcanzar, podremos evaluar cu\'ando estas pol\'iticas
+son dependientes o no de la tarea.
+\fixme{Requiere haber definido post y preorden antes.}
 
+El prototipo bidireccional nos permitir\'a investigar el
+fen\'omeno de reparaciones a corto y largo plazo,
+evaluando un sistema de predicci\'on de reparaciones
+contextualizadas.  Estas reparaciones est\'an usualmente
+causadas por implicaturas conversacionales.  Modelar
+estas implicaturas en un sistema de di\'alogo gen\'erico
+es dif\'icil.  Dado que nuestro prototipo provee una interacci\'on situada
+y restringida al mundo virtual, podremos testear la relaci\'on entre
+estas implicaturas, el tipo de reparaciones a las que
+dan origen, y las tareas de inferencia necesarias para
+predecirlas.
 
+Finalmente,
+el corpus anotado de interacci\'on humano-humano, m\'as
+los corpus de interacci\'on humano-m\'aquina recopilados
+durante el proyecto se har\'an p\'ublicos.  Este tipo de
+corpora servir\'a, por ejemplo, para dise\~nar plataformas
+m\'as generales de evaluaci\'on de sistemas de di\'alogo,
+que van m\'as all\'a de los aspectos evaluados actualmente
+por plataformas existentes como GIVE.
+
+\paragraph{Inferencia:} La principal contribuci\'on del
+proyecto en el \'area de l\'ogica e inferencia es en el
+dise\~no, desarrollo y estudio de algoritmos de planning.
+Un sistema de planning t\'ipico toma tres inputs -- un
+estado inicial, una especificaci\'on de posibles acciones y
+un objetivo esperado -- y retorna una secuencia de acciones (un plan)
+que al ser aplicadas secuencialmente al estado inicial, termina
+en un estado que satisface el objetivo pedido.  Distintos
+m\'etodos para obtener un plan han sido estudiados (e.g.,
+forward chaining, backward chaining, codification as propositional
+satisfiability, etc.); y existen actualmente sistemas
+implementados que pueden resolver esta tarea eficientemente.
+
+Sin embargo, la mayor\'ia de estos sistemas asumen condiciones
+que simplifican el problema (e.g., tiempo at\'omico y
+determin\'istico, informaci\'on completa, ausencia de una teor\'ia
+background, etc.) y retornan un \'unico plan.  En el transcurso
+del proyecto se investigar\'an algoritmos que eliminan algunas
+de las simplificaciones mencionadas (en particular, investigaremos
+el caso de planning con informaci\'on incompleta y en base a una
+teor\'ia background) y que ofrecen adem\'as servicios de planning
+extendidos (retorno de planes alternativos, planes m\'inimos, planes
+condicionados, planes incompletos, acciones posibles en un estado dado, etc.)
+
+\paragraph{Evaluaci\'on:}
+\fixme{escribir dos parrafos como los anteriores}

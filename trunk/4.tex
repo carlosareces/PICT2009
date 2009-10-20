@@ -34,7 +34,7 @@ La habilidad de entender una oraci\'on usando su contexto, es decir, la
 habilidad de entender un enunciado, se conoce como competencia pragm\'atica.
 Explicar la competencia pragm\'atica implica explicar como una persona hace
 inferencias sobre una oraci\'on y su contexto para interpretar adecuadamente el
-enunciado que el emisor intenta transmitir. 
+enunciado que el emisor intenta transmitir.
 
 Un sistema de di\'alogo cuyo objetivo sea interactuar de una forma natural debe
 demostrar habilidad pragm\'atica. Por lo tanto es responsabilidad del area de
@@ -46,19 +46,19 @@ desempe\~no de un sistema que da instrucciones en tiempo real. En dicho sistema
 es indispensable que las oraciones hagan explicita la cantidad de informaci\'on
 justa; si la informacion es demasiada, se retrasar\'a y aburrir\'a al usuario,
 si la informacion es muy poca, el usuario no sabr\'a c\'omo llevar a cabo la
-tarea y cometer\'a errores.  
+tarea y cometer\'a errores.
 
 
-% 
+%
 % La interacci\'on humano-humano est\'a gobernada
 %   por numerosas reglas pragm\'aticas que definen nociones b\'asicas como
 %   las obligaciones conversacionales de los participantes (qui\'en puede hablar
-% en cada momento), o las implicaciones de un enunciado (por ejemplo, si se 
+% en cada momento), o las implicaciones de un enunciado (por ejemplo, si se
 %   hizo una pregunta se espera una respuesta).
 %   Estas reglas se aplican tambi\'en a la interacci\'on humano-computadora en
 %   entornos virtuales cuando el objetivo del sistema de di\'alogo es
 %   simular, en la medida de lo posible, el comportamiento humano.
-% 
+%
 %   Modelar formalmente estas reglas pragm\'aticas para un sistema de di\'alogo
 % es uno de los desaf\'ios que condicionan la efectividad del mismo.
 
@@ -73,74 +73,4 @@ tarea y cometer\'a errores.
 \item \emph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del Procesamiento de Lenguaje Natural (PLN) dado que una idea puede expresarse de muchas formas, todas ellas correctas, y, en general, determinar la calidad de tales frases no puede hacerse de manera simple y directa, por ejemplo comparando el resultado del sistema con un patr\'on (en Ingl\'es ``gold stadard"). El problema de la falta de patrones es compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la cual se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas de forma directa (es decir, aplicando alguna m\'etrica al texto generado por un sistema) o indirecta (o sea, evaluando la perfomance del sistema a trav\'es de la utilizaci\'on del texto generado para realizaci\'on de alguna tarea). Sin embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como est\'andar y demostrada eficaz de manera general.
 En esta propuesta, dado que el objeto a evaluar es un sistema que interact\'ua via la generaci\'on de instrucciones en lenguaje natural, es necesario determinar su performance por medio de evaluaciones cuantitativas (como el tiempo de finalizaci\'on de la tarea), cualitativas (por ejemplo, la calidad de las interacciones) y basadas en el contexto (evaluaciones orientadas al usuario y sus necesidades en una situaci\'on particular). Dada la experiencia de los participantes es de especial inter\'es estudiar la  portabilidad y aplicaci\'on de t\'ecnicas de evaluaci\'on del dominio de la TA y la interacci\'on multimodal humano-computadora al sistema (en su totalidad y por componentes) planteado en este proyecto.
 \end{myitemize}
-
-El presente proyecto se focalizar\'a en el  m\'odulo del sistema encargado de generar las instrucciones, el cual deber\'a ser capaz de interactuar naturalmente con el usuario y adaptarse a posibles errores de interpretaci\'on o ejecuci\'on de las instrucciones, dando instrucciones correctivas en consecuencia. Adem\'as, el usuario se encontrar\'a en un universo en el que podr\'a interactuar con objetos y explorar el ambiente virtual provisto. As\'i, el usuario intentar\'a seguir las instrucciones provistas por el sistema,
-realizando acciones f\'isicas en un mundo 3D.
-
-
-En una primera etapa, el modelo a utilizar permitir\'a el flujo de informaci\'on ling\"u\'istica de manera unidireccional, es decir,
-desde el sistema hacia el usuario, por lo que
-el usuario no podr\'a pedir ningu\'n tipo de ayuda.  La restricci\'on a un
-modelo unidireccional tiene como objetivo
-simplificar la representaci\'on y manejo del contexto de la interacci\'on.
-
-En etapas m\'as avanzadas del proyecto, el modelo unidireccional ser\'a extendido para
-permitir intercambio ling\"u\'istico bidireccional: por ejemplo, el usuario podr\'a
-pedir clarificaciones o redefinir el objetivo a alcanzar, en ambos casos usando lenguaje natural.
-
-La generaci\'on de instrucciones para un dominio espec\'ifico requiere la adquisici\'on del conocimiento relevante y la compilaci\'on del mismo debe incluir cierta informaci\'on  ling\"u\'istica que permita su posterior procesamiento: en los aspectos morfol\'ogico y sint\'actico se requiere una gr\'amatica de lenguaje seleccionado (Espa\~nol en este caso), en el aspecto sem\'antico se necesita un repositorio de informaci\'on l\'exica organizada en forma ontol\'ogica y en lo pragm\'atico es necesaria una descripci\'on formal de las
-acciones posibles en un universo dado (incluyendo precondiciones, efectos e informaci\'on contextual del estado de cada interacci\'on).
-
-Esta informaci\'on relacionada al conocimiento de un dominio es utilizada por distintos componentes del sistema de di\'alogo que
-gestionar\'an la interacci\'on con el usuario. En un sistema t\'ipico, esto sucede como se detalla a continuaci\'on: en la direcci\'on sistema $\rightarrow$ usuario, el componente encargado de \textit{planificar} genera una secuencia de acciones relevantes al momento de la interacci\'on, luego el componente encargado de  \textit{administrar el conocimiento} actualiza la informaci\'on contextual y,  finalmente, el componente encargado de
-\textit{generar instrucciones}  transmite las mismas como expresiones
-del lenguaje natural.  En la direcci\'on opuesta, es decir usuario $\rightarrow$ sistema,  el componente denominado \textit{discretizador}
-transforma el flujo continuo de informaci\'on derivada del comportamiento del usuario, en acciones relevantes al universo en cuesti\'on, mientras que
-los componentes de planeamiento y administraci\'on del conocimiento se ocupan
-de mantener el contexto actualizado y de detectar posibles errores.
-
-
-El dise\~no de una tal arquitectura presenta
-desaf\'ios tanto te\'oricos como pr\'acticos.  En lo te\'orico, la necesidad de
- guiar la interacci\'on con el usuario (qu\'e decir,
-cu\'ando y c\'omo, en un contexto dado) motiva la creaci\'on, adaptaci\'on o mejora de heur\'isticas pertinentes y, por otro lado,  la necesidad de describir la situaci\'on actual as\'i como tambi\'en  de indicar c\'omo alterarla para alcanzar un objetivo pre-establecido, incentivan el estudio de diversos m\'etodos
-para la inferencia eficiente y precisa.
-La calidad de cada una de estas capacidades afecta la percepci\'on que
-el usuario tiene del sistema, y por lo tanto, es imperativo aplicar m\'etricas pertinentes que permitan evaluar cada uno de estos aspectos del sistema.  La complejidad del problema te\'orico se
-refleja, en lo pr\'actico, en el desarrollo de un sistema de m\'ultiples componentes: un
-generador de lenguaje natural, un componente de planeamiento, un entorno 3D, etc.
-
-Dise\~nar e implementar todos estos componentes requerir\'ia un esfuerzo prohibitivo, por lo que proponemos utilizar recursos disponibles de forma libre y gratuita. En particular, se propone el uso de la plataforma desarrollada com parte de la competencia \textit{Generating Instructions in Virtual Environments} (GIVE\footnote{Disponible libremente en  \fnturl{http://www.give-challenge.org}}) que
-provee un prototipo b\'asico de este tipo de sistemas. En este contexto ``competencia" (del Ingl\'es ``evaluation campaign" o ``evaluation challenge") se refiere a la organizaci\'on de un evento en el que participan distintos grupos de investigaci\'on, realizando todos el mismo ejercicio con sus sistemas propios y comparando al final los resultados obtenidos por cada grupo. Este tipo de eventos es muy popular en distinas \'areas del PLN (TA, reconocimiento del habla, recuperaci\'on de informac\'on, entre otras) y benefician ampliamente cada \'area generando y compartiendo con la comunidad de investigadores nuevas tecnolog\'ias.
-
-El objetivo principal de GIVE es actuar como medio de evaluaci\'on de sistemas de generaci\'on
-de lenguaje natural, donde \'estos se eval\'uan de forma m\'as precisa y homog\'enea dado que todos los sistemas participantes utilizan los mismos recursos provistos por los organizadores. Adem\'as, desde un punto de vista general, la evaluaci\'on
-tambi\'en tiene en cuenta el problema b\'asico de la interacci\'on en
-entornos virtuales.  En el escenario propuesto por GIVE, el usuario
-humano lleva acabo una tarea de `b\'usqueda del tesoro' en un entorno
-virtual 3D y el trabajo del sistema participante es proveer, en tiempo
-real, instrucciones en lenguaje natural que ayuden al usuario
-a encontrar el tesoro escondido.
-
-\fixme{GIVE tiene el apoyo de SIGSEM SIGDIAL SIGGEN grupos de interes de
-ACL, la Asociacion de Ling\"u\'istica Computacional.}
-
-Por su dise\~no, el prototipo GIVE es una herramienta muy propicia para investigar distintos aspectos de la interacci\'on situada en un entorno virtual:
-el problema de realizaci\'on sint\'actica y morfo\'ogica de las
-instrucciones (en Ingl\'es \emph{surface realization}),
-la representaci\'on del conocimiento existente en el contexto de
-interacci\'on (contexto del discurso, ontolog\'ias, acciones posibles),
-el tipo de inferencia requerido por las tareas involucradas
-(planeamiento, construcci\'on y chequeo de modelos),
-las reglas pragm\'aticas de interacci\'on requeridas por la tarea
-(administraci\'on de la carga cognitiva, actualizaci\'on y uso de la informaci\'on contextual), entre otras. Adicionalmente, GIVE provee herramientas para registrar todos los detalles de la
-interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de interacci\'on en entornos virtuales anotado autom\'aticamente. \fixme{agregar la importancia de tales corpora}
-
-
-%Finalmente, la calidad de la interacci\'on con un
-%sistema de di\'alogo dado puede medirse en esta tarea en t\'erminos
-%cuantitativos (por ejemplo el tiempo m\'aximo para completar la tarea)
-%y cualitativos (como la relevancia de una instrucci\'on dada).
-
-\fixme{Terminar con un comentario sobre tutoring!!!.}
 
