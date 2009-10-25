@@ -1,56 +1,43 @@
 \MySubSection{4. Objetivos Generales}
 
-El objetivo \'ultimo de este proyecto es dise\~nar un sistema de di\'alogo hombre-computadora con soporte para interacci\'on en tres dimensiones (3D) que generare autom\'aticamente instrucciones en lenguaje natural para guiar  al usuario durante la ejecuci\'on de una tarea determinada. Esta propuesta apunta
+El objetivo \'ultimo de este proyecto es dise\~nar un sistema de di\'alogo hombre-computadora con soporte para interacci\'on en tres dimensiones (3D) que genere autom\'aticamente instrucciones en Lenguaje Natural (LN) para guiar  al usuario durante la ejecuci\'on de una tarea determinada. Esta propuesta apunta
 a obtener un balance entre un sistema de uso general, aplicable en
 diferentes \'ambitos, y un sitema lo suficientemente espec\'ifico
 como para permitir el uso efectivo de las t\'ecnicas actuales de
-administraci\'on del conocimiento, planneamiento y procesamiento de lenguaje natural (PLN).
+administraci\'on del conocimiento, planneamiento y Procesamiento de Lenguaje Natural (PLN).
 
 El sistema resultante podr\'ia utilizarse en distintas situaciones, a modo de ejemplo:
 en comercio electr\'onico  al usarse como avatar de asistencia en la web, en soporte t\'ecnico al proveer ayuda al usuario no experto, en
-control de dispositivos por voz al usarse en sistemas de di\'alogo embebidos,
-en la ense\~nanza a distancia al constituir tutores de lenguas extranjeras.  Una vez obtenido
-un prototipo, se planea aplicarlo  como
-tutor virtual para el aprendizaje de idiomas; para estimar la eficacia del prototipo  en esta tarea, se podr\'ia realizar una evaluaci\'on comparativa (compar\'andolo con otros sistemas existentes) o una evaluaci\'on orientada al usuario al ser utilizado, por ejemplo, por estudiantes de la universidad donde se desarrolla el proyecto.
+control de dispositivos por voz al usarse en sistemas de di\'alogo embebidos o
+en la ense\~nanza a distancia al constituir un tutor virtual para el aprendizaje de lenguas extranjeras, \'esta \'ultima siendo la tarea seleccionada para testear nuestro prototipo una vez obtenido
+el mismo. Para estimar la eficacia y adecuaci\'on del prototipo para tal tarea, se podr\'ia realizar una evaluaci\'on comparativa (compar\'andolo con otros sistemas existentes) o una evaluaci\'on orientada al usuario (al ser utilizado, por ejemplo, por estudiantes de la facultad donde se desarrollar\'a el presente proyecto).
 
 
-A fin de obtener un sistema como el descripto anteriormente, este proyecto propone estudiar las tres \'areas fundamentales detalladas a continuaci\'on, las cuales posibilitan el desarrollo de este tipo de sistemas:
-
-%\begin{myitemize}
-
-%\item
+A fin de obtener un sistema como el descripto anteriormente, este proyecto propone estudiar las tres \'areas detalladas a continuaci\'on, las cuales son  fundamentales para el desarrollo de cualquier sistema de di\'alogo:
 
 \paragraph{Pragm\'atica:} La pragm\'atica es un \'area interdisciplinaria a
-la que contribuyen teor\'ias ling\"u\'isticas (e.g., implicaturas
-conversacionales~\citep{Grice75}), sociol\'ogicas (e.g., an\'alisis
-conversa\-cio\-nal~\citep{schegloff87b}) y filos\'oficas (e.g., teor\'ia de los actos
-de habla~\citep{austin62}). Su objetivo es estudiar c\'omo el contexto
-contribuye al significado; la transmisi\'on de significado depende no s\'olo del
-conocimiento ling\"u\'istico (e.g., reglas gramaticales y morfol\'ogicas), sino
-tambien extraling\"u\'istico (e.g., situaci\'on f\'isica donde la comunicaci\'on
-est\'a situada, experiencias previas de los hablantes, objetivo de la
-conversaci\'on, etc.). Una misma oraci\'on puede significar
-cosas diferentes en distintos contextos; el \'area de pragm\'atica estudia el
-proceso por el cual una oraci\'on es desambiguada usando su contexto. En
+la que contribuyen teor\'ias ling\"u\'isticas (implicaturas
+conversacionales~\citep{Grice75}), sociol\'ogicas (an\'alisis
+conversa\-cio\-nal~\citep{schegloff87b}) y filos\'oficas (teor\'ia de los actos
+de habla~\citep{austin62}). Su objetivo es estudiar c\'omo el contexto que rodea a una frase expresada en LN
+contribuye a determinar su significado, en otras palabras, su sem\'antica. La transmisi\'on de significado depende no s\'olo del
+conocimiento ling\"u\'istico, como reglas gramaticales y morfol\'ogicas, sino
+tambi\'en extraling\"u\'istico, como la situaci\'on f\'isica donde la comunicaci\'on
+est\'a situada, experiencias previas de los hablantes u el objetivo de la
+conversaci\'on, por lo tanto, una misma frase puede cambiar su sem\'antica si se cambia el contexto.  En
 pragm\'atica se distingue entre oraci\'on (forma
-gramatical que toma el acto del habla) y enunciado (oraci\'on m\'as su contexto).
-La habilidad de entender una oraci\'on usando su contexto, es decir, la
-habilidad de entender un enunciado, se conoce como competencia pragm\'atica.
-Explicar la competencia pragm\'atica implica explicar como una persona hace
-inferencias sobre una oraci\'on y su contexto para interpretar adecuadamente el
-enunciado que el emisor intenta transmitir.
+gramatical que toma el acto del habla) y enunciado (oraci\'on m\'as su contexto), y la habilidad de entender enunciado, se conoce como competencia pragm\'atica, la cual explica c\'omo una persona hace
+inferencias sobre una oraci\'on y su contexto para interpretar adecuadamente el enunciado que se intenta transmitir.
 
-Un sistema de di\'alogo cuyo objetivo sea interactuar de una forma natural debe
-demostrar habilidad pragm\'atica. Por lo tanto es responsabilidad del area de
-pragm\'atica definir 1) qu\'e tipo de informacion contextual el sistema de
-di\'alogo debe representar y 2) qu\'e tareas de inferencia sobre la oraci\'on y
-la informaci\'on contextual son necesarias para interpretar un enunciado. Hacer
-estas dos tareas de forma correcta tendr\'a un impacto crucial sobre el
-desempe\~no de un sistema que da instrucciones en tiempo real. En dicho sistema
-es indispensable que las oraciones hagan explicita la cantidad de informaci\'on
-justa; si la informacion es demasiada, se retrasar\'a y aburrir\'a al usuario,
-si la informacion es muy poca, el usuario no sabr\'a c\'omo llevar a cabo la
-tarea y cometer\'a errores.
+Para que un sistema de di\'alogo interact\'ue de una forma natural con sus usuarios, debe
+demostrar habilidad pragm\'atica, definiendo (1) qu\'e tipo de informaci\'on contextual se debe representar y (2) qu\'e tareas de inferencia sobre la oraci\'on y
+su contexto son necesarias para interpretar un enunciado. 
+%Hacer estas dos tareas de forma correcta tendr\'a un impacto crucial sobre el desempe\~no de un sistema que da instrucciones en tiempo real. 
+En un sistema como el que proponemos desarrollar,
+es indispensable que las oraciones hagan expl\'icita la cantidad de informaci\'on
+justa: si la informaci\'on a procesar es demasiada, podr\'ia  retrasarse y aburrir al usuario, mientras que
+si la informaci\'on es escasa, el usuario podr\'ia no recibir las instrucciones correctas sobre c\'omo llevar a cabo la
+tarea y, en consecuencia, podr\'ia cometer errores.
 
 
 %
@@ -71,9 +58,9 @@ tarea y cometer\'a errores.
   inferencia toda operaci\'on que transforme informaci\'on \textit{impl\'icita} en
   \textit{expl\'icita}.  Bajo esta amplia definici\'on, es posible considerar como
   inferencia tanto la cl\'asica (por caso
-  tareas habituales en inteligencia artificial como la planificaci\'on) u operaciones estad\'isticas (por ejemplo para obtener estimadores sobre un conjunto de datos).  Un sistema de di\'alogo realiza continuamente operaciones de inferencia, por un lado   para interpretar la informaci\'on recibida e incorporarla a su repositorio de datos, y por otro, para decidir qu\'e parte de la informaci\'on disponible transmitir.
+  tareas habituales de Inteligencia Artificial (IA) como la planificaci\'on) u operaciones estad\'isticas (por ejemplo para obtener estimadores sobre un conjunto de datos).  Un sistema de di\'alogo realiza continuamente operaciones de inferencia, por un lado   para interpretar la informaci\'on recibida e incorporarla a su repositorio de datos, y por otro, para decidir qu\'e parte de la informaci\'on disponible debe transmitir.
 
-  El problema mismo de decidir qu\'e tipo de representaci\'on l\'ogica y que tipo de inferencia utilizar en una determinada situaci\'on (e.g., l\'ogica proposicional vs.\ l\'ogica de primer orden, validez vs.\ chequeo de modelos, inferencia l\'ogica vs. inferencia estad\'istica) es complejo, y las tareas de inferencia en s\'i son computacionalmente costosas.  El desaf\'io en este caso es encontrar el compromiso adecuado entre representaci\'on de la informaci\'on y el m\'etodo de inferencia a utilizar.
+  El problema mismo de decidir qu\'e tipo de representaci\'on l\'ogica y qu\'e tipo de inferencia utilizar (l\'ogica proposicional vs.\ l\'ogica de primer orden, validez vs.\ chequeo de modelos, inferencia l\'ogica vs. inferencia estad\'istica) en una determinada situaci\'on  es complejo, y adem\'as las tareas de inferencia en s\'i son computacionalmente costosas.  El desaf\'io en este caso es encontrar el compromiso adecuado entre representaci\'on de la informaci\'on y el m\'etodo de inferencia a utilizar.
 
 \paragraph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del Procesamiento de Lenguaje Natural (PLN) dado que una idea puede expresarse de muchas formas, todas ellas correctas. En general, determinar la calidad de una frase generada no puede hacerse de manera simple y directa, por ejemplo comparando el resultado del sistema con un patr\'on (en Ingl\'es ``gold stadard"). El problema de la falta de patrones es compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la cual se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas de forma directa (es decir, aplicando alguna m\'etrica al texto generado por un sistema) o indirecta (o sea, evaluando la perfomance del sistema a trav\'es de la utilizaci\'on del texto generado para realizaci\'on de alguna tarea). Sin embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como est\'andar y demostrada eficaz de manera general.
 
