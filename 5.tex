@@ -16,9 +16,9 @@ permitir intercambio ling\"u\'istico bidireccional: por ejemplo, el usuario podr
 pedir clarificaciones o redefinir el objetivo a alcanzar, en ambos casos usando lenguaje natural.
 
 La generaci\'on de instrucciones para un dominio espec\'ifico requiere la adquisici\'on del conocimiento relevante y la compilaci\'on del mismo debe incluir cierta informaci\'on  ling\"u\'istica que permita su posterior procesamiento: en los aspectos morfol\'ogico y sint\'actico se requiere una gr\'amatica de lenguaje seleccionado (Espa\~nol en este caso), en el aspecto sem\'antico se necesita un repositorio de informaci\'on l\'exica organizada en forma ontol\'ogica y en lo pragm\'atico es necesaria una descripci\'on formal de las
-acciones posibles en un universo dado (incluyendo precondiciones, efectos e informaci\'on contextual del estado de cada interacci\'on).
+acciones posibles en un universo dado (incluyendo precondiciones y efectos) e informaci\'on contextual del estado de cada interacci\'on.
 
-Esta informaci\'on relacionada al conocimiento de un dominio es utilizada por distintos componentes del sistema de di\'alogo que
+Esta informaci\'on relacionada a un dominio dado es utilizada por distintos componentes del sistema de di\'alogo que
 gestionar\'an la interacci\'on con el usuario. En un sistema t\'ipico, esto sucede como se detalla a continuaci\'on: en la direcci\'on sistema $\rightarrow$ usuario, el componente encargado de \textit{planificar} genera una secuencia de acciones relevantes al momento de la interacci\'on, luego el componente encargado de  \textit{administrar el conocimiento} actualiza la informaci\'on contextual y,  finalmente, el componente encargado de
 \textit{generar instrucciones}  transmite las mismas como expresiones
 del lenguaje natural.  En la direcci\'on opuesta, es decir usuario $\rightarrow$ sistema,  el componente denominado \textit{discretizador}
@@ -26,49 +26,49 @@ transforma el flujo continuo de informaci\'on derivada del comportamiento del us
 los componentes de planeamiento y administraci\'on del conocimiento se ocupan
 de mantener el contexto actualizado y de detectar posibles errores.
 
-Los objetivos espec\'ificos se listan a continuaci\'on:
+Los objetivos espec\'ificos de este proyecto se listan a continuaci\'on:
 
 \begin{itemize}
-    \item[$\triangleright$] Identificar y delimitar las \'areas de trabajo pertinentes, seg\'un el estado del arte. 
-    \item[$\triangleright$] Proponer distintos y novedosos algoritmos de interacci\'on.
-    \item[$\triangleright$] Proponer distintos algoritmos de inferencia, estudiando la utilizaci\'on de distintas metodolog\'ias (por caso, distintos tipos de l\'ogias o representaciones del conocimiento).
-    \item[$\triangleright$] Proponer una metodolog\'ia de trabajo que permita la conjunci\'on de los puntos anteriores en un prototipo de tutor virtual.
-    \item[$\triangleright$] Estudiar y proponer una metodolog\'ia para la aplicaci\'on de t\'ecnicas evaluativas de otros dominios del PLN (en particular de la TA) al dominio de los sistemas de di\'alogos.
-    \item[$\triangleright$] Proponer un modelo de evaluaci\'on basada en el contexto para la evaluaci\'on de prototipos por usuarios reales.
-    \item[$\triangleright$] Diseñar y ejecutar planes de evaluaciones de acuerdo al punto anterior, que permitan identificar las debilidades del sistema para luego mejorar en fases subsiguientes.
+    \item[$\triangleright$] Identificar y delimitar las \'areas de trabajo pertinentes, seg\'un el estado del arte.\\[-2em]
+    \item[$\triangleright$] Proponer  algoritmos de interacci\'on adecuados a la tarea.\\[-2em]
+    \item[$\triangleright$] Proponer distintos algoritmos de inferencia, estudiando la utilizaci\'on de distintas metodolog\'ias (e.g., distintos tipos de l\'ogicas y como usarlas para una correcta representaciones del conoci\-mien\-to requerido por el sistema).\\[-2em]
+    \item[$\triangleright$] Proponer una metodolog\'ia de trabajo que permita la conjunci\'on de los puntos anteriores en un prototipo de tutor virtual.\\[-2em]
+    \item[$\triangleright$] Estudiar y proponer una metodolog\'ia para la aplicaci\'on de t\'ecnicas evaluativas de otros dominios del PLN (en particular de la TA) al dominio de los sistemas de di\'alogos.\\[-2em]
+    \item[$\triangleright$] Proponer un modelo de evaluaci\'on basada en el contexto para la evaluaci\'on de prototipos por usuarios reales.\\[-2em]
+    \item[$\triangleright$] Dise\~nar y ejecutar planes de evaluaciones de acuerdo al punto anterior, que permitan identificar las debilidades del sistema para luego mejorar en fases subsiguientes.\\[-2em]
     \item[$\triangleright$] Documentar y diseminar la experiencia ganada durante el proyecto a los fines de contribuir a la comunidad cient\'ifica.
 \end{itemize}
 
-A continuaci\'on se detallan el plan de trabajo propuesto para llevar a cabo los objetivos planteados ut supra: en la Subsecci\'on 5.1 se presentan las tareas planificadas y luego en la Subsecci\'on 5.2 se detalla un posible aplicaci\'on del sistema a desarrollar.
+En la siguiente secci\'on se detalla el plan de trabajo propuesto para llevar a cabo los objetivos planteados, para luego discutir una posible aplicaci\'on del sistema a desarrollar.
 % y, finalmente, la Subsecci\'on 5.3 provee informaci\'on sobre la plataforma que se utilizar\'a.
 
 \MySubSubSection{5.1. Tareas a Realizar}
 
-El plan de trabajo propuesto puede agruparse en cuatro grandes paquetes de tareas con sus respectivas sub-tareas, como se muestra a continuaci\'on:\footnote{El cronograma correspondiente a la ejecuci\'on de estas tares se detalla en la Secci\'on 8.} 
+El plan de trabajo propuesto puede agruparse en cuatro grandes paquetes de tareas con sus respectivas sub-tareas, como se muestra a continuaci\'on:\footnote{El cronograma correspondiente a la ejecuci\'on de estas tares se detalla en la Secci\'on 8.}
 
 \begin{enumerate}
-    \item Prospecci\'on de metodolog\'ias existentes para el desarrollo de sistemas de di\'alogo a utilizarse en entornos 3D, enfatizando la misma en los algoritmos de interacii\'on e inferencia propuestos.
+    \item Prospecci\'on de metodolog\'ias existentes para el desarrollo de sistemas de di\'alogo a utilizarse en entornos 3D, enfatizando principalmente los algoritmos de interacci\'on e inferencia propuestos.
 \begin{enumerate}
     \item Relevamiento bibliogr\'afico
     \item Estudio del material bibliogr\'afico
     \item Estudio de la plataforma GIVE
 \end{enumerate}
-\item Propuesta y relizaci\'on de las componentes que conformar\'ian el m\'odulo encargado de la generaci\'on de instrucciones y de la interpretaci\'on de devoluciones por el usuario, en base al punto 1.
+\item Propuesta y realizaci\'on de las componentes que conformar\'ian el m\'odulo encargado de la generaci\'on de instrucciones y de la interpretaci\'on de respuestas del usuario.
 \begin{enumerate}
-\item Recopilaci\'on de un corpus de interacci\'on humano-humano (uni y bidireccional) que contendr\'a la interacci\'on lig\"u\'istica alineada con las acciones realizadas en un mundo virtual.  Este corpus ser\'a utilizado para guiar el dise\~no de las pol\'iticas de interacci\'on a implementar. Trabajos relacionados \citep{HCRC-93, byron-06}. \fixme{arreglar este item}
-    \item Dise\~no, implementaci\'on y testing de algoritmo(s) de interacci\'on unidireccional(es)
-    \item Dise\~no, implementaci\'on y testing de algoritmo(s) de interacci\'on bidireccional(es)
-    \item Dise\~no, implementaci\'on y testing de algoritmo(s) de inferencia
+\item Recopilaci\'on de un corpus de interacci\'on humano-humano (uni y bidireccional) que contendr\'a la interacci\'on lig\"u\'istica alineada con las acciones realizadas en un mundo virtual.  Este corpus ser\'a utilizado para guiar el dise\~no de las pol\'iticas de interacci\'on a implementar \citep{HCRC-93, byron-06}.
+    \item Dise\~no, implementaci\'on y testing de algoritmo(s) de interacci\'on unidireccional(es).
+    \item Dise\~no, implementaci\'on y testing de algoritmo(s) de interacci\'on bidireccional(es).
+    \item Dise\~no, implementaci\'on y testing de algoritmo(s) de inferencia.
 \end{enumerate}
 
-\item Propuesta y prototipado de un sistema de di\'alogo con las capacidades mencionadas en la Secci\'on 4 y que incluya los m\'odulos disponibles del punto anterior (punto 2).
+\item Propuesta y prototipado de un sistema de di\'alogo con las capacidades mencionadas en la Secci\'on 4 y que incluya los m\'odulos disponibles del punto anterior.
 \begin{enumerate}
     \item Desarrollo de tutor virtual:  http://www.speech.kth.se/prod/publications/files/1020.pdf - \\
 http://www.ijvr.org/issues/issue2-2008/9.pdf \\
 Learning and Teaching in the Virtual World of Second Life\\
 
 \citep{Eskenazi09, Wik09, Doswell05}
-    \item Evaluaci\'on: para determinar la calidad del tutor virtual se propone estudiar la creaci\'on de un modelo de la calidad seg\'un los est\'andares de evaluaci\'on de software ISO/IEC 9126 y 14528 \citep{ISO9126-1, ISO14598-1}, los cuales fueron exitosamente aplicados al dominio de la TA, como lo muestra la herramienta FEMTI (Framework for the Evaluation of Machine Translation), disponible libremente en \url{http://www.issco.unige.ch/femti/}. FEMTI \citep{Est2005} intenta guiar a los evaluadores hacia la creaci\'on de planes de evaluaci\'on parametrizables que incluyen diversos spectos del sistema a evaluar y ofrece un conjunto de m\'etricas relevantes. El desaf\'io principal de este estudio es establecer los aspectos del tutor m\'as importantes para un estudiante de idiomas e identificar el conjunto de m\'etricas relevantes, por ejemplo bas\'andose en experiencias previas \citep{paradise06, Chu2000, Litman2002}, realizando encuestas o especificaciones de requerimientos (como en \citep{Lecoeuche98}) o bien coleccionando estos datos a trav\'es de experimentos llamados ``Mago de Oz" (del Ingl\'es \textit{Wizard of Oz}) donde el usuario interact\'ua con un prototipo de sistema (posiblemente incompleto o reducido en funcionalidades) y un humano (es decir, el ``Mago") detr\'as de la interface responde como si lo hiciera el sistema \citep{Dahlback93, Fabbrizio05}. 
+    \item Evaluaci\'on: para determinar la calidad del tutor virtual se propone estudiar la creaci\'on de un modelo de la calidad seg\'un los est\'andares de evaluaci\'on de software ISO/IEC 9126 y 14528 \citep{ISO9126-1, ISO14598-1}, los cuales fueron exitosamente aplicados al dominio de la TA, como lo muestra la herramienta FEMTI (Framework for the Evaluation of Machine Translation), disponible libremente en \url{http://www.issco.unige.ch/femti/}. FEMTI \citep{Est2005} intenta guiar a los evaluadores hacia la creaci\'on de planes de evaluaci\'on parametrizables que incluyen diversos spectos del sistema a evaluar y ofrece un conjunto de m\'etricas relevantes. El desaf\'io principal de este estudio es establecer los aspectos del tutor m\'as importantes para un estudiante de idiomas e identificar el conjunto de m\'etricas relevantes, por ejemplo bas\'andose en experiencias previas \citep{paradise06, Chu2000, Litman2002}, realizando encuestas o especificaciones de requerimientos (como en \citep{Lecoeuche98}) o bien coleccionando estos datos a trav\'es de experimentos llamados ``Mago de Oz" (del Ingl\'es \textit{Wizard of Oz}) donde el usuario interact\'ua con un prototipo de sistema (posiblemente incompleto o reducido en funcionalidades) y un humano (es decir, el ``Mago") detr\'as de la interface responde como si lo hiciera el sistema \citep{Dahlback93, Fabbrizio05}.
 
 Luego de elaborar un modelo de la calidad, se pueden aplicar diversas metodolog\'ias para evaluar cada uno de estos aspectos; seg\'un corresponda se pueden aplicar m\'etricas autom\'aticas, subjetivas (tambi\'en llamadas ``humanas") o basadas en la tarea para evaluar la contribuci\'on de cada componente y la calidad del sistema en su totalidad.
 
@@ -78,7 +78,7 @@ Por otro lado, dado que se usar\'a la plataforma GIVE, se planea la participaci\
 
 \item Diseminaci\'on de resultados y lecciones aprendidas.
 \begin{enumerate}
-    \item Documentaci\'on del sistema obtenido, en forma de manuales de usuario y/o del desarrollador que incluyan una descripci\'on detallada de los algoritmos implementados con sus puntos fuertes y d\'ebiles.  
+    \item Documentaci\'on del sistema obtenido, en forma de manuales de usuario y/o del desarrollador que incluyan una descripci\'on detallada de los algoritmos implementados con sus puntos fuertes y d\'ebiles.
     \item Presentaci\'on de resultados te\'oricos y aplicados a trav\'es de art\'iculos presentados en conferencias locales o internacionales as\'i como tambi\'en en revistas cient\'ificas pertinentes a las \'areas de investigaci\'on afectadas.
 % Posibles candidatos son: \textit{International Journal of Speech Technology}, \textit{}\textit{}\textit{} \fixme{Agregar conferencias/journals de interes}
 \end{enumerate}
@@ -196,7 +196,7 @@ el tipo de inferencia requerido por las tareas involucradas
 (planeamiento, construcci\'on y chequeo de modelos),
 las reglas pragm\'aticas de interacci\'on requeridas por la tarea
 (administraci\'on de la carga cognitiva, actualizaci\'on y uso de la informaci\'on contextual), entre otras. Adicionalmente, GIVE provee herramientas para registrar todos los detalles de la
-interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de interacci\'on en entornos virtuales anotado autom\'aticamente. \fixme{agregar la importancia de tales corpora}
+interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de interacci\'on en entornos virtuales anotado autom\'aticamente.
 
 
 
