@@ -39,51 +39,110 @@ Los objetivos espec\'ificos de este proyecto se listan a continuaci\'on:
     \item[$\triangleright$] Documentar y diseminar la experiencia ganada durante el proyecto a los fines de contribuir a la comunidad cient\'ifica.
 \end{itemize}
 
-En la siguiente secci\'on se detalla el plan de trabajo propuesto para llevar a cabo los objetivos planteados, para luego discutir una posible aplicaci\'on del sistema a desarrollar.
+En la siguiente secci\'on se detalla el plan de trabajo propuesto para llevar a cabo los objetivos planteados (la Secci\'on 8
+provee un cronograma completo), para luego discutir una posible aplicaci\'on del sistema a desarrollar.
 % y, finalmente, la Subsecci\'on 5.3 provee informaci\'on sobre la plataforma que se utilizar\'a.
 
 \MySubSubSection{5.1. Tareas a Realizar}
 
-El plan de trabajo propuesto puede agruparse en cuatro grandes paquetes de tareas con sus respectivas sub-tareas, como se muestra a continuaci\'on:\footnote{El cronograma correspondiente a la ejecuci\'on de estas tares se detalla en la Secci\'on 8.}
+Comenzaremos por la prospecci\'on (relevamiento y estudio de material bibliogr\'afico)
+de metodolo\-g\'ias existentes para el desarrollo de sistemas de di\'alogo a utilizarse en entornos 3D, enfatizando principalmente los algoritmos de interacci\'on e inferencia propuestos. Entre la bibliograf\'ia b\'asica a estudiar podemos nombrar ~\citep{}.
+\fixme{Incluir bibliograf\'ia b\'asica}
 
-\begin{enumerate}
-    \item Prospecci\'on de metodolog\'ias existentes para el desarrollo de sistemas de di\'alogo a utilizarse en entornos 3D, enfatizando principalmente los algoritmos de interacci\'on e inferencia propuestos.
-\begin{enumerate}
-    \item Relevamiento bibliogr\'afico
-    \item Estudio del material bibliogr\'afico
-    \item Estudio de la plataforma GIVE
-\end{enumerate}
-\item Propuesta y realizaci\'on de las componentes que conformar\'ian el m\'odulo encargado de la generaci\'on de instrucciones y de la interpretaci\'on de respuestas del usuario.
-\begin{enumerate}
-\item Recopilaci\'on de un corpus de interacci\'on humano-humano (uni y bidireccional) que contendr\'a la interacci\'on lig\"u\'istica alineada con las acciones realizadas en un mundo virtual.  Este corpus ser\'a utilizado para guiar el dise\~no de las pol\'iticas de interacci\'on a implementar \citep{HCRC-93, byron-06}.
-    \item Dise\~no, implementaci\'on y testing de algoritmo(s) de interacci\'on unidireccional(es).
-    \item Dise\~no, implementaci\'on y testing de algoritmo(s) de interacci\'on bidireccional(es).
-    \item Dise\~no, implementaci\'on y testing de algoritmo(s) de inferencia.
-\end{enumerate}
+Una vez cumplido el relevamiento inicial el siguiente objetivo es
+obtener una propuesta y luego implementar los componentes que
+conformar\'ian el m\'odulo encargado de la generaci\'on de instrucciones
+y de la interpretaci\'on de respuestas del usuario.
+Dise\~nar e implementar todos estos componentes empezando desde cero requerir\'ia un esfuerzo prohibitivo, por lo que proponemos utilizar recursos disponibles de forma libre y gratuita. En particular, usaremos la plataforma desarrollada como parte de la competencia\footnote{En este contexto ``competencia'' (del Ingl\'es ``evaluation campaign" o ``evaluation challenge") se refiere a la organizaci\'on de un evento en el que participan distintos grupos de investigaci\'on, realizando todos el mismo ejercicio con sus sistemas propios y comparando al final los resultados obtenidos por cada grupo. Este tipo de eventos es muy popular en distinas \'areas del PLN (TA, reconocimiento del habla, recuperaci\'on de informac\'ion, entre otras) y benefician ampliamente cada \'area generando y compartiendo con la comunidad de investigadores nuevas tecnolog\'ias.} \textit{Generating Instructions in Virtual Environments} (GIVE)\footnote{GIVE se encuentra disponible libremente en  \fnturl{http://www.give-challenge.org}, y posee el respaldo de los grupos de inter\'es SIGSEM, SIGDIAL, y SIGGEN de la ACL, Association for Computational Linguistics.} que
+provee un prototipo b\'asico de este tipo de sistemas.
 
-\item Propuesta y prototipado de un sistema de di\'alogo con las capacidades mencionadas en la Secci\'on 4 y que incluya los m\'odulos disponibles del punto anterior.
-\begin{enumerate}
-    \item Desarrollo de tutor virtual:  http://www.speech.kth.se/prod/publications/files/1020.pdf - \\
+El objetivo principal de GIVE es actuar como medio de evaluaci\'on de sistemas de generaci\'on
+de lenguaje natural, donde \'estos se eval\'uan de forma m\'as precisa y homog\'enea dado que todos los sistemas participantes utilizan los mismos recursos provistos por los organizadores. Adem\'as, desde un punto de vista general, la evaluaci\'on
+tambi\'en tiene en cuenta el problema b\'asico de la interacci\'on en
+entornos virtuales.  En el escenario propuesto por GIVE, el usuario
+humano lleva acabo una tarea de ``b\'usqueda del tesoro" en un entorno
+virtual 3D y el trabajo del sistema participante es proveer, en tiempo
+real, instrucciones en lenguaje natural que ayuden al usuario
+a encontrar el tesoro escondido.
+
+Por su dise\~no, el prototipo GIVE es una herramienta muy propicia para investigar distintos aspectos de la interacci\'on situada en un entorno virtual:
+el problema de realizaci\'on sint\'actica y morf\'ogica de las
+instrucciones (en Ingl\'es \emph{surface realization}),
+la representaci\'on del conocimiento existente en el contexto de
+interacci\'on (contexto del discurso, ontolog\'ias, acciones posibles),
+el tipo de inferencia requerido por las tareas involucradas
+(planeamiento, construcci\'on y chequeo de modelos),
+las reglas pragm\'aticas de interacci\'on requeridas por la tarea
+(administraci\'on de la carga cognitiva, actualizaci\'on y uso de la informaci\'on contextual), entre otras. Adicionalmente, GIVE provee herramientas para registrar todos los detalles de la
+interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de interacci\'on en entornos virtuales anotado autom\'aticamente.
+
+Para la definici\'on correcta de las pol\'iticas de interacci\'on que utilizaremos en nuestro prototipo, es necesario
+contar con un corpus que provea ejemplos de interacci\'on t\'ipica sobre la
+tarea~\citep{HCRC-93, byron-06}.  Utilizando herramientas provistas por GIVE,
+recopilaremos un corpus de interacci\'on humano-humano (uni y bidireccional) que contendr\'a la interacci\'on lig\"u\'istica alineada con las acciones realizadas en un mundo virtual.
+
+\fixme{Dise\~no, implementaci\'on y testing de algoritmo(s) de interacci\'on unidireccional(es).}
+
+Un problema importante en
+s\'intesis de lenguaje natural es el de la generaci\'on de expresiones
+referenciales. Esto quiere decir, producir una frase nominal que describa
+un\'ivocamente a un objeto (e.g., ``el jarr\'on que est\'a sobre la mesa'').
+Estas expresiones, para ser aceptables, deben ser similares a las que podr\'ia
+producir una persona en condiciones normales (no ser\'ia aceptable, en lugar del
+ejemplo anterior, ``el jarr\'on que no est\'a arriba de la silla ni arriba del
+sof\'a ni abajo de la mesa'').  En~\citep{AKS08} se propone utilizar la
+minimizaci\'on simb\'olica del modelo que representa
+el estado del mundo para as\'i obtener f\'ormulas l\'ogicas que describan
+un\'ivocamente a cada objeto. En particular se observa que con un
+lenguaje l\'ogico sin negaci\'on, no se pueden obtener resultados poco
+naturales como el anteriormente expuesto.
+
+
+\fixme{Dise\~no, implementaci\'on y testing de algoritmo(s) de interacci\'on bidireccional(es).}
+
+Respecto de la representaci\'on del conocimiento, en un primer momento
+utilizaremos sistemas de inferencia \emph{of-the-shelf} como
+FaCT++~\citep{horr:fact99},
+RACER~\citep{haar:race99} o Pellet~\citep{siri:pell06}, que soportan tareas de
+definici\'on, mantenimiento y consulta de ontolog\'ias.  Estos sistemas
+han sido utilizados como motores de inferencia
+en numerosas applicaciones en el \'area, y en applicaciones
+dise\~nadas por miembros del equipo de
+investigaci\'on~(e.g., \citep{benotti07}).  Una vez observado el comportamiento de
+estos motores de inferencia en la tarea, se analizar\'an sus limitaciones
+e investigar\'an extensiones en el segundo a\~no del proyecto.  La tarea
+de inferencia que ser\'a investigada en m\'as detalle durante el primer
+a\~no ser\'a la tarea de planning.  GIVE provee un sistema de plannig muy
+limitado.  Existen, sistemas de planning m\'as avanzandos (en particular,
+que permiten el manejo de infirmaci\'on incompleta sobre el dominio)
+como PKS \url{http://homepages.inf.ed.ac.uk/rpetrick/research/pks/}, pero
+est\'an todav\'ia en periodo de desarrollo.  En general, el estado del
+arte en el \'area de planning no cubre los requerimientos de nuestro
+sistema.  Si bien, existen sistemas optimizados que funcionan adecuadamente
+en ciertas aplicaciones, ninguno provee servicios como la generaci\'on de
+planes alternativos, o la generaci\'on de planes incompletos en caso de
+absencia de plan.
+
+Finalmente, para determinar la calidad del los propotipos obtenidos se propone estudiar la creaci\'on de un modelo de la calidad seg\'un los est\'andares de evaluaci\'on de software ISO/IEC 9126 y 14528 \citep{ISO9126-1, ISO14598-1}, los cuales fueron exitosamente aplicados al dominio de la TA, como lo muestra la herramienta FEMTI (Framework for the Evaluation of Machine Translation), disponible libremente en \url{http://www.issco.unige.ch/femti/}. FEMTI \citep{Est2005} intenta guiar a los evaluadores hacia la creaci\'on de planes de evaluaci\'on parametrizables que incluyen diversos spectos del sistema a evaluar y ofrece un conjunto de m\'etricas relevantes. El desaf\'io principal de este estudio es establecer los aspectos del tutor m\'as importantes para un estudiante de idiomas e identificar el conjunto de m\'etricas relevantes, por ejemplo bas\'andose en experiencias previas \citep{paradise06, Chu2000, Litman2002}, realizando encuestas o especificaciones de requerimientos (como en \citep{Lecoeuche98}) o bien coleccionando estos datos a trav\'es de experimentos llamados ``Mago de Oz" (del Ingl\'es \textit{Wizard of Oz}) donde el usuario interact\'ua con un prototipo de sistema (posiblemente incompleto o reducido en funcionalidades) y un humano (es decir, el ``Mago") detr\'as de la interface responde como si lo hiciera el sistema \citep{Dahlback93, Fabbrizio05}.
+
+Luego de elaborar un modelo de la calidad, se pueden aplicar diversas metodolog\'ias para evaluar cada uno de estos aspectos; seg\'un corresponda se pueden aplicar m\'etricas autom\'aticas, subjetivas (tambi\'en llamadas ``humanas") o basadas en la tarea para evaluar la contribuci\'on de cada componente y la calidad del sistema en su totalidad.
+Por otro lado, dado que se usar\'a la plataforma GIVE, se planea la participaci\'on en el evento asociado, lo cual servir\'a como una fuente adicional de informaci\'on acerca de los aspectos del sistema a mejorar.
+
+
+
+Desarrollo de tutor virtual:  http://www.speech.kth.se/prod/publications/files/1020.pdf - \\
 http://www.ijvr.org/issues/issue2-2008/9.pdf \\
 Learning and Teaching in the Virtual World of Second Life\\
 
 \citep{Eskenazi09, Wik09, Doswell05}
-    \item Evaluaci\'on: para determinar la calidad del tutor virtual se propone estudiar la creaci\'on de un modelo de la calidad seg\'un los est\'andares de evaluaci\'on de software ISO/IEC 9126 y 14528 \citep{ISO9126-1, ISO14598-1}, los cuales fueron exitosamente aplicados al dominio de la TA, como lo muestra la herramienta FEMTI (Framework for the Evaluation of Machine Translation), disponible libremente en \url{http://www.issco.unige.ch/femti/}. FEMTI \citep{Est2005} intenta guiar a los evaluadores hacia la creaci\'on de planes de evaluaci\'on parametrizables que incluyen diversos spectos del sistema a evaluar y ofrece un conjunto de m\'etricas relevantes. El desaf\'io principal de este estudio es establecer los aspectos del tutor m\'as importantes para un estudiante de idiomas e identificar el conjunto de m\'etricas relevantes, por ejemplo bas\'andose en experiencias previas \citep{paradise06, Chu2000, Litman2002}, realizando encuestas o especificaciones de requerimientos (como en \citep{Lecoeuche98}) o bien coleccionando estos datos a trav\'es de experimentos llamados ``Mago de Oz" (del Ingl\'es \textit{Wizard of Oz}) donde el usuario interact\'ua con un prototipo de sistema (posiblemente incompleto o reducido en funcionalidades) y un humano (es decir, el ``Mago") detr\'as de la interface responde como si lo hiciera el sistema \citep{Dahlback93, Fabbrizio05}.
 
-Luego de elaborar un modelo de la calidad, se pueden aplicar diversas metodolog\'ias para evaluar cada uno de estos aspectos; seg\'un corresponda se pueden aplicar m\'etricas autom\'aticas, subjetivas (tambi\'en llamadas ``humanas") o basadas en la tarea para evaluar la contribuci\'on de cada componente y la calidad del sistema en su totalidad.
 
-Por otro lado, dado que se usar\'a la plataforma GIVE, se planea la participaci\'on en el evento asociado (ver Secci\'on 6), lo cual servir\'a como una fuente adicional de informaci\'on acerca de los aspectos del sistema a mejorar.
-	%\item Caso de estudio: aplicaci\'on
-\end{enumerate}
+Durante todo el proyecto, nos ocuparemos de la diseminaci\'on de resultados y lecciones aprendidas.  En particular, trabajaremos en la documentaci\'on del sistema obtenido, en forma de manuales de usuario y/o del desarrollador que incluyan una descripci\'on detallada de los algoritmos implementados con sus puntos fuertes y d\'ebiles.
+Por otro lado, los resultados te\'oricos y aplicados ser\'an prsentados a trav\'es de art\'iculos presentados en conferencias locales o internacionales as\'i como tambi\'en en revistas cient\'ificas pertinentes a las \'areas de investigaci\'on afectadas.  Nuestros
+planes de diseminaci\'on se definen en m\'as detalle en la Seccion~13.
 
-\item Diseminaci\'on de resultados y lecciones aprendidas.
-\begin{enumerate}
-    \item Documentaci\'on del sistema obtenido, en forma de manuales de usuario y/o del desarrollador que incluyan una descripci\'on detallada de los algoritmos implementados con sus puntos fuertes y d\'ebiles.
-    \item Presentaci\'on de resultados te\'oricos y aplicados a trav\'es de art\'iculos presentados en conferencias locales o internacionales as\'i como tambi\'en en revistas cient\'ificas pertinentes a las \'areas de investigaci\'on afectadas.
-% Posibles candidatos son: \textit{International Journal of Speech Technology}, \textit{}\textit{}\textit{} \fixme{Agregar conferencias/journals de interes}
-\end{enumerate}
 
-\end{enumerate}
+%\end{enumerate}
 
 % XXX
 %
@@ -118,23 +177,7 @@ Por otro lado, dado que se usar\'a la plataforma GIVE, se planea la participaci\
 %
 % Mapping entre tareas pragm\'aticas/cognitivas y servicios
 % de inferencia / representaci\'on de conocimientos del sistema.
-\fixme{C/L: esto mas lo comentado podria agregarse al punto 2a-b-c-d para explicar mejor cada tarea?}
 
-\emph{Generaci\'on de expresiones referenciales}. Un problema importante en
-s\'intesis de lenguaje natural es el de la generaci\'on de expresiones
-referenciales. Esto quiere decir, producir una frase nominal que describa
-un\'ivocamente a un objeto (e.g. ``el jarr\'on que est\'a sobre la mesa'').
-Estas expresiones, para ser aceptables, deben ser similares a las que podr\'ia
-producir una persona en condiciones normales (no ser\'ia aceptable, en lugar del
-ejemplo anterior, ``el jarr\'on que no est\'a arriba de la silla ni arriba del
-sof\'a ni abajo de la mesa'').  En~\cite{AKS08} se propone utilizar la
-minimizaci\'on simb\'olica del modelo que representa
-el estado del mundo para as\'i obtener f\'ormulas l\'ogicas que describan
-un\'ivocamente a cada objeto. En particular se observa que con un
-lenguaje l\'ogico sin negaci\'on, no se pueden obtener resultados poco
-naturales como el anteriormente expuesto. Esta \'area de aplicaci\'on se
-investigar\'a en conjunto con el grupo TALARIS (INRIA,
-Nancy, Francia).
 
 \MySubSubSection{5.2. Aplicaciones}
 
@@ -171,32 +214,6 @@ Para estimar la eficacia de estos sistemas de tutoring se har\'a una evaluaci\'o
 sistemas de tutoring existentes) o una evaluaci\'on orientada al usuario al ser utilizado, por ejemplo, por estudiantes de la universidad donde se desarrolla el proyecto.
 
 
-\MySubSubSection{6. Consideraciones Pr\'acticas}
-
-%El dise\~no de una sistema como el descripto anteriormente presenta desaf\'ios tanto te\'oricos como pr\'acticos.  En lo te\'orico, la necesidad de  guiar la interacci\'on con el usuario (qu\'e decir, cu\'ando y c\'omo, en un contexto dado) motiva la creaci\'on, adaptaci\'on o mejora de heur\'isticas pertinentes y, por otro lado,  la necesidad de describir la situaci\'on actual as\'i como tambi\'en  de indicar c\'omo alterarla para alcanzar un objetivo pre-establecido, incentivan el estudio de diversos m\'etodos para la inferencia eficiente y precisa. La calidad de cada una de estas capacidades afecta la percepci\'on que el usuario tiene del sistema, y por lo tanto, es imperativo aplicar m\'etricas pertinentes que permitan evaluar cada uno de estos aspectos del sistema.  La complejidad del problema te\'orico serefleja, en lo pr\'actico, en el desarrollo de un sistema de m\'ultiples componentes: un generador de lenguaje natural, un componente de planeamiento, un entorno 3D, etc.
-
-Dise\~nar e implementar todos estos componentes requerir\'ia un esfuerzo prohibitivo, por lo que proponemos utilizar recursos disponibles de forma libre y gratuita. En particular, se propone el uso de la plataforma desarrollada com parte de la competencia \textit{Generating Instructions in Virtual Environments} (GIVE)\footnote{GIVE se encuentra disponible libremente en  \fnturl{http://www.give-challenge.org}, y posee el respaldo de los grupos de interes SIGSEM, SIGDIAL, y SIGGEN de ACL, Association for Computational Linguistics.} que
-provee un prototipo b\'asico de este tipo de sistemas. En este contexto ``competencia" (del Ingl\'es ``evaluation campaign" o ``evaluation challenge") se refiere a la organizaci\'on de un evento en el que participan distintos grupos de investigaci\'on, realizando todos el mismo ejercicio con sus sistemas propios y comparando al final los resultados obtenidos por cada grupo. Este tipo de eventos es muy popular en distinas \'areas del PLN (TA, reconocimiento del habla, recuperaci\'on de informac\'ion, entre otras) y benefician ampliamente cada \'area generando y compartiendo con la comunidad de investigadores nuevas tecnolog\'ias.
-
-El objetivo principal de GIVE es actuar como medio de evaluaci\'on de sistemas de generaci\'on
-de lenguaje natural, donde \'estos se eval\'uan de forma m\'as precisa y homog\'enea dado que todos los sistemas participantes utilizan los mismos recursos provistos por los organizadores. Adem\'as, desde un punto de vista general, la evaluaci\'on
-tambi\'en tiene en cuenta el problema b\'asico de la interacci\'on en
-entornos virtuales.  En el escenario propuesto por GIVE, el usuario
-humano lleva acabo una tarea de ``b\'usqueda del tesoro" en un entorno
-virtual 3D y el trabajo del sistema participante es proveer, en tiempo
-real, instrucciones en lenguaje natural que ayuden al usuario
-a encontrar el tesoro escondido.
-
-Por su dise\~no, el prototipo GIVE es una herramienta muy propicia para investigar distintos aspectos de la interacci\'on situada en un entorno virtual:
-el problema de realizaci\'on sint\'actica y morf\'ogica de las
-instrucciones (en Ingl\'es \emph{surface realization}),
-la representaci\'on del conocimiento existente en el contexto de
-interacci\'on (contexto del discurso, ontolog\'ias, acciones posibles),
-el tipo de inferencia requerido por las tareas involucradas
-(planeamiento, construcci\'on y chequeo de modelos),
-las reglas pragm\'aticas de interacci\'on requeridas por la tarea
-(administraci\'on de la carga cognitiva, actualizaci\'on y uso de la informaci\'on contextual), entre otras. Adicionalmente, GIVE provee herramientas para registrar todos los detalles de la
-interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de interacci\'on en entornos virtuales anotado autom\'aticamente.
 
 
 
