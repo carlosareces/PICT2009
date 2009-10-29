@@ -22,7 +22,6 @@ Dado que nuestro prototipo permitir\'a la especificaci\'on
 del mundo virtual, las posibles acciones y el objetivo
 a alcanzar, podremos determinar cu\'ando estas pol\'iticas
 son dependientes de la tarea.
-\fixme{Requiere haber definido post y preorden antes.}
 
 El prototipo bidireccional nos permitir\'a investigar el
 fen\'omeno de reparaciones a corto y largo plazo,
@@ -30,14 +29,16 @@ evaluando un sistema de predicci\'on de reparaciones
 contextualizadas.  Estas reparaciones est\'an usualmente
 causadas por implicaturas conversacionales.  Modelar
 estas implicaturas en un sistema de di\'alogo gen\'erico
-es dif\'icil.  Sin embargo, dado que el presente prototipo provee una interacci\'on situada
+es dif\'icil.  Sin embargo, dado que el presente prototipo provee una
+interacci\'on situada
 y restringida al mundo virtual, ser'a posible testear la relaci\'on entre
 las implicaturas, el tipo de reparaciones a las que
 dan origen y las tareas de inferencia necesarias para
 predecirlas.
 
 
-\fixme{estan bien "acciones linguisticas"? Cambié de lugar ultimo parrafo q hablaba de evaluacion}
+\fixme{estan bien ``acciones linguisticas''? Cambi\'e de lugar ultimo parrafo q
+hablaba de evaluacion}
 
 \paragraph{Inferencia:} La principal contribuci\'on del
 proyecto en el \'area de l\'ogica e inferencia es en el
@@ -47,7 +48,8 @@ estado inicial, una especificaci\'on de posibles acciones y
 un objetivo esperado -- y retorna una secuencia de acciones (un plan)
 que al ser aplicadas secuencialmente al estado inicial, termina
 en un estado que satisface el objetivo pedido.  Distintos
-m\'etodos para obtener un plan han sido estudiados (forward chaining, backward chaining, codification as propositional
+m\'etodos para obtener un plan han sido estudiados (forward chaining, backward
+chaining, codification as propositional
 satisfiability, etc.); y existen actualmente sistemas
 implementados que pueden resolver esta tarea eficientemente.
 
@@ -63,11 +65,21 @@ extendidos (retorno de planes alternativos, planes m\'inimos, planes
 condicionados, planes incompletos, acciones posibles en un estado dado, etc.)
 
 \paragraph{Evaluaci\'on:}
+En este \'area se espera que una de las contribuciones principales sea la
+intergaci\'on de t\'ecnicas de evaluaci\'on de distintas \'areas en una
+metodolog\'ia que permita evaluar sistemas de di\'alogo para entornos virtuales
+de manera que se estime la usabilidad y eficacia del mismo. Esta metodolog\'ia
+podr\'ia usarse tanto para determinar si un sistema es adecuado para un tipo de
+tarea y de usuario, como para comparar la performance de distintos sistemas del
+mismo tipo.
 
-
-En este \'area se espera que una de las contribuciones principales sea la intergaci\'on de t\'ecnicas de evaluaci\'on de distintas \'areas en una metodolog\'ia que permita evaluar sistemas de di\'alogo para entornos virtuales de manera que se estime la usabilidad y eficacia del mismo. Esta metodolog\'ia podr\'ia usarse tanto para determinar si un sistema es adecuado para un tipo de tarea y de usuario, como para comparar la performance de distintos sistemas del mismo tipo.
-
-Otra contribuci\'on ser\'a el estudio y aplicaci\'on de est\'andares de evaluaci\'on de software a los sistemas desarrollados, generando un modelo de la calidad estandarizado y proponiendo un conjunto de m\'etricas apropiadas para evaluar cada uno de los aspectos contenidos en el modelo. Este trabajo incluir\'a tambi\'en un estudio profundo de varias m\'etricas a fines de incluir en el modelo de calidad algunos consejos sobre las m\'etricas elegidas; este estudio se considera como una meta-evaluaci\'on del modelo propuesto.
+Otra contribuci\'on ser\'a el estudio y aplicaci\'on de est\'andares de
+evaluaci\'on de software a los sistemas desarrollados, generando un modelo de la
+calidad estandarizado y proponiendo un conjunto de m\'etricas apropiadas para
+evaluar cada uno de los aspectos contenidos en el modelo. Este trabajo
+incluir\'a tambi\'en un estudio profundo de varias m\'etricas a fines de incluir
+en el modelo de calidad algunos consejos sobre las m\'etricas elegidas; este
+estudio se considera como una meta-evaluaci\'on del modelo propuesto.
 
 Finalmente,
 el corpus anotado de interacci\'on humano-humano, m\'as

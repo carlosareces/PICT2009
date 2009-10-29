@@ -1,18 +1,32 @@
 \MySubSection{4. Objetivos Generales}
 
-El objetivo \'ultimo de este proyecto es dise\~nar un sistema de di\'alogo hombre-computadora con soporte para interacci\'on en tres dimensiones (3D) que genere autom\'aticamente instrucciones en lenguaje natural (LN) para guiar  al usuario durante la ejecuci\'on de una tarea determinada. Esta propuesta apunta
-a obtener un balance entre un sistema de uso general, aplicable en
-diferentes \'ambitos, y un sitema lo suficientemente espec\'ifico
+El objetivo \'ultimo de este proyecto es dise\~nar un sistema de di\'alogo
+hombre-computadora con soporte para interacci\'on en tres dimensiones (3D) que
+genere autom\'aticamente instrucciones en lenguaje natural (LN) para guiar  al
+usuario durante la ejecuci\'on de una tarea determinada. Este proyecto apunta
+a obtener un balance entre un sistema de uso general (aplicable en
+diferentes \'ambitos) y un sistema lo suficientemente espec\'ifico
 como para permitir el uso efectivo de las t\'ecnicas actuales de
-administraci\'on del conocimiento, planneamiento y procesamiento de lenguaje natural (PLN).
+gesti\'on del conocimiento, planning y procesamiento de lenguaje
+natural (PLN).
 
-El sistema resultante podr\'ia utilizarse en distintas situaciones, a modo de ejemplo:
-en comercio electr\'onico  al usarse como avatar de asistencia en la web, en soporte t\'ecnico al proveer ayuda al usuario no experto, en
+El sistema resultante podr\'ia utilizarse en distintas situaciones, a modo de
+ejemplo:
+en comercio electr\'onico  al usarse como avatar de asistencia en la web, en
+soporte t\'ecnico al proveer ayuda al usuario no experto, en
 control de dispositivos por voz al usarse en sistemas de di\'alogo embebidos, o
-en la ense\~nanza a distancia al constituir un tutor virtual para el aprendizaje de lenguas extranjeras. Esta \'ultima es la tarea seleccionada para testear nuestro prototipo. Para estimar la eficacia y adecuaci\'on del prototipo para tal tarea, se podr\'ia realizar una evaluaci\'on comparativa (compar\'andolo con otros sistemas existentes) o una evaluaci\'on orientada al usuario (al ser utilizado, por ejemplo, por estudiantes de la facultad donde se desarrollar\'a el presente proyecto).
+en la ense\~nanza a distancia al constituir un tutor virtual para el aprendizaje
+de lenguas extranjeras. Esta \'ultima es la tarea seleccionada para testear
+nuestro prototipo. La eficacia y adecuaci\'on del prototipo para
+tal tarea puede ser estimada de diferentes formas. Por un lado, se puede realizar 
+una evaluaci\'on comparativa con
+otros sistemas existentes. Por otra parte, estudiantes de la facultad donde se desarrollar\'a
+el presente proyecto pueden participar en una evaluaci\'on orientada al usuario.
 
 
-A fin de obtener un sistema como el descripto anteriormente, este proyecto propone estudiar las tres \'areas detalladas a continuaci\'on, las cuales son  fundamentales para el desarrollo de cualquier sistema de di\'alogo:
+A fin de obtener un sistema como el descripto anteriormente, este proyecto
+propone estudiar las tres \'areas detalladas a continuaci\'on, las cuales son 
+fundamentales para el desarrollo de cualquier sistema de di\'alogo:
 
 \paragraph{Pragm\'atica:} La pragm\'atica es un \'area interdisciplinaria a
 la que contribuyen teor\'ias ling\"u\'isticas (implicaturas
@@ -27,8 +41,8 @@ gramaticales y morfol\'ogicas, etc.), sino tambien extraling\"u\'istica
 previas de los hablantes, objetivo de la conversaci\'on, etc.). Por lo tanto,
 una misma oraci\'on puede significar cosas diferentes en distintos contextos; el
 \'area de pragm\'atica estudia el proceso por el cual una oraci\'on es
-desambiguada usando su contexto. En pragm\'atica se distingue entre oraci\'on
-(forma gramatical que toma el acto del habla) y enunciado (oraci\'on mas su
+desambig\"uada usando su contexto. En pragm\'atica se distingue entre oraci\'on
+(forma gramatical que toma el acto ling\"u\'istico) y enunciado (oraci\'on m\'as su
 contexto). La habilidad de entender una oraci\'on usando su contexto, es decir,
 la habilidad de entender un enunciado, se conoce como competencia pragm\'atica.
 Explicar la competencia pragm\'atica implica explicar c\'omo una persona hace
@@ -42,7 +56,7 @@ qu\'e tareas de inferencia sobre la oraci\'on y el contexto son necesarias para
 interpretar un enunciado. Hacer estas dos tareas de forma correcta tendr\'a un
 impacto crucial sobre el desempe\~no de un sistema como el que proponemos
 desarrollar. En dicho sistema es indispensable que las oraciones hagan
-expl\'icita la cantidad de informaci\'on justa; si la informaci\'on es
+expl\'icita la cantidad de informaci\'on justa: si la informaci\'on es
 demasiada, se retrasar\'a y aburrir\'a al usuario, si la informaci\'on es muy
 poca, el usuario no sabr\'a c\'omo llevar a cabo la tarea y cometer\'a errores. 
 
@@ -60,16 +74,52 @@ poca, el usuario no sabr\'a c\'omo llevar a cabo la tarea y cometer\'a errores.
 % es uno de los desaf\'ios que condicionan la efectividad del mismo.
 
   %\item
-  \paragraph{Inferencia:} En t\'erminos generales, podemos entender como
-  inferencia toda operaci\'on que transforme informaci\'on \textit{impl\'icita} en
-  \textit{expl\'icita}.  Bajo esta amplia definici\'on, es posible considerar como
-  inferencia tanto la cl\'asica (por caso
-  tareas habituales de Inteligencia Artificial (IA) como la planificaci\'on) u operaciones estad\'isticas (por ejemplo para obtener estimadores sobre un conjunto de datos).  Un sistema de di\'alogo realiza continuamente operaciones de inferencia, por un lado   para interpretar la informaci\'on recibida e incorporarla a su repositorio de datos, y por otro, para decidir qu\'e parte de la informaci\'on disponible debe transmitir.
 
-  El problema mismo de decidir qu\'e tipo de representaci\'on l\'ogica y qu\'e tipo de inferencia utilizar (l\'ogica proposicional vs.\ l\'ogica de primer orden, validez vs.\ chequeo de modelos, inferencia l\'ogica vs. inferencia estad\'istica) en una determinada situaci\'on  es complejo, y adem\'as las tareas de inferencia en s\'i son computacionalmente costosas.  El desaf\'io en este caso es encontrar el compromiso adecuado entre representaci\'on de la informaci\'on y el m\'etodo de inferencia a utilizar.
+\paragraph{Inferencia:} Podemos entender como
+inferencia toda operaci\'on que transforme informaci\'on \textit{impl\'icita} en
+\textit{expl\'icita}.  Esta definici\'on es lo suficientemente general 
+como para cubrir tareas que van desde la inferencia l\'ogica (i.e., deducci\'on 
+en un lenguaje formal), hasta tareas de inferencia habituales en inteligencia
+artificial (e.g., planning e inferencia no mon\'otona), y operaciones estad\'isticas (por
+ejemplo obtener estimadores sobre un conjunto de datos).  Un sistema de
+di\'alogo realiza continuamente operaciones de inferencia. Por un lado, 
+se necesita inferencia para
+interpretar la informaci\'on recibida e incorporarla al repositorio de datos,
+y por otro, para decidir qu\'e parte de la informaci\'on disponible se debe
+transmitir.
 
-\paragraph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del PLN dado que una idea puede expresarse de muchas formas, todas ellas correctas. En general, determinar la calidad de una frase generada no puede hacerse de manera simple y directa, por ejemplo comparando el resultado del sistema con un patr\'on (en Ingl\'es ``gold stadard"). El problema de la falta de patrones es compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la cual se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas de forma directa (es decir, aplicando alguna m\'etrica al texto generado por un sistema) o indirecta (i.e., evaluando la perfomance del sistema a trav\'es de la utilizaci\'on del texto generado para realizaci\'on de alguna tarea). Sin embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como est\'andar y demostrada eficaz de manera general.
+  El problema mismo de decidir qu\'e tipo de representaci\'on l\'ogica y qu\'e
+tipo de inferencia utilizar  en una determinada situaci\'on  es complejo
+(l\'ogica proposicional vs.\ l\'ogica de primer
+orden, validez vs.\ chequeo de modelos, inferencia l\'ogica vs.\ inferencia
+estad\'istica). Adem\'as las
+tareas de inferencia en s\'i son computacionalmente costosas.  El desaf\'io en
+este caso es encontrar el compromiso adecuado entre representaci\'on de la
+informaci\'on y el m\'etodo de inferencia a utilizar.
 
-En esta propuesta, dado que el objeto a evaluar es un sistema que interact\'ua via la generaci\'on de instrucciones en lenguaje natural, es necesario determinar su performance por medio de evaluaciones cuantitativas (como el tiempo de finalizaci\'on de la tarea), cualitativas (por ejemplo, la calidad de las interacciones) y basadas en el contexto (evaluaciones orientadas al usuario y sus necesidades en una situaci\'on particular). Dada la experiencia de los participantes es de especial inter\'es estudiar la  portabilidad y aplicaci\'on de t\'ecnicas de evaluaci\'on del dominio de la TA y la interacci\'on multimodal humano-computadora al sistema (en su totalidad y por componentes) planteado en este proyecto.
-%\end{myitemize}
+\paragraph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de
+lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del PLN, dado
+que una idea puede expresarse de muchas formas, todas ellas correctas. En
+general, determinar la calidad de una frase generada no puede hacerse de manera
+simple y directa, por ejemplo comparando el resultado del sistema con un
+patr\'on (en Ingl\'es \emph{gold stadard}). El problema de la falta de patrones es
+compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la
+cual se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas 
+que pueden clasificarse en directas e indirectas. 
+Una metodolog\'ia directa aplica alguna m\'etrica al texto generado por un
+sistema. Una metodolog\'ia indirecta, en cambio, eval\'ua la perfomance del 
+sistema a trav\'es de la utilizaci\'on del texto generado para realizar alguna tarea. Sin
+embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como
+est\'andar y demostrada eficaz de manera general.
+
+Dado que el objetivo en este proyecto a evaluar es un sistema que interact\'ua
+via la generaci\'on de instrucciones en lenguaje natural, podemos
+determinar su performance por medio de evaluaciones cuantitativas (como el
+tiempo de finalizaci\'on de la tarea), cualitativas (por ejemplo, la calidad de
+las interacciones) y basadas en el contexto (evaluaciones orientadas al usuario
+y sus necesidades en una situaci\'on particular). Dada la experiencia de los
+participantes, es de especial inter\'es estudiar la  portabilidad y aplicaci\'on
+de t\'ecnicas de evaluaci\'on del dominio de la TA y la interacci\'on multimodal
+humano-computadora, al sistema  planteado en
+este proyecto (en su totalidad y por componentes).
 
