@@ -1,89 +1,64 @@
-\MySubSection{10. Impacto Cient\'ifico}
+\MySubSection{10. Diseminaci\'on.}
 
-Se puede clasificar el impacto cient\'ifico
-esperado del proyecto en tres grandes areas, como se detalla a continuaci\'on:
+Durante el desarrollo de todo el proyecto, se organizar\'an seminarios
+entre los integrantes del grupo y estudiantes de la carrera
+interesados en temas afines.  La combinaci\'on de temas te\'oricos y
+pr\'acticos se presta naturalmente a la definici\'on de proyectos de
+grado que exploren subproblemas de los objetivos generales del proyecto.
 
-\paragraph{Interacci\'on:}
-Una de las contribuciones m\'as
-importantes del proyecto ser\'a un laboratorio virtual para
-teor\'ias pragm\'aticas que consistir\'a de un
-entorno controlado para el estudio de la interacci\'on situada en un mundo donde
-se entremezclan acciones f\'isicas y ling\"u\'isticas. 
+Los resultados t\'eoricos y pr\'acticos obtenidos ser\'an presentados en
+congresos locales e internacionales.  Versiones finales, m\'as
+completas, ser\'an publicadas en revistas cient\'ificas especializadas.
+Listamos a continuaci\'on las principales conferencias y revistas
+internacionales en las que se podr\'ian presentar los resultados del proyecto:
 
-El prototipo unidireccional permitir\'a
-investigar el impacto de distintas
-pol\'iticas para dar instrucciones (post o
-preorden en el \'arbol de acciones de la tarea)
-sobre la realizaci\'on exitosa de la tarea.
-Estudios de este tipo se han realizado anteriormente
-(~\citep{foster-etal-ijcai2009}) pero 
-asumiendo una tarea prefijada.
-Dado que nuestro prototipo permitir\'a la especificaci\'on
-del mundo virtual, las posibles acciones y el objetivo
-a alcanzar, podremos determinar cu\'ando estas pol\'iticas
-son dependientes de la tarea.
+\begin{myitemize}
+\item Conferencias de la \emph{Association of Computational Linguistics}
+(ACL) \url{http://www.aclweb.org/}, en sus versiones internacional (ACL),
+europea (EACL) y norteamericana (NAACL).
 
-El prototipo bidireccional nos permitir\'a investigar el
-fen\'omeno de reparaciones a corto y largo plazo,
-evaluando un sistema de predicci\'on de reparaciones
-contextualizadas.  Estas reparaciones est\'an usualmente
-causadas por implicaturas conversacionales.  Modelar
-estas implicaturas en un sistema de di\'alogo gen\'erico
-es dif\'icil.  Sin embargo, dado que el presente prototipo provee una
-interacci\'on situada
-y restringida al mundo virtual, ser'a posible testear la relaci\'on entre
-las implicaturas, el tipo de reparaciones a las que
-dan origen y las tareas de inferencia necesarias para
-predecirlas.
+\item Conferencias asociadas a los grupos de inter\'es especial (SIGs) de
+ACL relevantes: el grupo de inter\'es especial en discurso y di\'alogo
+(SIGDIAL) \url{http://www.sigdial.org/}, y el grupo de inter\'es especial en
+generaci\'on (SIGGEN) \url{http://www.siggen.org/}.
 
-\paragraph{Inferencia:} La principal contribuci\'on del
-proyecto en el \'area de l\'ogica e inferencia es en el
-dise\~no, desarrollo y estudio de algoritmos de planning.
-Un sistema de planning t\'ipico toma tres inputs -- un
-estado inicial, una especificaci\'on de posibles acciones y
-un objetivo esperado -- y retorna una secuencia de acciones (un plan)
-que al ser aplicadas secuencialmente al estado inicial, termina
-en un estado que satisface el objetivo pedido.  Distintos
-m\'etodos para obtener un plan han sido estudiados (forward chaining, backward
-chaining, codification as propositional
-satisfiability, etc.); y existen actualmente sistemas
-implementados que pueden resolver esta tarea eficientemente.
+\item Revistas en el \'area de Ling\"u\'istica Computacional y Pragm\'atica:
+Computational Linguistics
+\url{http://www.mitpressjournals.org/loi/coli}, Research on Language and Computation
+\url{http://www.springer.com/linguistics/computational+linguistics/journal/11168},
+Discourse and Dialogue \url{http://www.dialogue-and-discourse.org/},
+Semantics and Pragmatics \url{http://semprag.org/}.
 
-Sin embargo, la mayor\'ia de estos sistemas asumen condiciones
-que simplifican el problema (tiempo at\'omico y
-determin\'istico, informaci\'on completa, ausencia de una teor\'ia
-background, etc.) y retornan un \'unico plan.  En el transcurso
-del proyecto se investigar\'an algoritmos que eliminan algunas
-de las simplificaciones mencionadas (en particular, investigaremos
-el caso de planning con informaci\'on incompleta y en base a una
-teor\'ia background) y que ofrecen adem\'as servicios de planning
-extendidos (retorno de planes alternativos, planes m\'inimos, planes
-condicionados, planes incompletos, acciones posibles en un estado dado, etc.)
+\item Conferencias en el \'area de Inteligencia Artificial y L\'ogica
+Computacional:
+International Joint Conference on Artificial Intelligence (IJCAI)
+\url{http://www.ijcai.org/}, International Conference on the Principles of
+Knowledge Representation and Reasoning (KR) \url{www.kr.org},
+IEEE Symposium on Logic in Computer Science
+(LICS) \url{http://www2.informatik.hu-berlin.de/lics/},
+European Conference on Artificial Intelligence (ECAI) \url{http://www.eccai.org/ecai.shtml}.
 
-\paragraph{Evaluaci\'on:}
-En este \'area se espera que una de las contribuciones principales sea la
-intergaci\'on de t\'ecnicas de evaluaci\'on de distintas \'areas en una
-metodolog\'ia que permita evaluar sistemas de di\'alogo para entornos virtuales
-de manera que se estime la usabilidad y eficacia del mismo. Esta metodolog\'ia
-podr\'ia usarse tanto para determinar si un sistema es adecuado para un tipo de
-tarea y de usuario, como para comparar la performance de distintos sistemas del
-mismo tipo.
+\item Revistas en el \'area de Inteligencia Artificial y L\'ogica
+Computacional: Journal of Artificial Intelligence Research (JAIR)
+\url{http://www.jair.org/}, Artificial Intelligence
+\url{http://www.elsevier.com/wps/product/cws_home/505601}.
 
-Otra contribuci\'on ser\'a el estudio y aplicaci\'on de est\'andares de
-evaluaci\'on de software a los sistemas desarrollados, generando un modelo de la
-calidad estandarizado y proponiendo un conjunto de m\'etricas apropiadas para
-evaluar cada uno de los aspectos contenidos en el modelo. Este trabajo
-incluir\'a tambi\'en un estudio profundo de varias m\'etricas a fines de incluir
-en el modelo de calidad algunos consejos sobre las m\'etricas elegidas; este
-estudio se considera como una meta-evaluaci\'on del modelo propuesto.
+\item Conferencias en el \'area de Demostraci\'on Autom\'atica y Planning:
+The International Joint Conference on
+Automated Reasoning (IJCAR) \url{http://www.ijcar.org/},
+International Conference on Automated Deduction (CADE) \url{http://www.cadeconference.org/},
+Methods for Modalities (M4M) \url{http://www.m4m.fr},
+International Conference on Automated Planning and Scheduling (ICAPS)
+\url{http://icaps-conference.org/}.
 
-Finalmente,
-el corpus anotado de interacci\'on humano-humano, m\'as
-los corpus de interacci\'on humano-m\'aquina recopilados
-durante el proyecto se har\'an p\'ublicos.  Este tipo de
-corpora servir\'a, por ejemplo, para dise\~nar plataformas
-m\'as generales de evaluaci\'on de sistemas de di\'alogo,
-que van m\'as all\'a de los aspectos evaluados actualmente
-por plataformas existentes como GIVE.
+\item Revistas en el \'area de Demostraci\'on Autom\'atica y Planning:
+Journal of Automated Reasoning (JAR) \url{http://www.springerlink.com/content/100280/},
+Journal of Experimental and Theoretical AI
+\url{http://www.tandf.co.uk/journals/tf/0952813X.html}.
 
+\item Conferencias en el \'area de Evaluaci\'on de sistemas: International Conference on Human-Computer Interaction \url{http://www.hci-international.org/}, International Conference on Language Resources and Evaluation \url{http://www.lrec-conf.org/}, International Conference on Multimodal Interfaces \url{http://icmi2009.acm.org/}, ACM Conference on Human Factors in Computing Systems (CHI), Ibero-American Conference on Artificial Intelligence, Jornadas Argentinas de Informática - Simposio Argentino de Inteligencia Artificial.
+
+\item Revistas en el \'area de Evaluaci\'on de sistemas: Software Quality Journal \url{http://www.springer.com/computer/programming/journal/11219}, International Journal of Speech Technology \url{http://www.springer.com/engineering/signals/journal/10772},
+
+\end{myitemize}
 
