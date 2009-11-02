@@ -1,110 +1,64 @@
-\MySubSection{14. Composici\'on del Grupo de Investigaci\'on y Areas de Especializaci\'on}
+\MySubSubSection{6. Metodolog\'ia de trabajo}
 
-\begin{center}\small
-    \begin{minipage}{\linewidth}
-        \begin{center}
-        \begin{tabular}{|l|l|}
-        \hline\hline
-        Nombre &  Especializaci\'on \\
-        \hline
-        Dr.\ Carlos Areces &
-          L\'ogica Computacional\\
-        & Representaci\'on de Conocimiento\\
-        & Complejidad Algor\'itmica
-      \\ \hline
-        Dra.\ Paula Estrella &
-          Ling\"u\'istica Computacional \\
-        & Evaluaci\'on de Sistemas de PLN
-      \\
-		& Traducci\'on Autom\'atica \\ \hline
-        Lic.\ Luciana Benotti &
-          Pragm\'atica \\
-        & Sistemas de Di\'alogo\\
-        & L\'ogica Computacional\\
-        \hline\hline
-        \end{tabular}
-        \end{center}
-    \end{minipage}
-\end{center}
+Describimos a continuaci\'on el m\'etodo cient\'ifico a utilizar
+respecto a los aspectos te\'oricos, de desarrollo y de evaluaci\'on
+que conciernen al proyecto.
 
-\MySubSection{14.1. Publicaciones m\'as relevantes del grupo investigador}
-\begin{itemize}
+\begin{myitemize}
+\item \textbf{Aspectos Te\'oricos.}
+La metodolog\'ia de trabajo a utilizar para investigar los aspectos
+te\'oricos del proyecto es el estandard en investigaci\'on de base.
+Comenzaremos con el estudio de la bibliograf\'ia existente, para luego
+familiarizarnos con las t\'ecnicas de demostraci\'on espec\'ificas de esta
+\'area y poder con ellas demostrar los resultados deseados.
 
-\item[$\triangleright$] El Dr.\ Carlos Areces se especializa en l\'ogica computacional,
-en particular en el estudio te\'orico y aplicado de lenguajes para
-representaci\'on del conocimiento (e.g., l\'ogicas modales, h\'ibridas y
-para la descripci\'on).  Las publicaciones
-m\'as importantes sobre aspectos te\'oricos en estos lenguajes
-son~\citep{ABM01,arec:hybr05b}.  Ha desarrollado tambi\'en demostradores
-autom\'aticos para estos lenguajes~\citep{ANR01,arec:hylo02a,AG06,Hoffmann2007}
-accessibles en \url{http://www.glyc.dc.uba.ar/intohylo/}.
-Ha trabajado tambi\'en en el dise\~no de algoritmos para la generaci\'on de
-expresiones referenciales~\citep{AKS08}, y en el estudio de lenguajes l\'ogicos
-adecuados para la representaci\'on sem\'antica~\citep{AF08}.
+El grupo
+responsable esta formado por expertos en las tres \'areas principales
+que el proyecto planea investigar: Areces es
+experto en m\'etodos de inferencia y lenguajes para la representaci\'on del
+conocimiento; Benotti es experta en el \'area de
+pragm\'atica de la interacci\'on y sistemas de di\'alogos; y Estrella es experta en t\'ecnicas
+de evaluci\'on de sistemas de procesamiento natural.
+Los tres han desarrollado extensa investigaci\'on previa en sus respectivas
+\'areas
+de experiencia.
 
-\item[$\triangleright$] La Dra.\ Paula Estrella ha realizado su tesis doctoral en la evaluaci\'on contextual de sistemas de TA~\citep{estr:impr08, estr:femt09}, proponiendo un modelo generalizable y aplicable a otras otras \'areas del PLN, como se muestra en \citep{Miller2008}. Tambi\'en ha trabajado en el desarrollo y mejora de sistemas de TA estad\'istica desde y hacia varios idiomas, por ejemplo el Espa\~nol~\citep{estr:expe05} y entre los idiomas \{Franc\'es, Ingl\'es, Japon\'es, Arabe\} \citep{rayner-EtAl:2009:GEAF}. Adem\'as ha participado en proyectos que involucran la creaci\'on y evaluaci\'on de corpora correspondientes a anotaciones multimodales~\citep{pope:estr07} y trabaj\'o en un prototipo para la evaluaci\'on autom\'atica de anotaciones de di\'alogos multimodales \citep{multieval}, investigando tambi\'en la aplicaci\'on de m\'etricas provenientes de otras \'areas; el prototipo est\'a disponible p\'ublicamente en \url{http://www.issco.unige.ch:8080/multieval/}.
+\item \textbf{Desarrollo:}
+Una vez se haya avanzado con las tareas de investigaci\'on te\'orica,
+\'estas dar\'an origen al dise\~no de t\'ecnicas y algoritmos que se
+implementar\'an en el framework de GIVE. Para ello se utilizar\'a la
+metodolog\'ia
+usual en ingenier\'ia del software (desarrollo por
+m\'odulos con interfaces claras y bien documentadas,
+que garanticen alta cohesi\'on y bajo acoplamiento).  El grupo
+responsable ha participado extensamente en tareas de desarrollo de
+software, tanto en el \'area de sistemas de di\'alogo, como en el
+de sistemas de inferencia.
+
+Al finalizar la implementaci\'on
+se espera tambi\'en tener un documento al estilo de manual de
+desarrollador, en donde queden expl\'icitas las principales interfaces
+de los m\'odulos desarrollados y la forma de interacci\'on con la
+herramienta.
 
 
-\item[$\triangleright$] La Lic.\ Luciana Benotti ha trabajado en el desarrollo de un sistema de
-di\'alogo completo, llamado Frolog, situado en una aventura de
-texto~\citep{benotti09b} (la implementacion abarca tareas de analisis
-sint\'actico hasta tareas pragmaticas). Tambi\'en ha extendido sistemas de
-dialogo ya existentes con habilidades pragmaticas. Primero extendi\'o un
-sistema desarrollado por Alexander Koller~\citep{koller04} usando un sistema de
-planning clasico~\citep{benotti07} y un sistema de planning con informaci\'on
-incompleta~\citep{benotti08}. Y luego extendi\'o el sistema de di\'alogo
-desarrollado por el grupo de David Traum usando la arquitectura cognitiva
-SOAR~\citep{benotti09a} (para el caso de oraciones comparativas). Finalmente,
-trabaj\'o en el analisis empirico de corpora de dialogo humano-humano utilizando
-diferentes tecnicas de planning para precedir los sub-dialogos de reparacion que
-ocurren en los corpora~\citep{benotti09c}.
+\item \textbf{Evaluaci\'on:}
+Una vez implementados los algoritmos, se proceder\'a a realizar tests
+completos de unidad y de integraci\'on.  Verificar la correctitud de los
+algoritmos implementados dada una especificaci\'on adecuada es una
+tarea que requiere tiempo y esfuerzo, pero de clara soluci\'on.  Por otro lado, evaluar la calidad de las pol\'iticas de interacci\'on es, como
+discutimos en las secciones anteriores, mucho m\'as dif\'icil.  Intentar
+definir metodolog\'ias para una adecuada evaluaci\'on de sistemas de
+di\'alogo es una de las contribuciones principales de este proyecto.
 
-\end{itemize}
-
-\MySubSection{14.2. Colaboraci\'on Internacional}
-A continuaci\'on se detallan grupos de investigaci\'on relevantes con los que los  participantes del presente proyecto colaboran.
-
-
-\begin{itemize}
-    \item[$\triangleright$] El Dr. Carlos Areces fue miembro
-del grupo TALARIS \url{http://talaris.loria.fr}, parte del
-\textit{Laboratoire Lorrain de Recherche en Informatique et ses Applications} (LORIA - \url{http://www.loria.fr}). El principal tema de investigaci\'on de TALARIS es la ling\"u\'istica computacional con \'enfasis en sem\'antica e inferencia. Actualmente, colabora con los siguientes investigadores e instituciones especialistas en el \'area de inferencia y l\'ogica computacional:
-\begin{itemize}
-    \item[-]  Patrick Blackburn \url{http://www.loria.fr/~blackbur} (director de TALARIS) es especialista en el \'area de l\'ogicas modales y aplicaciones
-en ling\"u\'istica computacional.
-\item[-] Grupo de L\'ogica, Lenguaje y Computabilidad (GLyC) \url{http://www.glyc.dc.uba.ar/} del Departamento de Computaci\'on de la Universidad
-de Buenos Aires.
-\item[-] Ron Petrick \url{http://homepages.inf.ed.ac.uk/rpetrick/} es el
-desarrollador de PKS, uno de los pocos sistemas de planning con informaci\'on
-incompleta funcionales hoy en d\'ia.
-\end{itemize}
-
-\item[$\triangleright$] La Dra. Paula Estrella fue miembro del grupo\textit{Traitement Informatique Multilingue} (ISSCO/TIM) de la Facultad de Traducci\'on e Interpretaci\'on de la Universidad de Ginebra y del grupo \textit{Database management and meeting analysis} (IM2.DMA) dentro del Polo de Investigaci\'on \textit{Interactive Multimodal Information Management} (IM2 - \url{http://www.im2.ch/}). Acutalmente colabora con las siguientes instituciones especialistas en las \'areas de Interacci\'on Hombre-M\'aquina y  Ling\"u\'istica Computacional:
-\begin{itemize}
-    \item[-]  Instituto de Investigaci\'on Idiap, Martigny, Suiza -  \url{http://www.idiap.ch/}
-\item[-] Grupo de Tratamiento Inform\'atico Multiling\"ue, Universidad de Ginebra, Suiza - \\ \url{http://www.issco.unige.ch/}
-\item[-]  Grupo de Inteligencia Artificial y Pervasiva, Universidad de Friburgo, Suiza - \\ \url{http://diuf.unifr.ch/pai/wiki/doku.php}
-\end{itemize}
-
-\item[$\triangleright$] La Lic. Luciana Benotti realiza su doctorado en el
-grupo TALARIS y colabora actualmente con los siguientes investigadores e instituciones
-especialistas en generaci\'on de lenguaje natural y sistemas de di\'alogo:
-\begin{itemize}
-    \item[-]  Alexander Koller \url{http://www.coli.uni-saarland.de/~koller/}.
-Alexander Koller es uno de los organizadores del GIVE Challenge y el
-coordinador de la implementaci\'on de la plataforma GIVE.
-    \item[-] David Traum \url{http://people.ict.usc.edu/~traum/} es, hoy en d\'ia, uno
-de los investigadores mas renombrados del \'area de sistemas de di\'alogo.
-Adem\'as es el director del grupo de sistemas de di\'alogo en el ``Institute
-for Creative Techologies'' \url{http://ict.usc.edu/}.
-\item[-] Claire Gardent \url{http://www.loria.fr/~gardent/} (vice-directora de
-TALARIS) es especialista en generaci\'on de lenguaje natural, adquisici\'on
-lexica y desarrollo de gram\'aticas.
-\item[-] Agust\'in Gravano \url{http://www.glyc.dc.uba.ar/agustin/} es especialista
-en el estudio de variaci\'ones pros\'odicas en sisteams de di\'alogo.
-
-\end{itemize}
-\end{itemize}
-
-
-
+Un punto que merece mencionarse separadamente es la recopilaci\'on
+de corpus de interacci\'on.  La recopilaci\'on de este corpus es
+importante para permitir la correcta definici\'on de pol\'iticas de
+interacci\'on en este proyecto y esperamos que, una vez hecho p\'ublico, ser\'a de ayuda tambi\'en para la comunidad cient\'ifica en general. La
+plataforma GIVE provee herramientas que simplifican esta tarea.  GIVE
+provee interfaces que permiten recopilar interaciones hombre-m\'aquina u
+hombre-hombre, alineando el material ling\"u\'istico con las acciones
+realizadas en el mundo virtual.  Adem\'as, al proveer
+accesso mediante internet, los usuarios que proveer\'an los datos pueden
+estar distribu\'idos geogr\'aficamente.
+\end{myitemize}
