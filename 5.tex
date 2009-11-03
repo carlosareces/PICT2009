@@ -1,7 +1,7 @@
 \MySubSection{5. Objetivos Espec\'ificos}
 
 
-En el presente proyecto nos focalizaremos en el sistema encargado de la
+En este proyecto prestaremos principal atenci\'on al sistema encargado de la
 generaci\'on de  instrucciones e interpretaci\'on de las respuestas del usuario.
 Dicho sistema deber\'a ser capaz de una interacci\'on natural y debe poder adaptarse a
 posibles errores de interpretaci\'on o ejecuci\'on de las instrucciones, dando
@@ -11,11 +11,10 @@ virtual provisto. En este mundo virtual 3D, el usuario intentar\'a seguir las in
 provistas por el sistema realizando acciones f\'isicas.
 
 En una primera etapa, el modelo a utilizar permitir\'a el flujo de informaci\'on
-ling\"u\'istica de manera unidireccional, es decir,
-desde el sistema hacia el usuario, por lo que
-el usuario no podr\'a pedir ningu\'n tipo de ayuda.  La restricci\'on a un
+ling\"u\'istica de manera unidireccional, desde el sistema hacia el usuario, por lo que
+el usuario no podr\'a pedir ning\'un tipo de ayuda.  La restricci\'on a un
 modelo unidireccional tiene como objetivo
-simplificar la representaci\'on y manejo del contexto de la interacci\'on.
+simplificar la representaci\'on y el manejo del contexto de la interacci\'on.
 
 En etapas m\'as avanzadas del proyecto, el modelo unidireccional ser\'a
 extendido para
@@ -25,32 +24,29 @@ pedir clarificaciones o redefinir el objetivo a alcanzar, en ambos casos usando
 lenguaje natural.
 
 La generaci\'on de instrucciones para un dominio espec\'ifico requiere
-%la adquisici\'on del conocimiento relevante y la compilaci\'on del mismo debe
-%incluir cierta
-informaci\'on  ling\"u\'istica.
-%que permita su posterior procesamiento: en los aspectos
+informaci\'on  ling\"u\'istica a distintos niveles.
 A nivel morfol\'ogico y sint\'actico se requiere una
-gr\'amatica del lenguaje seleccionado (Espa\~nol en este caso). A nivel
+gram\'atica del lenguaje seleccionado (Espa\~nol en este caso). A nivel
 sem\'antico se necesita un repositorio de informaci\'on l\'exica organizada en
 forma ontol\'ogica. A nivel pragm\'atico es necesaria una descripci\'on formal de
 las
 acciones posibles en el dominio (con sus precondiciones y efectos), e
-informaci\'on del estado de cada interacci\'on.
+informaci\'on del estado de la interacci\'on.
 
 Esta informaci\'on relacionada a un dominio dado es utilizada por distintos
 componentes del sistema de di\'alogo que
 gestiona la interacci\'on con el usuario. En un sistema t\'ipico, esto
 sucede como se detalla a continuaci\'on.  En la direcci\'on sistema $\rightarrow$
-usuario, el componente encargado de \textit{planificar} genera una secuencia de
-acciones relevantes al momento de la interacci\'on, luego el componente
-encargado de  \textit{gestionar el conocimiento} actualiza la informaci\'on
+usuario, el componente encargado de \emph{planificar el contenido} genera una secuencia de
+instrucciones relevantes al momento de la interacci\'on, luego el componente
+encargado de  \emph{gestionar el conocimiento} actualiza la informaci\'on
 contextual y,  finalmente, el componente encargado de
-\textit{generar instrucciones}  transmite las mismas como expresiones
-del lenguaje natural.  En la direcci\'on opuesta, es decir usuario $\rightarrow$
-sistema,  el componente denominado \textit{discretizador}
+\emph{generar instrucciones}  transmite las mismas como expresiones
+de lenguaje natural.  En la direcci\'on opuesta, es decir usuario $\rightarrow$
+sistema,  el componente denominado \emph{discretizador}
 transforma el flujo continuo de informaci\'on derivada del comportamiento del
-usuario, en acciones relevantes al universo en cuesti\'on, mientras que
-los componentes de planeamiento y gesti\'on del conocimiento se ocupan
+usuario, en acciones relevantes a la tarea en cuesti\'on, mientras que
+los componentes de planificaci\'on del contenido y gesti\'on del conocimiento se ocupan
 de mantener el contexto actualizado y de detectar posibles errores.
 
 Los objetivos espec\'ificos de este proyecto se listan a continuaci\'on:
@@ -81,7 +77,6 @@ cabo los objetivos planteados (la Secci\'on 8
 provee un cronograma completo), para luego discutir una posible aplicaci\'on del
 sistema a desarrollar.
 % y, finalmente, la Subsecci\'on 5.3 provee informaci\'on sobre la plataforma
-que se utilizar\'a.
 
 \MySubSubSection{5.1. Tareas a Realizar}
 
@@ -90,8 +85,9 @@ bibliogr\'afico de metodolo\-g\'ias existentes para el desarrollo de sistemas de
  en entornos 3D, enfatizando principalmente el estudio de las pol\'iticas de
 interacci\'on y las tareas de inferencia propuestos. Entre la bibliograf\'ia b\'asica a
 estudiar podemos nombrar:
-Pragm\'atica~\citep{grice75,clark96,kehler04,devault08,ginzburg09},
-Planning~\citep{kautz99,hoffmann01,nau04,petrick06} y Evaluaci\'on~\citep{Jones96, EAG96, Dybkjaer07, Petrie09}.
+en Pragm\'atica~\citep{grice75,clark96,kehler04,devault08,ginzburg09},
+en Planning~\citep{kautz99,hoffmann01,nau04,petrick06} y 
+en Evaluaci\'on~\citep{Jones96, EAG96, Dybkjaer07, Petrie09}.
 
 
 Una vez cumplido el relevamiento inicial, el siguiente objetivo es
@@ -104,17 +100,17 @@ disponibles de forma libre y gratuita. En particular, usaremos la plataforma
 desarrollada como parte de la competencia\footnote{En este contexto
 ``competencia'' (del Ingl\'es \emph{evaluation campaign} o \emph{evaluation challenge})
 se refiere a la organizaci\'on de un evento en el que participan distintos
-grupos de investigaci\'on, realizando todos el mismo ejercicio con sus sistemas
-propios y comparando al final los resultados obtenidos por cada grupo. Este tipo
+grupos de investigaci\'on, realizando todos el mismo ejercicio con sistemas
+propios, y comparando al final los resultados obtenidos. Este tipo
 de eventos es popular en distinas \'areas del PLN (TA, reconocimiento del
 habla, recuperaci\'on de informaci\'on, entre otras) y benefician
 cada \'area generando y diseminando nuevas
-tecnolog\'ias.} \textit{Generating Instructions in Virtual Environments}
+tecnolog\'ias.} \emph{Generating Instructions in Virtual Environments}
 (GIVE)\footnote{GIVE se encuentra disponible libremente en
 \fnturl{http://www.give-challenge.org}, y posee el respaldo de los grupos de
 inter\'es SIGSEM, SIGDIAL, y SIGGEN de la \emph{Association for Computational
 Linguistics} (ACL).} que
-provee un prototipo b\'asico de este tipo de sistemas.
+provee una plataforma b\'asica para este tipo de sistemas.
 
 El objetivo principal de GIVE~\citep{byron09} es actuar como medio de
 evaluaci\'on de sistemas de generaci\'on
@@ -131,46 +127,47 @@ sistema de participar en una interacci\'on situada en un entorno 3D.
 
 La plataforma GIVE es, entonces, una herramienta propicia para
 investigar los distintos aspectos de la interacci\'on situada en un entorno
-virtual que se enumeran a continuaci\'on: (1) el problema de realizaci\'on
+virtual que se enumeran a continuaci\'on: el problema de realizaci\'on
 sint\'actica y morf\'ogica de las
-instrucciones (en Ingl\'es \emph{surface realization});
-(2) la representaci\'on del conocimiento existente en el contexto de
-interacci\'on (contexto del discurso, ontolog\'ias, acciones posibles); (3)
+instrucciones (en Ingl\'es, \emph{surface realization});
+la representaci\'on del conocimiento existente en el contexto de
+interacci\'on (contexto del discurso, ontolog\'ias, acciones posibles);
 el tipo de inferencia requerido por las tareas involucradas
-(planeamiento, construcci\'on y chequeo de modelos); y (4)
+(planning, construcci\'on y chequeo de modelos); y
 las reglas pragm\'aticas de interacci\'on requeridas por la tarea
 (administraci\'on de la carga cognitiva, actualizaci\'on y uso de la
-informaci\'on contextual. Adicionalmente, GIVE provee
+informaci\'on contextual). GIVE provee, adem\'as, 
 herramientas para registrar todos los detalles de la
 interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de
 interacci\'on en entornos virtuales, anotado autom\'aticamente.
 
 Para la definici\'on correcta de las pol\'iticas de interacci\'on que
-utilizaremos en nuestro prototipo, es necesario
+utilizaremos en nuestro prototipo es necesario
 contar con un corpus que provea ejemplos de interacci\'on t\'ipica sobre la
-tarea~\citep{HCRC-93, byron-06}.  Utilizando herramientas provistas por GIVE,
+tarea~\citep{HCRC-93, byron-06}.  Usando herramientas provistas por GIVE,
 recopilaremos un corpus de interacci\'on humano-humano (uni y bidireccional)
 que contendr\'a la interacci\'on lig\"u\'istica alineada con las acciones
 realizadas en el mundo virtual.
 
-Utilizando el corpus recolectado, y bas\'andonos en la plataforma GIVE,
-comenzaremos el dise\~no,
-implementaci\'on y testing de algoritmos de interacci\'on unidireccionales.
+A partir del corpus recolectado comenzaremos el dise\~no,
+implementaci\'on y testing de algoritmos de interacci\'on unidireccionales, los 
+cuales ser\'an integrados a la plataforma GIVE.
 Existen tradicionalmente cuatro tareas que un sistema de generaci\'on
-de instrucciones debe implementar: planificaci\'on del contenido, generaci\'on
-de expresiones referenciales, gesti\'on del contexto de interacci\'on, e
-interpretaci\'on de las respuestas del usuario.
+de instrucciones debe implementar: (1) planificaci\'on del contenido, (2) generaci\'on
+de expresiones referenciales, (3) gesti\'on del contexto de interacci\'on, y
+(4) interpretaci\'on de las respuestas del usuario.
 
-Para planificar el contenido a generar es necesario primero obtener un plan de
+\emph{(1) Planificaci\'on del contenido:} Para planificar el contenido a generar es necesario primero obtener un plan de
 acciones que alcance el objetivo desde el estado actual. Dicho plan contrendr\'a
 acciones f\'isicas a ejecutar sobre el entorno. El segundo paso es decidir
 c\'omo se transmitir\'a al usuario esta secuencia de acciones. Es decir,
 se debe decidir cu\'antas acciones comunicar
 por instrucci\'on y c\'omo agregarlas coherentemente. El
-resultado del proceso de agregaci\'on de acciones es un \'arbol que describe la
-estructura de la tarea a diferentes niveles de abstracci\'on. El tercer, y \'ultimo, paso
+resultado del proceso de agregaci\'on de acciones (en Ingl\'es, \emph{action agreggation}) 
+es un \'arbol que describe la
+estructura de la tarea a diferentes niveles de abstracci\'on. El tercer y \'ultimo paso
 es decidir c\'omo navegar el \'arbol de acciones para verbalizar las
-instruciones (por ejemplo, post o preorden~\citep{foster-etal-ijcai2009}). En este proyecto investigaremos
+instruciones (por ejemplo, en post o preorden~\citep{foster-etal-ijcai2009}). En este proyecto investigaremos
 diferentes pol\'iticas de agregaci\'on (e.g., agregando acciones que manipulan el mismo
 objeto) y pol\'iticas no est\'andard de recorrido del \'arbol de acciones (e.g., bajando a un
 nivel menor de abstracci\'on en caso de malentendidos).
@@ -180,17 +177,17 @@ planning~\citep{nau04}. GIVE provee un sistema de planning muy
 limitado.  Existen sistemas de planning m\'as avanzandos (en particular,
 que permiten el manejo de informaci\'on incompleta sobre el dominio)
 como PKS\footnote{PKS est\'a disponible en \fnturl{http://homepages.inf.ed.ac.uk/rpetrick/research/pks/}}, pero
-est\'an todav\'ia en periodo de desarrollo.  En general, el estado del
+est\'an todav\'ia en desarrollo.  En general, el estado del
 arte en el \'area de planning no cubre los requerimientos de nuestro
-sistema.  Si bien, existen sistemas optimizados que funcionan adecuadamente
+sistema.  Si bien existen sistemas optimizados que funcionan adecuadamente
 en ciertas aplicaciones, ninguno provee servicios como la generaci\'on de
 planes alternativos, o la generaci\'on de planes incompletos en caso de
-absencia de plan. Por lo que deberemos dise\~nar e implementar estas
+ausencia de plan. Por lo que deberemos dise\~nar e implementar estas
 extensiones a los algoritmos de planning. Estudiaremos tambi\'en el
 comportamiento te\'orico (e.g., complejidad) de estos algoritmos.
 
-Una vez terminada la fase de planificaci\'on de contenido, la siguiente tarea
-es la generaci\'on de expresiones referenciales. Esto quiere decir, producir una
+\emph{(2) Generaci\'on de Expresiones Referenciales:} Una vez terminada la fase de planificaci\'on de contenido, la siguiente tarea
+es la generaci\'on de expresiones referenciales. Esta tarea implica producir una
 frase que describa una entidad referenciable de forma tal que el usuario
 la pueda identificar (e.g., ``el jarr\'on que est\'a sobre la mesa'').
 Estas expresiones, para ser aceptables, deben ser similares a las que podr\'ia
@@ -202,34 +199,34 @@ el estado del mundo, para as\'i obtener f\'ormulas l\'ogicas que describan
 un\'ivocamente a cada objeto. En nuestro proyecto implementaremos este m\'etodo
 y lo evaluaremos dentro del sistema de di\'alogo.
 
-Para la gesti\'on del contexto de interacci\'on utilizaremos, en un primer
+\emph{(3) Gesti\'on del Contexto de Interacci\'on:} Para la gesti\'on del contexto de interacci\'on utilizaremos, en un primer
 momento, sistemas existentes de manejo de conocimiento (\emph{knowledge mantainance
 systems}) como
 FaCT++~\citep{horr:fact99},
 RACER~\citep{haar:race99} o Pellet~\citep{siri:pell06}, que soportan tareas de
 definici\'on, mantenimiento y consulta de ontolog\'ias.  Estos sistemas
 han sido utilizados como motores de inferencia
-en numerosas applicaciones en el \'area~\citep{franconi03,koller04}, y en
-applicaciones
-dise\~nadas por miembros del equipo de
+en numerosas aplicaciones en el \'area~\citep{franconi03,koller04} y,
+en particular,  en aplicaciones dise\~nadas por miembros del equipo de
 investigaci\'on~\citep{benotti07,benotti09b}.  Una vez observado el
 comportamiento de
 estos motores de inferencia en la tarea, se analizar\'an sus limitaciones
 e investigar\'an extensiones requeridas.
 
-La interpretaci\'on de las respuestas del usuario en el sistema unidireccional
+\emph{(4) Interpretaci\'on de las Respuestas del Usuario:} La interpretaci\'on 
+de las respuestas del usuario en el sistema unidireccional
 es relativamente simple, y en una primera etapa utilizaremos el m\'odulo
 discretizador provisto por GIVE.  Luego de la evaluaci\'on del sistema,
 podremos determinar si este m\'odulo satisface o no los requerimientos de
 nuestra tarea y cu\'ales son sus limitaciones.  En el sistema bidireccional,
-en cambio, este es el m\'odulo que requerir\'a m\'as atenci\'on.
+en cambio, \'este es el m\'odulo que requerir\'a m\'as atenci\'on.
 
-Por empezar, el sistema debe ser extendido con capacidades de procesamiento
-del input del usuario en lenguaje natural (parser, construcci\'on sem\'antica,
-resoluci\'on de referencias, etc.).  Gracias a que los objetos y las acciones
-a los que el usuario se puede referir estan restringidos por el entorno virtual,
-podemos restringir el lenguaje
-a interpretar y utilizar recursos para interpretaci\'on de lenguaje natural
+Por empezar, el sistema bidireccional debe ser extendido con capacidades de procesamiento
+de enunciados provenientes del usuario (an\'alisis sint\'actico, construcci\'on sem\'antica,
+resoluci\'on de referencias, etc.).  Gracias a que, en este sistema,  los objetos y las acciones
+a los que el usuario se puede referir son los del entorno virtual,
+el lenguaje a interpretar est\'a naturalmente restringido y es posible 
+utilizar recursos para interpretaci\'on de lenguaje natural
 existentes~\citep{kow06}.  Estudiaremos, en particular, dos
 tipos espec\'ificios de contribuciones del usuario: pedidos de aclaraci\'on
 de la \'ultima instrucci\'on dada, y redefinici\'on de objetivos.  Elegimos
@@ -245,8 +242,10 @@ informaci\'on debe ahora tambi\'en representar y mantener actualizada las
 contribuciones ling\"u\'isticas del usuario; mientras que el m\'odulo de
 planificaci\'on del contenido debe reestructurar el \'arbol de acciones
 de la tarea cuando el usuario requiere una reparaci\'on a largo plazo.
+\medskip
 
-Para determinar la calidad del los propotipos obtenidos se propone
+\noindent
+Para determinar la calidad de los propotipos obtenidos se propone
 estudiar la creaci\'on de un modelo de la calidad seg\'un los est\'andares de
 evaluaci\'on de software ISO/IEC 9126 y 14528 \citep{ISO9126-1, ISO14598-1}, los
 cuales fueron exitosamente aplicados al dominio de la TA, como lo muestra la
@@ -254,19 +253,18 @@ herramienta FEMTI (Framework for the Evaluation of Machine
 Translation)\footnote{Disponible libremente en \fnturl{http://www.issco.unige.ch/femti/}}. FEMTI
 \citep{Est2005} intenta guiar a los evaluadores hacia la creaci\'on de planes de
 evaluaci\'on parametrizables que incluyen diversos aspectos del sistema a evaluar
-y ofrece un conjunto de m\'etricas relevantes. El desaf\'io principal de este
-estudio es establecer los aspectos del tutor m\'as importantes para un
-estudiante de idiomas e identificar el conjunto de m\'etricas relevantes, por
+y ofrece un conjunto de m\'etricas relevantes. La identificaci\'on de m\'etricas
+relevantes se puede realizar usando distintos m\'etodos, por
 ejemplo bas\'andose en experiencias previas \citep{paradise06, Chu2000,
 Litman2002}, realizando encuestas o especificaciones de requerimientos (como en
 \citep{Lecoeuche98}) o bien recolectando estos datos a trav\'es de experimentos
-llamados ``mago de Oz" (del Ingl\'es \textit{wizard of Oz}) donde el usuario
+llamados ``mago de Oz" (del Ingl\'es \emph{wizard of Oz}) donde el usuario
 interact\'ua con un prototipo de sistema (posiblemente incompleto o reducido en
-funcionalidades) y un humano (es decir, el ``mago") detr\'as de la interface
+funcionalidades) y un humano (el ``mago") detr\'as de la interface
 responde como si lo hiciera el sistema \citep{Dahlback93, Fabbrizio05}.
 
 Luego de elaborar un modelo de la calidad, se pueden aplicar diversas
-metodolog\'ias para evaluar cada uno de estos aspectos: seg\'un corresponda, se
+metodolog\'ias para evaluar distintos aspectos del sistema. Seg\'un corresponda, se
 pueden aplicar m\'etricas autom\'aticas, subjetivas (tambi\'en llamadas
 ``humanas") o basadas en la tarea, tanto para evaluar la contribuci\'on de cada
 componente como la calidad del sistema en su totalidad.
@@ -285,11 +283,10 @@ lecciones aprendidas.  En particular, trabajaremos en la documentaci\'on del
 sistema obtenido, en forma de manuales del usuario y del desarrollador que
 incluyan una descripci\'on detallada de los algoritmos implementados con sus
 puntos fuertes y d\'ebiles.
-Por otro lado, los resultados te\'oricos y aplicados ser\'an presentados a
-trav\'es de art\'iculos presentados en conferencias locales o internacionales
-as\'i como tambi\'en en revistas cient\'ificas pertinentes a las \'areas de
+Los resultados te\'oricos y aplicados ser\'an presentados en conferencias locales e internacionales,
+y en revistas cient\'ificas pertinentes a las \'areas de
 investigaci\'on afectadas.  Nuestros
-planes de diseminaci\'on se definen en m\'as detalle en la Seccion~13.
+planes de diseminaci\'on se definen en m\'as detalle en la Seccion~10.
 
 
 \MySubSubSection{5.2. Aplicaciones}
@@ -307,7 +304,7 @@ extranjeras~\citep{Eskenazi09,Wik09}.
 Dada la arquitectura del sistema, es posible cambiar el lenguaje de
 interacci\'on con el sistema (input y output), introduciendo
 una gram\'atica y dem\'as recursos sint\'acticos (e.g., informaci\'on
-morfol\'ogica) para el lenguaje correcto.  Es decir dados los recursos
+morfol\'ogica) para el lenguaje correcto.  Es decir, dados los recursos
 sint\'acticos adecuados para, por ejemplo, el ingl\'es que cubran las
 estructuras y el vocabulario usados en el sistema, se obtiene un sistema
 de di\'alogo que interprete y/o produzca instrucciones en ingl\'es.
@@ -345,7 +342,9 @@ evaluaci\'on comparativa (i.e., con otros
 sistemas de tutoring existentes) o una evaluaci\'on orientada al usuario al ser
 utilizado, por ejemplo, por estudiantes de la universidad donde se desarrolla el
 proyecto.
-
+El desaf\'io principal de este
+estudio es establecer los aspectos del tutor m\'as importantes para un
+estudiante de idiomas e identificar el conjunto de m\'etricas relevantes.
 
 
 

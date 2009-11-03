@@ -2,7 +2,7 @@
 
 El objetivo \'ultimo de este proyecto es dise\~nar un sistema de di\'alogo
 hombre-computadora con soporte para interacci\'on en tres dimensiones (3D) que
-genere autom\'aticamente instrucciones en lenguaje natural (LN) para guiar  al
+genere autom\'aticamente instrucciones en lenguaje natural para guiar  al
 usuario durante la ejecuci\'on de una tarea determinada. Este proyecto apunta
 a obtener un balance entre un sistema de uso general (aplicable en
 diferentes \'ambitos) y un sistema lo suficientemente espec\'ifico
@@ -29,9 +29,9 @@ propone estudiar las tres \'areas detalladas a continuaci\'on, las cuales son
 fundamentales para el desarrollo de cualquier sistema de di\'alogo:
 
 \paragraph{Pragm\'atica:} La pragm\'atica es un \'area interdisciplinaria a
-la que contribuyen teor\'ias ling\"u\'isticas (implicaturas
-conversacionales~\citep{grice75}), sociol\'ogicas (an\'alisis
-conversa\-cio\-nal~\citep{schegloff87b}) y filos\'oficas (teor\'ia de los actos
+la que contribuyen teor\'ias ling\"u\'isticas (e.g., implicaturas
+conversacionales~\citep{grice75}), sociol\'ogicas (e.g., an\'alisis
+conversa\-cio\-nal~\citep{schegloff87b}) y filos\'oficas (e.g., teor\'ia de los actos
 de habla~\citep{austin62}). Su objetivo es estudiar c\'omo el contexto (en el
 que la conversaci\'on esta situada) contribuye al significado (de cada cosa que
 se diga durante esa conversaci\'on). La transmisi\'on de significado depende no
@@ -76,8 +76,8 @@ poca, el usuario no sabr\'a c\'omo llevar a cabo la tarea y cometer\'a errores.
   %\item
 
 \paragraph{Inferencia:} Podemos entender como
-inferencia toda operaci\'on que transforme informaci\'on \textit{impl\'icita} en
-\textit{expl\'icita}.  Esta definici\'on es lo suficientemente general 
+inferencia toda operaci\'on que transforme informaci\'on \emph{impl\'icita} en
+\emph{expl\'icita}.  Esta definici\'on es lo suficientemente general 
 como para cubrir tareas que van desde la inferencia l\'ogica (i.e., deducci\'on 
 en un lenguaje formal), hasta tareas de inferencia habituales en inteligencia
 artificial (e.g., planning e inferencia no mon\'otona), y operaciones estad\'isticas (por
@@ -94,17 +94,17 @@ tipo de inferencia utilizar  en una determinada situaci\'on  es complejo
 orden, validez vs.\ chequeo de modelos, inferencia l\'ogica vs.\ inferencia
 estad\'istica). Adem\'as las
 tareas de inferencia en s\'i son computacionalmente costosas.  El desaf\'io en
-este caso es encontrar el compromiso adecuado entre representaci\'on de la
+este caso es encontrar el compromiso adecuado entre la representaci\'on de la
 informaci\'on y el m\'etodo de inferencia a utilizar.
 
 \paragraph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de
 lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del PLN, dado
 que una idea puede expresarse de muchas formas, todas ellas correctas. En
 general, determinar la calidad de una frase generada no puede hacerse de manera
-simple y directa, por ejemplo comparando el resultado del sistema con un
-patr\'on (en Ingl\'es \emph{gold stadard}). El problema de la falta de patrones es
+simple y directa, por ejemplo, comparando el resultado del sistema con un
+patr\'on (en Ingl\'es \emph{gold standard}). El problema de la falta de patrones es
 compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la
-cual se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas 
+que se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas 
 que pueden clasificarse en directas e indirectas. 
 Una metodolog\'ia directa aplica alguna m\'etrica al texto generado por un
 sistema. Una metodolog\'ia indirecta, en cambio, eval\'ua la perfomance del 
@@ -112,13 +112,13 @@ sistema a trav\'es de la utilizaci\'on del texto generado para realizar alguna t
 embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como
 est\'andar y demostrada eficaz de manera general.
 
-Dado que el objetivo en este proyecto a evaluar es un sistema que interact\'ua
+Dado que el objeto a evaluar en este proyecto es un sistema que interact\'ua
 via la generaci\'on de instrucciones en lenguaje natural, podemos
 determinar su performance por medio de evaluaciones cuantitativas (como el
-tiempo de finalizaci\'on de la tarea), cualitativas (por ejemplo, la calidad de
+tiempo de finalizaci\'on de la tarea), cualitativas (e.g., la calidad de
 las interacciones) y basadas en el contexto (evaluaciones orientadas al usuario
-y sus necesidades en una situaci\'on particular). Dada la experiencia de los
-participantes, es de especial inter\'es estudiar la  portabilidad y aplicaci\'on
+y sus necesidades en una situaci\'on particular). Dada la experiencia previa de los
+integrantes del proyecto, es de especial inter\'es estudiar la  portabilidad y aplicaci\'on
 de t\'ecnicas de evaluaci\'on del dominio de la TA y la interacci\'on multimodal
 humano-computadora, al sistema  planteado en
 este proyecto (en su totalidad y por componentes).

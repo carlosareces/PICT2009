@@ -20,18 +20,19 @@ Estudios de este tipo se han realizado anteriormente
 asumiendo una tarea prefijada.
 Dado que nuestro prototipo permitir\'a la especificaci\'on
 del mundo virtual, las posibles acciones y el objetivo
-a alcanzar, podremos determinar cu\'ando estas pol\'iticas
-son dependientes de la tarea.
+a alcanzar, podremos determinar cu\'ando el impacto resultante
+del uso de una determinada pol\'itica
+es dependiente de la tarea.
 
 El prototipo bidireccional nos permitir\'a investigar el
 fen\'omeno de reparaciones a corto y largo plazo,
-evaluando un sistema de predicci\'on de reparaciones
+dise\~nando y evaluando un sistema de predicci\'on de reparaciones
 contextualizadas.  Estas reparaciones est\'an usualmente
 causadas por implicaturas conversacionales.  Modelar
 estas implicaturas en un sistema de di\'alogo gen\'erico
 es dif\'icil.  Sin embargo, dado que el presente prototipo provee una
 interacci\'on situada
-y restringida al mundo virtual, ser'a posible testear la relaci\'on entre
+y restringida al mundo virtual, ser\'a posible testear la relaci\'on entre
 las implicaturas, el tipo de reparaciones a las que
 dan origen y las tareas de inferencia necesarias para
 predecirlas.
@@ -45,8 +46,7 @@ un objetivo esperado -- y retorna una secuencia de acciones (un plan)
 que al ser aplicadas secuencialmente al estado inicial, termina
 en un estado que satisface el objetivo pedido.  Distintos
 m\'etodos para obtener un plan han sido estudiados (forward chaining, backward
-chaining, codification as propositional
-satisfiability, etc.); y existen actualmente sistemas
+chaining, codificaci\'on en t\'erminos de satisfiabilidad proposicional, etc.); y existen actualmente sistemas
 implementados que pueden resolver esta tarea eficientemente.
 
 Sin embargo, la mayor\'ia de estos sistemas asumen condiciones
@@ -58,13 +58,13 @@ de las simplificaciones mencionadas (en particular, investigaremos
 el caso de planning con informaci\'on incompleta y en base a una
 teor\'ia background) y que ofrecen adem\'as servicios de planning
 extendidos (retorno de planes alternativos, planes m\'inimos, planes
-condicionados, planes incompletos, acciones posibles en un estado dado, etc.)
+condicionales, planes incompletos, acciones posibles en un estado dado, etc.)
 
 \paragraph{Evaluaci\'on:}
 En este \'area se espera que una de las contribuciones principales sea la
-intergaci\'on de t\'ecnicas de evaluaci\'on de distintas \'areas en una
+integraci\'on de t\'ecnicas de evaluaci\'on de distintas \'areas en una
 metodolog\'ia que permita evaluar sistemas de di\'alogo para entornos virtuales
-de manera que se estime la usabilidad y eficacia del mismo. Esta metodolog\'ia
+de manera que se estime su usabilidad y eficacia. Esta metodolog\'ia
 podr\'ia usarse tanto para determinar si un sistema es adecuado para un tipo de
 tarea y de usuario, como para comparar la performance de distintos sistemas del
 mismo tipo.
