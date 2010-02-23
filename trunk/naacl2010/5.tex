@@ -13,14 +13,11 @@
 % instrucciones
 % provistas por el sistema realizando acciones f\'isicas.
 
-In this project, we focus primarily on the system responsible for the
-generation of instructions and interpretation of user responses. The system must
-be capable of
-a natural interaction and be able to adapt to possible errors of interpretation
+Given the nature of the interaction we model, the system must
+be capable of adapting to possible errors of interpretation
 or execution of the instructions, giving corrective instructions when necessary.
-You will find yourself in a universe where you can interact with objects and
-explore the virtual environment provided. In this 3D virtual world, the user
-will try to follow instructions provided by the system by physical actions.
+Reparing misinterpretations is challenging, we will face this challenge by
+designing our system in sucessive stages of increasing complexity.
 
 % En una primera etapa, el modelo a utilizar permitir\'a el flujo de
 % informaci\'on
@@ -29,12 +26,6 @@ will try to follow instructions provided by the system by physical actions.
 % el usuario no podr\'a pedir ning\'un tipo de ayuda.  La restricci\'on a un
 % modelo unidireccional tiene como objetivo
 % simplificar la representaci\'on y el manejo del contexto de la interacci\'on.
-
-Initially, the model to use will flow one-way linguistic information from the
-system to the user so the user can not ask for any help. The restriction to a
-unidirectional model is to simplify the representation and management of the
-context of the interaction.
-
 % En etapas m\'as avanzadas del proyecto, el modelo unidireccional ser\'a
 % extendido para
 % permitir intercambio ling\"u\'istico bidireccional: por ejemplo, el usuario
@@ -43,10 +34,11 @@ context of the interaction.
 % usando
 % lenguaje natural.
 
-At later stages of the project, the unidirectional model will be extended to
-allow bidirectional language exchange: for example, the user may request
-clarification or redefine the objective to be achieved in both cases using
-natural language.
+Initially, the flow of linguistic information will be one-way, from the
+system to the user, so the user can not ask for any help. At later stages of the
+project, the unidirectional model will be extended to allow for bidirectional
+language exchange: for example, the user may request clarifications or redefine
+the objective to be achieved using natural language.
 
 % La generaci\'on de instrucciones para un dominio espec\'ifico requiere
 % informaci\'on  ling\"u\'istica a distintos niveles.
@@ -59,13 +51,13 @@ natural language.
 % acciones posibles en el dominio (con sus precondiciones y efectos), e
 % informaci\'on del estado de la interacci\'on.
 
-The generation of instructions for a specific domain requires different levels
-of linguistic information. A morphological and syntactic level requires a
-selected language grammar (Spanish in this case). A semantic level requires a
-repository of lexical information organized as ontological. A pragmatic level
-requires a formal description of possible actions in the domain (with their
-preconditions and effects), and information of prior interaction.
-
+The generation of instructions for a specific domain requires linguistic
+information at different levels. At the morphological and syntactic level a
+grammar of the choosen language is required (namely, Spanish). At the semantic
+level a repository of lexical information organized ontologically is needed. At
+the pragmatic level, we need a formal description of the possible actions in the
+domain (with their preconditions and effects), as well as information about the
+state of the task.
 
 % Esta informaci\'on relacionada a un dominio dado es utilizada por distintos
 % componentes del sistema de di\'alogo que
@@ -87,18 +79,19 @@ preconditions and effects), and information of prior interaction.
 % se ocupan
 % de mantener el contexto actualizado y de detectar posibles errores.
 
-This information relating to a given domain is used by various components of the
+This domain dependent information is used by various components of the
 dialogue system that manages the user interaction. In a typical system, this is
-as detailed below. The address system $\rightarrow$ user, the component
-responsible for planning the content generates a sequence of instructions
-relevant to the moment of interaction, then the component will manage the
-knowledge updated contextual information and, finally, the component will
-generate transmits the same instructions as natural language expressions. In the
-opposite direction, ie user $\rightarrow$ system, the component called
-discretized transforms the continuous flow of information derived from user
-behavior in actions relevant to the task at hand, while the components of
-content planning and management knowledge concerned with maintaining the current
-context and possible errors.
+as detailed below. In the direction system $\rightarrow$ user, the component
+responsible for \emph{content planning} generates a sequence of instructions
+relevant to the current moment of the interaction, then the \emph{knowledge
+management} component updates the contextual information and, finally, the
+component in charge of \emph{generating the instruction} transmits the 
+instructions as natural language expressions. In the
+opposite direction, i.e. user $\rightarrow$ system, the component called
+\emph{discretized} transforms the continuous flow of information obtained from
+user behavior in discrete actions relevant to the task at hand, while the
+components of content planning and knowledge management are concerned with
+managing the current context and detecting possible errors.
 
 % En la siguiente secci\'on se detalla el plan de trabajo propuesto para llevar
 % a
@@ -107,10 +100,9 @@ context and possible errors.
 % del
 % sistema a desarrollar.
 
-
-In the next sections, we detail the proposed work plan to carry out the stated
-objectives and then we discuss a possible application of the system to be
-developed. 
+In the next sections, we detail the workplan for carrying out the objectives
+stated above and then we discuss a the application of the system that we plan
+to investigate. 
 
 \subsection{Tasks}
 % 
@@ -125,10 +117,11 @@ developed.
 % Linguistics} (ACL).} que
 % provee una plataforma b\'asica para este tipo de sistemas.
 
-As we said, designing and implementing all the necessary components from scratch
-would require a prohibitive effort, therefore we will use resources
-available for free. In particular, we will use the platform developed as part of
-the competencia1 Generating Instructions in Virtual Environments
+Designing and implementing all the necessary components of a
+situated instruction giving system from scratch would require a prohibitive
+effort, therefore we will make use of resources available for free. In
+particular, we will use the platform developed as part of
+the challenge \emph{Generating Instructions in Virtual Environments}
 (GIVE)\footnote{GIVE is freely available at \url{http://www.give-challenge.org}
 and has the support of interest groups SIGSEM, SIGDIAL, and SIGGEN of the
 Association for Computational Linguistics (ACL).} which provides a basic
@@ -147,15 +140,15 @@ platform for this type of system.
 % la generaci\'on de lenguaje natural sino tambi\'en la habilidad del
 % sistema de participar en una interacci\'on situada en un entorno 3D.
 
-The main aim of GIVE~\cite{byron09}  is to act as a means of evaluation of
-systems for natural language generation. In this competition, systems are
-evaluated in a homogeneous since all participating systems use the same
-resources provided by the organizers. In the scenario proposed by GIVE, the
-human user carries out a task of `` treasure hunts in a 3D virtual environment
-and work of the participant system is to provide real-time, natural language
-instructions that help users find the hidden treasure. So GIVE not only assesses
-the generation of natural language but also the system's ability to participate
-in an interaction set in a 3D environment.
+The main aim of GIVE~\cite{byron09} is to act as an evaluation framework for
+natural language generation systems. In the GIVE Challenge the systems are
+evaluated homogeneously since all the participating systems use the same
+resources provided by the organizers. In the scenario proposed by GIVE, a
+human user carries out a task of ``treasure hunt'' in a 3D virtual environment
+and the task of the generation system is to provide real-time, natural
+language instructions that help the user find the hidden treasure. So GIVE not
+only evaluates the generation of natural language but also the system's ability
+to participate in a real-time interaction situated in a 3D environment.
 % 
 % La plataforma GIVE es, entonces, una herramienta propicia para
 % investigar los distintos aspectos de la interacci\'on situada en un entorno
@@ -173,10 +166,10 @@ in an interaction set in a 3D environment.
 % interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de
 % interacci\'on en entornos virtuales, anotado autom\'aticamente.
 
-GIVE platform is thus a favorable tool for investigating various aspects of
+GIVE platform is thus an appropriate tool for investigating various aspects of
 interaction situated in a virtual environment as listed below: the problem of
-morphogen syntactic realization of the instructions (in English, surface
-realization), the representation of existing knowledge in the context of
+morpho-syntactic realization of the instructions, the representation of
+existing knowledge in the context of
 interaction (discourse context, ontologies, possible actions), the type of
 inference required by the tasks involved (planning, construction and checking of
 designs), and pragmatic rules of interaction required by the task (management
