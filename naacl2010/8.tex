@@ -1,0 +1,88 @@
+
+Se puede clasificar el impacto cient\'ifico
+esperado del proyecto en tres grandes areas, como se detalla a continuaci\'on:
+
+\paragraph{Interacci\'on:}
+Una de las contribuciones m\'as
+importantes del proyecto ser\'a un laboratorio virtual para
+teor\'ias pragm\'aticas que consistir\'a de un
+entorno controlado para el estudio de la interacci\'on situada en un mundo donde
+se entremezclan acciones f\'isicas y ling\"u\'isticas.
+
+El prototipo unidireccional permitir\'a
+investigar el impacto de distintas
+pol\'iticas para dar instrucciones (post o
+preorden en el \'arbol de acciones de la tarea)
+sobre la realizaci\'on exitosa de la tarea.
+Estudios de este tipo se han realizado anteriormente
+(e.g.,~\cite{foster-etal-ijcai2009}) pero
+asumiendo una tarea prefijada.
+Dado que nuestro prototipo permitir\'a la especificaci\'on
+del mundo virtual, las posibles acciones y el objetivo
+a alcanzar, podremos determinar cu\'ando el impacto resultante
+del uso de una determinada pol\'itica
+es dependiente de la tarea.
+
+El prototipo bidireccional nos permitir\'a investigar el
+fen\'omeno de reparaciones a corto y largo plazo,
+dise\~nando y evaluando un sistema de predicci\'on de reparaciones
+contextualizadas.  Estas reparaciones est\'an usualmente
+causadas por implicaturas conversacionales.  Modelar
+estas implicaturas en un sistema de di\'alogo gen\'erico
+es dif\'icil.  Sin embargo, dado que el presente prototipo provee una
+interacci\'on situada
+y restringida al mundo virtual, ser\'a posible testear la relaci\'on entre
+las implicaturas, el tipo de reparaciones a las que
+dan origen y las tareas de inferencia necesarias para
+predecirlas.
+
+\paragraph{Inferencia:} La principal contribuci\'on del
+proyecto en el \'area de l\'ogica e inferencia es en el
+dise\~no, desarrollo y estudio de algoritmos de planning.
+Un sistema de planning t\'ipico toma tres inputs -- un
+estado inicial, una especificaci\'on de posibles acciones y
+un objetivo esperado -- y retorna una secuencia de acciones (un plan)
+que al ser aplicadas secuencialmente al estado inicial, termina
+en un estado que satisface el objetivo pedido.  Distintos
+m\'etodos para obtener un plan han sido estudiados (forward chaining, backward
+chaining, codificaci\'on en t\'erminos de satisfiabilidad proposicional, etc.); y existen actualmente sistemas
+implementados que pueden resolver esta tarea eficientemente.
+
+Sin embargo, la mayor\'ia de estos sistemas asumen condiciones
+que simplifican el problema (tiempo at\'omico y
+determin\'istico, informaci\'on completa, ausencia de una teor\'ia
+background, etc.) y retornan un \'unico plan.  En el transcurso
+del proyecto se investigar\'an algoritmos que eliminan algunas
+de las simplificaciones mencionadas (en particular, investigaremos
+el caso de planning con informaci\'on incompleta y en base a una
+teor\'ia background) y que ofrecen adem\'as servicios de planning
+extendidos (retorno de planes alternativos, planes m\'inimos, planes
+condicionales, planes incompletos, acciones posibles en un estado dado, etc.)
+
+\paragraph{Evaluaci\'on:}
+En este \'area se espera que una de las contribuciones principales sea la
+integraci\'on de t\'ecnicas de evaluaci\'on de distintas \'areas en una
+metodolog\'ia que permita evaluar sistemas de di\'alogo para entornos virtuales
+de manera que se estime su usabilidad y eficacia. Esta metodolog\'ia
+podr\'ia usarse tanto para determinar si un sistema es adecuado para un tipo de
+tarea y de usuario, como para comparar la performance de distintos sistemas del
+mismo tipo.
+
+Otra contribuci\'on ser\'a el estudio y aplicaci\'on de est\'andares de
+evaluaci\'on de software a los sistemas desarrollados, generando un modelo de la
+calidad estandarizado y proponiendo un conjunto de m\'etricas apropiadas para
+evaluar cada uno de los aspectos contenidos en el modelo. Este trabajo
+incluir\'a tambi\'en un estudio profundo de varias m\'etricas a fines de incluir
+en el modelo de calidad algunos consejos sobre las m\'etricas elegidas; este
+estudio se considera como una meta-evaluaci\'on del modelo propuesto.
+
+Finalmente,
+el corpus anotado de interacci\'on humano-humano, m\'as
+los corpus de interacci\'on humano-m\'aquina recopilados
+durante el proyecto se har\'an p\'ublicos.  Este tipo de
+corpora servir\'a, por ejemplo, para dise\~nar plataformas
+m\'as generales de evaluaci\'on de sistemas de di\'alogo,
+que van m\'as all\'a de los aspectos evaluados actualmente
+por plataformas existentes como GIVE.
+
+
