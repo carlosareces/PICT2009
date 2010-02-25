@@ -166,16 +166,17 @@ to participate in a real-time interaction situated in a 3D environment.
 % interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de
 % interacci\'on en entornos virtuales, anotado autom\'aticamente.
 
-GIVE platform is thus an appropriate tool for investigating various aspects of
-interaction situated in a virtual environment as listed below: the problem of
-morpho-syntactic realization of the instructions, the representation of
-existing knowledge in the context of
-interaction (discourse context, ontologies, possible actions), the type of
-inference required by the tasks involved (planning, construction and checking of
-designs), and pragmatic rules of interaction required by the task (management
-cognitive load, update and use of contextual information). GIVE provides further
-tools to record all details of the interaction, thus allowing to easily obtain a
-corpus of interaction in virtual environments annotated automatically.
+The GIVE platform is thus an appropriate tool for starting to investigate
+various aspects of an interaction situated in a virtual environment: the problem
+of
+morpho-syntactic realization of the instructions, knowledge representation of
+the context of interaction (discourse context, ontologies, possible actions),
+the type of inference required by the tasks involved (planning, model building
+and model checking), and the pragmatic rules of interaction required by the task
+(managing the cognitive load, update and use of contextual information).
+Moreover, GIVE provides tools to record all details of the interaction, thus
+allowing to easily obtain a corpus of interaction in virtual environments
+annotated automatically.
 
 % Para la definici\'on correcta de las pol\'iticas de interacci\'on que
 % utilizaremos en nuestro prototipo es necesario
@@ -185,11 +186,13 @@ corpus of interaction in virtual environments annotated automatically.
 % que contendr\'a la interacci\'on lig\"u\'istica alineada con las acciones
 % realizadas en el mundo virtual.
 
-For the correct definition of interaction policies we use in our prototype is a
-need for a body that provides examples of typical interaction on the
-task~\cite{HCRC-93,byron-06}. Using tools provided by GIVE, we collect a corpus
-of human-human interaction (uni and bidirectional) containing the interaction
-linguistics has aligned with actions in the virtual world.
+For the correct definition of the interaction policies of our prototype we need
+a corpus that provides examples of typical interactions the domain. The GIVE
+platform also provides tools for collecting such corpus, namely a Wizard of Oz
+platform for collecting interactions in which two persons interact to solve a
+task in the GIVE domain. The collected corpus is automatically annotated
+aligning the linguistic interaction with the discretized actions in the virtual
+world. 
 
 % A partir del corpus recolectado comenzaremos el dise\~no,
 % implementaci\'on y testing de algoritmos de interacci\'on unidireccionales,
@@ -201,13 +204,12 @@ linguistics has aligned with actions in the virtual world.
 % de expresiones referenciales, (3) gesti\'on del contexto de interacci\'on, y
 % (4) interpretaci\'on de las respuestas del usuario.
 
-From the corpus collected begin the design, implementation and testing of
-unidirectional interaction algorithms, which will be integrated into the
-platform GIVE. There are traditionally four tasks that a generation system must
-implement instructions: (1) planning the content, (2) generation of referring
-expressions, (3) managing the interaction context, and (4) interpretation of
-user responses. 
-% 
+From the collected corpus we will begin the design, implementation and testing
+of the unidirectional interaction algorithm. There are traditionally four tasks
+that a generation system must implement: (1) planning the content, (2)
+generation of referring expressions, (3) managing the interaction context, and
+(4) interpretation of user responses. 
+
 % \emph{(1) Planificaci\'on del contenido:} Para planificar el contenido a
 % generar
 % es necesario primero obtener un plan de
@@ -233,18 +235,19 @@ user responses.
 % bajando a un
 % nivel menor de abstracci\'on en caso de malentendidos).
 
-\emph{(1) Content planning:} To plan the content to be generated is first
-necessary to obtain a plan of action to reach the target from the current state.
-The plan to run contrendrá physical actions on the environment. The second step
-is to decide how to transmit this sequence of user actions. That is, they must
-decide how many shares communicate instruction and how to add coherently. The
-result of the aggregation process shares (in English, action agreggation) is a
+\emph{(1) Content planning:} To plan the content to be generated it is first
+necessary to obtain a plan to reach the task goal from the current state.
+The plan will contain physical actions on the virtual environment. The second
+step is to decide how to transmit this sequence of actions. That is, to decide
+how many actions to communicate per instruction and how to aggregate them
+coherently. The result of the action aggregation process can be represented is a
 tree describing the task structure at different levels of abstraction. The third
 and final step is to decide how to navigate the tree of actions to verbalize the
-instructions (for example, post or preorder~\cite{foster-etal-ijcai2009}). This
-project will investigate different aggregation policies (eg, adding actions that
-manipulate the same object) and non-standard travel policy of the tree stock
-(eg, dropping to a lower level of abstraction in case of misunderstanding).
+instructions (for example, post or preorder as
+explored in~\cite{foster-etal-ijcai2009}). This project will investigate
+different aggregation policies (e.g., aggregating actions that
+manipulate similar object) and non-standard policies of navitation of the tree
+(e.g., moving to a lower level of abstraction in case of misunderstandings).
 
 % Para obtener el plan de acciones, utilizaremos la tarea de inferencia de
 % planning~\cite{nau04}. GIVE provee un sistema de planning muy
@@ -261,20 +264,20 @@ manipulate the same object) and non-standard travel policy of the tree stock
 % extensiones a los algoritmos de planning. Estudiaremos tambi\'en el
 % comportamiento te\'orico (e.g., complejidad) de estos algoritmos.
 
-For the action plan, we use the inference task planning~\cite{nau04}. GIVE
-provides a very limited system planning. There are more avanzandos
-planning systems (in particular, to enable the handling of incomplete
-information on the domain) as
-PKS\footnote{PKS is
-freely available in \url{http://homepages.inf.ed.ac.uk/rpetrick/research/pks/}},
-but they are still developing. In general,
+In order to get the plan, we use the inference task of planning~\cite{nau04}.
+GIVE provides a very limited planner. There are more advanced planners
+(in particular, to enable the handling of incomplete information on the domain)
+as PKS\footnote{PKS is freely available in
+\url{http://homepages.inf.ed.ac.uk/rpetrick/research/pks/}},
+but such planning techniques are still under research. In general,
 the state of the art in the planning area does not cover the requirements of our
-system. While there are systems that work well optimized for certain
+system. While there are systems that work well when optimized for certain
 applications, none provides services such as the generation of alternative
-plans, or the generation of incomplete plans in case of absence of plan. As we
-design and implement these extensions to the algorithms of planning. Also study
-the theoretical behavior (e.g., complexity) of these algorithms. 
-% 
+plans, or the generation of incomplete plans in case of the absence of plan.
+Hence, we will have to design and implement these extensions to the planning
+algorithms. We will also study the theoretical behavior (e.g., complexity) of
+these new algorithms. 
+
 % \emph{(2) Generaci\'on de Expresiones Referenciales:} Una vez terminada la
 % fase
 % de planificaci\'on de contenido, la siguiente tarea
@@ -293,15 +296,17 @@ the theoretical behavior (e.g., complexity) of these algorithms.
 % m\'etodo
 % y lo evaluaremos dentro del sistema de di\'alogo.
 
-\emph{(2) Generating referring expressions:} Once the planning phase content,
-the next task is the generation of referring expressions. This task involves
-producing a sentence that describes a referenceable entity so that the user can
-identify (eg, `` the vase on the table''). These expressions, to be acceptable,
-must be similar to those that could produce a person in normal conditions (for
-example, would not be acceptable, `` the vase who is not above the top of the
-chair or sofa or under the table''). In~\cite{AKS08} proposes to use the
-symbolic minimization model that represents the state of the world, in order to
-obtain logical formulas that describe each object uniquely. In our project we
+\emph{(2) Generating referring expressions:} Once the content planning is
+complete, the next task is the generation of referring expressions. This task
+involves
+producing a phrase that describes a referrable entity so that the user can
+identify it (e.g., `` the vase on the table''). To be
+acceptable these expressions should not be too heavy cognitively (for
+example, `` the vase that is not above the chair or sofa or under the
+table'' would not be acceptable). In~\cite{AKS08} the authors propose to
+do the symbolic minimization model that represents the state of the world, in
+order to obtain logical formulas that describe each object uniquely. In our
+project we
 will implement this method and evaluate within the dialogue system.
 % 
 % \emph{(3) Gesti\'on del Contexto de Interacci\'on:} Para la gesti\'on del
@@ -321,14 +326,14 @@ will implement this method and evaluate within the dialogue system.
 % e investigar\'an extensiones requeridas.
 
 \emph{(3) Management of the Interaction Context:} To manage the use of
-interaction context in the first instance, existing systems of knowledge
-management (knowledge mantainance systems) as RACER~\cite{haar:race99} or
-Pellet~\cite{siri:pell06}, which support tasks of definition, maintenance and
-querying of ontologies. These systems have been used as inference engines in
-numerous applications in the area~\cite{franconi03,koller04} and, in particular
-in applications designed by members of the research team~\cite{benotti09b}. Once
-observed the behavior of these inference engines on the task, analyzing the
-limitations and investigate extensions required.
+interaction context we will use existing knowledge mantainance systems such as
+RACER~\cite{haar:race99} or Pellet~\cite{siri:pell06}, which support tasks of
+definition, maintenance and querying of ontologies. These systems have been used
+as inference engines in numerous applications in
+the area~\cite{franconi03,koller04} and, in particular
+in applications designed by the authors~\cite{benotti09b}. Once we
+observe the behavior of these inference engines on the task, we will analyze
+its limitations and investigate the required extensions.
 % 
 % \emph{(4) Interpretaci\'on de las Respuestas del Usuario:} La
 % interpretaci\'on 
@@ -341,10 +346,10 @@ limitations and investigate extensions required.
 
 \emph{(4) Interpretation of User Responses:} The interpretation of user
 responses in the unidirectional system is relatively simple, and in a first
-stage we use the discretized form provided by GIVE. After evaluating the system,
-this module can determine whether or not it meets the requirements of our task
-and what are its limitations. In the two-way system, however, this is the module
-that will require more attention.
+stage, we will use the discretizer provided by GIVE. After evaluating the
+system, we can determine whether or not this module meets the requirements of
+our task and what are its limitations. In the bidirectional system, however,
+this is the module that will require more attention.
 % 
 % Por empezar, el sistema bidireccional debe ser extendido con capacidades de
 % procesamiento
@@ -376,25 +381,14 @@ that will require more attention.
 % de la tarea cuando el usuario requiere una reparaci\'on a largo plazo.
 
 
-To start with, the two-way system should be expanded processing capabilities of
-statements coming from user input (parsing, semantic construction, resolution of
-references, etc.).. With that in this system, the objects and actions that the
-user can refer are the virtual environment, to interpret the language is
-naturally limited and may utilize resources for existing natural language
-interpretation~\cite{kow06}. Study, in particular, two types of user
-contributions specificity:
-requests for clarification of the instruction given, and redefinition of goals.
-We chose such contributions represent contributions because the type `fix it
-'short and long term respectively. We will implement short-term repairs to
-extend the work of~\cite{purver06}. For long-term repairs will use the
-guidelines of~\cite{blaylock05a,blaylock05b}. Obviously, the integration
-of
-language skills in the management user $\to$ system involves not only changes
-in the form of interpretation of the answers, but all the above components are
-affected. For example, the management module of information must now also
-represent and update the user's linguistic contributions, while the content
-planning module must restructure the tree stock of the task when the user
-requires a long-term repair. 
+To start with, the bidirectional system should be expanded with capabilities
+for  processing statements coming from the user (namely, parsing, semantic
+construction, resolution of references, etc.). We will study, in particular, two
+types of user contributions: requests for clarification of the instruction
+given (that we call `short term repairs'), and redefinition of goals (that we
+call `short long repairs'). We will implement short-term repairs
+using Purver~\shortcite{purver06}'s approach. For long-term repairs will use the
+guidelines of~\cite{blaylock05a}. 
 \medskip
 
 % \noindent
@@ -424,22 +418,22 @@ requires a long-term repair.
 % responde como si lo hiciera el sistema \cite{Dahlback93,Fabbrizio05}.
 
 \noindent
-To determine the quality of the obtained propotipos is to study the creation of
-a model of quality assessment by the standards of software ISO/IEC 9126 and
-14528~\cite{ISO9126-1,ISO14598-1}, which were successfully applied to the
-TA domain, as shown in the tool FEMTI (Framework for the Evaluation of Machine
-Translation)\footnote{Freely available in
+To determine the quality of the obtained propotypes we propose to study the
+creation of a model of quality assessment by the standards of software ISO/IEC
+9126 and 14528~\cite{ISO9126-1,ISO14598-1}, which were successfully applied to
+the MT domain, as shown in the tool FEMTI (Framework for the Evaluation of
+Machine Translation)\footnote{Freely available in
 \url{http://www.issco.unige.ch/femti/}}. FEMTI~\cite{Est2005}
 try to guide the evaluators towards creating parameterized evaluation
 plans that include various aspects of the system to evaluate and offer a
 relevant set of metrics. The identification of relevant metrics can be performed
-using various methods, eg based on previous
+using various methods, e.g. based on previous
 experience~\cite{paradise06,Chu2000,Litman2002}, conducting
-surveys or specification requirements (as in \cite{Lecoeuche98}) or
-collecting such data through experiments called ``Wizard of Oz"(the
-English wizard of Oz) where the user interacts with a prototype system (possibly
-incomplete or reduced functionality) and a human (the ``Wizard") behind the
-interface responds as if I did the system~\cite{Dahlback93,Fabbrizio05}.
+surveys or requirement specifications (as in \cite{Lecoeuche98}) or
+collecting such data through experiments called ``Wizard of Oz'' where the user
+interacts with a prototype system (possibly incomplete or reduced in
+functionality) and a human (the ``Wizard'') behind the interface responds as if
+he were the system~\cite{Dahlback93,Fabbrizio05}.
 
 % Luego de elaborar un modelo de la calidad, se pueden aplicar diversas
 % metodolog\'ias para evaluar distintos aspectos del sistema. Seg\'un
@@ -453,20 +447,22 @@ interface responds as if I did the system~\cite{Dahlback93,Fabbrizio05}.
 % participaci\'on en el evento asociado, lo cual servir\'a como una fuente
 % adicional de informaci\'on acerca de los aspectos del sistema a mejorar.
 
-After developing a quality model can be applied several methodologies to assess
-various aspects of the system. As appropriate, you can apply automatic metrics,
-subjective (also called `` human ") or based on the task, both to evaluate the
-contribution of each component as the quality of the whole system. On the other
-hand, since it will be used GIVE platform is planned participation in the
-associated event, which will serve as an additional source of information about
-aspects of the system to improve.
+After developing a quality model, several methodologies to assess
+various aspects of the system can be applied: automatic metrics,
+subjective metrics (also called ``human") or matrics based on the task (both to
+evaluate the contribution of each component as well as the quality of the whole
+system). On the other hand, since we will use the GIVE platform  we plan to
+participate in the associated Challenge, which will serve as an additional
+source of information about aspects of the system that need
+improvement.\footnote{One of the authors is participating in the current
+edition of the Challenge, namely GIVE-2.}
 
 % Una vez que el sistema de interacci\'on bidireccional fue evaluado y mejorado
 % con los resultados de esta evaluaci\'on,
 % se investigar\'a su utilizaci\'on
 % como tutor virtual de idiomas como describimos en la siguiente secci\'on.
 
-Once the two-way interaction system was evaluated and improved over the results
+Once the two-way interaction system is evaluated and improved using the results
 of this evaluation, we will investigate its use as a virtual language tutor as
 described in the next section.
 
@@ -481,13 +477,17 @@ described in the next section.
 % investigaci\'on afectadas.  Nuestros
 % planes de diseminaci\'on se definen en m\'as detalle en la Seccion~10.
 
-Throughout the project, we will ensure the dissemination of results and lessons
-learned. In particular, we will work in your system documentation obtained in
-the form of user manuals and developer to include a detailed description of the
-algorithms implemented with their strengths and weaknesses. The theoretical and
-applied results will be presented at local and international conferences and in
-journals relevant to the research areas concerned. Our plans to spread more
-fully defined in Section 10. 
+% Throughout the project, we will ensure the dissemination of results and
+% lessons
+% learned. In particular, we will work in your system documentation obtained in
+% the form of user manuals and developer to include a detailed description of
+% the
+% algorithms implemented with their strengths and weaknesses. The theoretical
+% and
+% applied results will be presented at local and international conferences and
+% in
+% journals relevant to the research areas concerned. Our plans to spread more
+% fully defined in Section 10. 
 
 
 \subsection{Aplications}
@@ -501,10 +501,13 @@ fully defined in Section 10.
 % distancia, adaptando el sistema para que funcione como tutor de lenguas
 % extranjeras~\cite{Eskenazi09,Wik09}.
 
-The project outcome will be a system capable of natural language instructions to
-be carried out by the user in a virtual 3D environment. The technology and
+The project outcome will be a system capable of giving natural language
+instructions situated in a virtual 3D environment. The technology and
 theoretical advances of the project can be used in various applications
-(electronic commerce, technical support, voice control devices, etc.).. During
+(electronic commerce, technical support, voice control devices, etc.). 
+Given the architecture of the system, you can change the language of interaction
+with the system (input and output), just by changing the linguistic resources
+for the appropriate language. During
 the last year of the project will investigate its use for distance learning,
 adapting the system to operate as a foreign language
 tutor~\cite{Eskenazi09,Wik09}.
@@ -517,12 +520,6 @@ tutor~\cite{Eskenazi09,Wik09}.
 % estructuras y el vocabulario usados en el sistema, se obtiene un sistema
 % de di\'alogo que interprete y/o produzca instrucciones en ingl\'es.
 
-Given the architecture of the system, you can change the language of interaction
-with the system (input and output), introducing a syntactic grammar and other
-resources (eg, morphological information) for the correct language. That is,
-given the proper syntax for resources, for example, English to cover the
-structures and vocabulary used in the system, you get a dialog system to
-interpret and / or produces instructions in English.
 
 % Un sistema unidireccional que genere instrucciones en ingl\'es puede
 % usarse para testear la comprensi\'on del usuario.  La correcta
@@ -536,14 +533,14 @@ interpret and / or produces instructions in English.
 % de esta forma seleccionar el vocabulario y el tipo de estructuras que desea
 % practicar.
 
-A one-way system that generates instructions in English can be used to test user
-understanding. The correct interpretation of the instructions can be evaluated
-from the proper execution of the instructions. The two-way system will allow the
-user to seek clarification on the last statement (in their native language, if
-not understood the instruction, or English, if you want to practice their
-ability to speak in foreign language). The user may also redefine the objective
-to be achieved during the interaction, and thus select the type of vocabulary
-and structures you want to practice.
+A one-way system that generates instructions in English can be used to test the
+user understanding of a foreign language. The correct interpretation of the
+instructions can be evaluated from the proper execution of the instructions. The
+two-way system will allow the user to formulate clarifications (either in their
+native language, or in the foreign language, if they want to practice
+production in the foreign language). The user may also redefine the
+objective to be achieved during the interaction, and thus select the type of
+vocabulary he wants to practice.
 
 % Los mundos virtuales (como Second Life\footnote{Accessible gratuitamente
 % en \url{http://secondlife.com/}}) est\'an siendo incorporados r\'apidamente a
@@ -565,20 +562,18 @@ and structures you want to practice.
 % material adicional (e.g., ejemplos en contexto, im\'agenes explicativas, etc.)
 % con mayor facilidad y menos esfuerzo que un tutor humano.
 
-Virtual worlds (like Second Life4) are being rapidly incorporated into
-education, both initial and university~\cite{Doswell05,molk:lear09}. Its main
-attraction is to provide opportunities that are
-difficult or impossible to provide in today's world (for example, financial
-constraints or because the experience is dangerous for the observer). Moreover,
-the use of a virtual tutor has certain advantages over a human tutor.
-Engwall~\shortcite{engwall1020} mentioned the following. (1) Time of
-practice: the chance to practice the
-new language is essential for learning, and a virtual tutor practice provides
-only limited opportunities for technological resources. (2) Prestige: a student
-may feel embarrassed about making mistakes against a human tutor, and thus limit
-their capacity to speak in foreign language. (3) Augmented Reality: a virtual
+Virtual worlds (like Second Life) are being rapidly incorporated into
+education, both initial and superior~\cite{Doswell05,molk:lear09}. The use of a
+virtual tutor has certain advantages over a human tutor.
+Engwall~\shortcite{engwall1020} mentioned the following. (1) Ammount of
+practice: the chance to practice the new language is essential for learning, and
+a virtual tutor provides opportunities only limited by the
+technological resources. (2) Prestige: a student
+may feel embarrassed about making mistakes with a human tutor, and this
+might limit his willingness to speak in the foreign language. (3) Augmented
+Reality: a virtual
 tutor can provide additional material (eg, examples in context, explanatory
-images, etc.). With greater ease and less effort than a human tutor.
+images, etc.) with less effort than a human tutor.
 
 % Para estimar la eficacia de estos sistemas de tutoring se har\'a una
 % evaluaci\'on comparativa (i.e., con otros
@@ -591,11 +586,10 @@ images, etc.). With greater ease and less effort than a human tutor.
 % estudio es establecer los aspectos del tutor m\'as importantes para un
 % estudiante de idiomas e identificar el conjunto de m\'etricas relevantes.
 
-To estimate the effectiveness of these systems will be tutoring benchmark (ie,
-with other existing tutoring systems) or a user-oriented evaluation to be used,
-for example, students at the university where the project is developed. The main
-challenge of this study is to establish the most important guardian of a student
-of languages and identify the relevant set of metrics. 
+To estimate the effectiveness of our system we will make a comparative
+evaluation (with other existing tutoring systems) and a user-oriented evaluation
+The main challenge of this study is to establish the most important features for
+a language tutor and identify the relevant set of metrics. 
 
 
 
