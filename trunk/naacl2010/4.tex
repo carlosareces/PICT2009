@@ -1,101 +1,27 @@
+This project aims to achieve a balance between a system which is at the 
+same time sufficiently generic to be applicable in different areas, and 
+specific enough in order to benefit from the efficient use of existing 
+techniques for knowledge management, planning and natural language processing.
 
+The resulting system could be used in different applications. It could be used, 
+for example, in electronic commerce providing 
+assistance on the web for buying a product; in technical support helping a
+novice user to fix a problem; or as a virtual tutor for learning foreign 
+languages. 
 
-% El objetivo \'ultimo de este proyecto es dise\~nar un sistema de di\'alogo
-% hombre-computadora con soporte para interacci\'on en tres dimensiones (3D) que
-% genere autom\'aticamente instrucciones en lenguaje natural para guiar  al
-% usuario durante la ejecuci\'on de una tarea determinada. Este proyecto apunta
-% a obtener un balance entre un sistema de uso general (aplicable en
-% diferentes \'ambitos) y un sistema lo suficientemente espec\'ifico
-% como para permitir el uso efectivo de las t\'ecnicas actuales de
-% gesti\'on del conocimiento, planning y procesamiento de lenguaje
-% natural (PLN).
+Implementing a dialogue system is a multidisciplinary effort. In this project
+we will focus our research efforts in the following areas:
 
-% The ultimate goal of this project is to design a dialogue system with
-% human-computer interaction support for three dimensional (3D) to automatically
-% generate natural language instructions to guide the user during the execution
-% of a task. 
-
-This project aims to achieve a balance between a system which is generic in the
-sense that it is applicable in different areas, and a specific enough in order
-to allow for the efficient use of existing techniques for knowledge management,
-planning and natural language processing (NLP).
-
-% El sistema resultante podr\'ia utilizarse en distintas situaciones, a modo de
-% ejemplo:
-% en comercio electr\'onico  al usarse como avatar de asistencia en la web, en
-% soporte t\'ecnico al proveer ayuda al usuario no experto, en
-% control de dispositivos por voz al usarse en sistemas de di\'alogo embebidos,
-% o
-% en la ense\~nanza a distancia al constituir un tutor virtual para el
-% aprendizaje
-% de lenguas extranjeras. Esta \'ultima es la tarea seleccionada para testear
-% nuestro prototipo. La eficacia y adecuaci\'on del prototipo para
-% tal tarea puede ser estimada de diferentes formas. Por un lado, se puede
-% realizar 
-% una evaluaci\'on comparativa con
-% otros sistemas existentes. Por otra parte, estudiantes de la facultad donde se
-% desarrollar\'a
-% el presente proyecto pueden participar en una evaluaci\'on orientada al
-% usuario.
-
-The resulting system could be used in different applications in which the
-system needs to give instructions. For example in electronic commerce providing 
-assistance on the web for buying a product, in technical support helping a
-novice user to fix a problem, and in language learning by providing a
-virtual tutor for learning foreign languages. The latter is the task selected to
-test our prototype. The effectiveness and suitability of a prototype for such a
-task can be estimated in different ways. On the one hand, we will compare it
-with other existing and similar systems. On the other hand, we will
-carry out a user evaluation. 
-
-% A fin de obtener un sistema como el descripto anteriormente, este proyecto
-% propone estudiar las tres \'areas detalladas a continuaci\'on, las cuales son 
-% fundamentales para el desarrollo de cualquier sistema de di\'alogo:
-
-Implementing a dialogue system is a multidisciplinary effort. During the
-development of our dialogue system we will particularly concentrate our research
-efforts in the following areas:
-
-% \paragraph{Pragm\'atica:} La pragm\'atica es un \'area interdisciplinaria a
-% la que contribuyen teor\'ias ling\"u\'isticas (e.g., implicaturas
-% conversacionales~\cite{grice75}), sociol\'ogicas (e.g., an\'alisis
-% conversa\-cio\-nal~\cite{schegloff87b}) y filos\'oficas (e.g., teor\'ia de los
-% actos
-% de habla~\cite{austin62}). Su objetivo es estudiar c\'omo el contexto (en el
-% que la conversaci\'on esta situada) contribuye al significado (de cada cosa
-% que
-% se diga durante esa conversaci\'on). La transmisi\'on de significado depende
-% no
-% s\'olo de la informaci\'on ling\"u\'istica (entidades en foco, reglas
-% gramaticales y morfol\'ogicas, etc.), sino tambien extraling\"u\'istica
-% (situaci\'on f\'isica donde la comunicaci\'on est\'a situada, experiencias
-% previas de los hablantes, objetivo de la conversaci\'on, etc.). Por lo tanto,
-% una misma oraci\'on puede significar cosas diferentes en distintos contextos;
-% el
-% \'area de pragm\'atica estudia el proceso por el cual una oraci\'on es
-% desambig\"uada usando su contexto. En pragm\'atica se distingue entre
-% oraci\'on
-% (forma gramatical que toma el acto ling\"u\'istico) y enunciado (oraci\'on
-% m\'as su
-% contexto). La habilidad de entender una oraci\'on usando su contexto, es
-% decir,
-% la habilidad de entender un enunciado, se conoce como competencia
-% pragm\'atica.
-% Explicar la competencia pragm\'atica implica explicar c\'omo una persona hace
-% inferencias sobre una oraci\'on y su contexto para interpretar adecuadamente
-% el
-% enunciado que el emisor intenta transmitir. 
-
-\paragraph{Pragmatics:} Pragmatics is an interdisciplinary field which
+\paragraph{Pragmatics} is an interdisciplinary field which
 integrates insights from linguistics (e.g., 
 conversational implicatures~\cite{grice75}),
 sociology (e.g., conversational analysis~\cite{schegloff87b}) and
 philosophy (e.g., theory of speech acts~\cite{austin62}). It aims to explore how
 the context (in which a conversation is situated) contributes to the meaning (of
 everything that is said during that conversation). The meaning conveyed during
-a conversation depends not only of linguistic information (entities in focus,
-grammatical and morphological rules, etc.) but also from extralinguistic
-information (physical situation where the conversation is located, previous
+a conversation depends not only on linguistic information (entities in focus,
+grammatical and morphological rules, etc.) but also on extralinguistic
+information (physical situation of conversation, previous
 experiences of speakers, etc.). As a result, the same sentence may mean
 different things in different contexts. The area of pragmatics studies the
 process by which a sentence is disambiguated using its context. In pragmatics,
@@ -105,123 +31,90 @@ to understand a sentence using its context, i.e. the ability to understand an
 utterance, is called pragmatic competence. Explaining the pragmatic competence
 involves explaining how a person makes inferences about a sentence and its
 context to properly interpret the meaning that the speaker intends to convey.
-% 
-% Para que un sistema de di\'alogo interact\'ue de una forma natural con sus
-% usuarios, debe demostrar habilidad pragm\'atica. Por lo tanto, dicho sistema
-% debe definir (1) qu\'e tipo de informacion contextual se debe representar y
-% (2)
-% qu\'e tareas de inferencia sobre la oraci\'on y el contexto son necesarias
-% para
-% interpretar un enunciado. Hacer estas dos tareas de forma correcta tendr\'a un
-% impacto crucial sobre el desempe\~no de un sistema como el que proponemos
-% desarrollar. En dicho sistema es indispensable que las oraciones hagan
-% expl\'icita la cantidad de informaci\'on justa: si la informaci\'on es
-% demasiada, se retrasar\'a y aburrir\'a al usuario, si la informaci\'on es muy
-% poca, el usuario no sabr\'a c\'omo llevar a cabo la tarea y cometer\'a
-% errores. 
 
 A dialogue system needs to have pragmatic capabilities in order to interact in a
-natural way with its users. Therefore, the system must define (1) what kind of
-contextual information should be represented and (2) what inference tasks on a
-sentence and context are necessary in order to interpret an utterance. Doing
-these tasks correctly will have a crucial impact on the performance of a system
+natural way with its users. In particular, a system must define what kind of
+contextual information should be represented; and what inference tasks on a
+sentence and context are necessary in order to interpret an utterance. Properly 
+identifying this issues will have a crucial impact on the performance of a system
 like the one we propose to develop. In such a system it is indispensable that
-the sentences makes explicit the right ammount of information: if
-information is too much, the user will be delayed and get bored, if the
-information is too little, the user will not know how to perform the task and
-will make mistakes.
+sentences makes explicit the right amount of information: too much information
+will delay and bore the user, but if the information is not enough the user 
+will not know how to perform the task and make mistakes.
 
-% \paragraph{Inferencia:} Podemos entender como
-% inferencia toda operaci\'on que transforme informaci\'on \emph{impl\'icita} en
-% \emph{expl\'icita}.  Esta definici\'on es lo suficientemente general 
-% como para cubrir tareas que van desde la inferencia l\'ogica (i.e.,
-% deducci\'on 
-% en un lenguaje formal), hasta tareas de inferencia habituales en inteligencia
-% artificial (e.g., planning e inferencia no mon\'otona), y operaciones
-% estad\'isticas (por
-% ejemplo obtener estimadores sobre un conjunto de datos).  Un sistema de
-% di\'alogo realiza continuamente operaciones de inferencia. Por un lado, 
-% se necesita inferencia para
-% interpretar la informaci\'on recibida e incorporarla al repositorio de datos,
-% y por otro, para decidir qu\'e parte de la informaci\'on disponible se debe
-% transmitir.
+One of the major contributions of the project in this area will be a virtual 
+laboratory for pragmatic theories that consist of a controlled environment 
+for studying the
+interaction set in a world where physical actions and language intermingle.
 
-\paragraph{Inference:} Inference can be understood as any operation that
+The prototype will allow unidirectional investigate the impact of different
+policies to give instructions (post or pre-order on the tree structure of the task)
+on the successful completion of the task. Such studies have been performed
+previously (e.g.,~\cite{foster-etal-ijcai2009}) but assuming a predetermined
+task. Since our prototype allows the specification of the virtual world,
+possible actions and the goal to achieve, we can determine when the impact
+resulting from the use of a particular policy is dependent on the task.
+
+The prototype will allow us to investigate the two-way phenomenon repair the
+short and long term, designing and evaluating a prediction system repairs
+contextualized. These repairs are usually caused by conversational implicatures.
+Modeling these implicatures in a generic dialogue system is difficult. However,
+since the present prototype provides a situated interaction and restricted to
+the virtual world will be possible to test the relationship between
+implicatures, the type of repairs that give rise and inference tasks necessary
+to predict them. 
+
+\paragraph{Inference} can be understood as any operation that
 transforms implicit information in explicit information. This definition is
 general enough to cover tasks ranging from logical inference (i.e., deduction in
 a formal language) to inference tasks common in AI (e.g., planning and
 non-monotonic inference), as well as statistical operations (e.g. obtaining
 estimators on a data set). A dialogue system has to
 continually perform inference operations. On the one hand, inference is needed
-to interpret the information received and incorporate it to the data repository,
-and, on the other hand, it is needed in order to decide how much of the
-available information should be conveyed.
-
-%   El problema mismo de decidir qu\'e tipo de representaci\'on l\'ogica y qu\'e
-% tipo de inferencia utilizar  en una determinada situaci\'on  es complejo
-% (l\'ogica proposicional vs.\ l\'ogica de primer
-% orden, validez vs.\ chequeo de modelos, inferencia l\'ogica vs.\ inferencia
-% estad\'istica). Adem\'as las
-% tareas de inferencia en s\'i son computacionalmente costosas.  El desaf\'io en
-% este caso es encontrar el compromiso adecuado entre la representaci\'on de la
-% informaci\'on y el m\'etodo de inferencia a utilizar.
+to interpret the information received from the user and incorporate it to 
+the data repository of the system. On the other hand, it is also needed in order 
+to decide how much of the
+available information should be conveyed when addressing the user.
 
 The very problem of deciding what kind of logical representation and what type
 of inference to use in a given situation is complex (propositional logic vs.
-First-order logic, validity vs. model checking, logical inference vs.
-statistical inference). Furthermore inference tasks themselves are
-computationally expensive. The challenge here is to find the appropriate
+first-order logic, validity vs. model checking, logical inference vs.
+statistical inference). Independently of which type of inference it is used, they are usually computationally expensive. The challenge here is to find the appropriate
 balance between the expressivity of the representation formalism and the
 cost of the required inference methods.
 
+The main contribution of the project in the area of logic and inference is in
+the design, development and planning study of algorithms. A typical planning
+system takes three inputs - an initial state, a specification of possible
+actions and an expected objective - and returns a sequence of actions (a plan)
+that when applied sequentially to the initial state, ends in a state that
+satisfies the goal order. Different methods to obtain a scheme have been studied
+(forward chaining, backward chaining, coding in terms of propositional
+satisfiable, etc..) And are currently deployed systems that can solve this task
+efficiently.
 
-% \paragraph{Evaluaci\'on:} La evaluaci\'on de sistemas de generaci\'on de
-% lenguaje natural es una de las m\'as dif\'iciles dentro del \'area del PLN,
-% dado
-% que una idea puede expresarse de muchas formas, todas ellas correctas. En
-% general, determinar la calidad de una frase generada no puede hacerse de
-% manera
-% simple y directa, por ejemplo, comparando el resultado del sistema con un
-% patr\'on (en Ingl\'es \emph{gold standard}). El problema de la falta de
-% patrones es
-% compartido con otra \'area del PLN, la Traducci\'on Autom\'atica (TA), en la
-% que se han propuesto diversas metodolog\'ias para la evaluaci\'on de sistemas 
-% que pueden clasificarse en directas e indirectas. 
-% Una metodolog\'ia directa aplica alguna m\'etrica al texto generado por un
-% sistema. Una metodolog\'ia indirecta, en cambio, eval\'ua la perfomance del 
-% sistema a trav\'es de la utilizaci\'on del texto generado para realizar alguna
-% tarea. Sin
-% embargo, en ninguna de estas \'areas existe una metodolog\'ia aceptada como
-% est\'andar y demostrada eficaz de manera general.
+However, most of these systems assume conditions that simplify the problem
+(deterministic atomic time, complete, absence of a background theory, etc.). And
+return a single plan. In the course of the project will investigate algorithms
+that eliminate some of the simplifications (in particular, investigate the case
+of planning with incomplete information and theory based on a background) and
+also provide extended services planning (return on alternative plans, plans
+minimum conditional plans, incomplete plans, possible actions in a given state,
+etc.).
 
 \paragraph{Evaluation:} The evaluation of natural language generation systems
-is one of the
-most difficult ones in the area of NLP; an idea can be expressed in many
-forms, all of them correct. In general, determining the quality of a
-generated sentence can not be done simply and directly, for example, comparing
-the result with a gold standard. The problem of lack of gold standards is shared
-with another area of the NLP, namely the Machine Translation (MT), for which
-various evaluation methodologies, which can be classified into direct and
-indirect, have been proposed. A direct method applies a metric to the text
-generated by the system. An indirect method evaluates the perfomance of the
+is one of the most difficult tasks in the area of NLP. A given concept can be 
+expressed in many different ways, all of them correct. 
+Hence, it is not possible to determining the quality of a
+generated sentence simply by, for example, comparing 
+the result with a gold standard. The problem of absence of gold standards is shared
+with another area of the NLP, namely Machine Translation (MT), for which
+various evaluation methodologies, both direct and indirect, have been proposed. 
+Direct methods applies a metric to the text
+generated by the system, while indirect methods evaluates the performance of the
 system through the use of the generated text to perform some task. However, 
-none of these methods there is a standard and accepted methodology which has
+none of these methods is a standard and accepted methodology which has
 been generally proven to be effective.
-
-% Dado que el objeto a evaluar en este proyecto es un sistema que interact\'ua
-% via la generaci\'on de instrucciones en lenguaje natural, podemos
-% determinar su performance por medio de evaluaciones cuantitativas (como el
-% tiempo de finalizaci\'on de la tarea), cualitativas (e.g., la calidad de
-% las interacciones) y basadas en el contexto (evaluaciones orientadas al
-% usuario
-% y sus necesidades en una situaci\'on particular). Dada la experiencia previa
-% de los
-% integrantes del proyecto, es de especial inter\'es estudiar la  portabilidad y
-% aplicaci\'on
-% de t\'ecnicas de evaluaci\'on del dominio de la TA y la interacci\'on
-% multimodal
-% humano-computadora, al sistema  planteado en
-% este proyecto (en su totalidad y por componentes).
 
 Since what is being evaluated in this project is a system that interacts via the
 generation of natural language instructions, we can determine its performance
@@ -233,3 +126,63 @@ interesting for us to study the portability of evaluation
 techniques from the domain of MT
 and multimodal human-computer interaction to the evaluation of the system
 proposed in this project.
+
+In this area it is expected that one of the main contributions is the
+integration of assessment techniques from different areas on a methodology for
+evaluating dialog systems for virtual environments so as to estimate its
+usability and effectiveness. This methodology could be used both to determine
+whether a system is suitable for a task type and user, and to compare the
+performance of different systems of the same type.
+
+Another contribution is the study and application of appraisal standards
+developed software systems, creating a standardized quality model and proposing
+a set of appropriate metrics to assess each of the aspects of the model. This
+work will also include a thorough study of several metrics in late in the model
+include some tips on quality metrics chosen, this study is considered a
+meta-evaluation of the proposed model.
+
+Finally, the annotated corpus of human-human interaction, over the corpus of
+human-machine interaction collected during the project be made public. Such
+corpora will serve, for example, to design more general platform for evaluating
+dialog systems, which go beyond the aspects evaluated by currently existing
+platforms as GIVE.
+
+\paragraph{Impact in the Argentinean Landscape:} The topics investigated in the framework of this project are of relevance in the
+current Argentine landscape for at least two reasons.
+
+On the one hand, the project integrates and develops various key aspects of the
+area of computational linguistics (syntax, semantics, pragmatics,
+representation, inference, evaluation). The area of computational linguistics
+and its application to automatic processing of natural language have had a major
+international development in recent years, systems with applications like Web
+search, translation systems and abstract machines, voice interfaces, etc. .
+However, the area is almost nonexistent today in Argentina. This project will be
+among the contributions that aim to reverse this situation. Moreover, the
+ultimate goal of this project is to investigate the use of the platform
+developed in the area of distance education (specifically, as a platform for
+language learning).
+
+Clearly, distance education is a valuable resource to overcome the problem of
+centralization of educational resources in the country. However, developing
+appropriate tools in this specific area is difficult.
+
+To develop distance learning systems is essential to model the user's learning
+progress. This requires a system capable of being aware of the evolution of the
+user, and taking into account their achievements and their problems. This type
+of interaction between user and system can be modeled as a dialogue, which
+records the acquired knowledge context (the user about the course material, and
+system to user). Managing this kind of dialogue is particularly interesting,
+since the system must be able to interpret requirements, and generate
+appropriate responses, non-experts whose knowledge evolves during the
+interaction. Moreover, the system must be able to properly represent both the
+information concerning the course material, such as information concerning the
+evolution of the user. For example, the system must be able to diagnose what
+part of the course material should be reviewed from the wrong answers of the
+user. Finally, the system must be able to evaluate the user interaction in order
+to decide which learning objectives were achieved. The theoretical and practical
+results obtained during the project directly contribute to solving these
+problems.
+
+
+
+
