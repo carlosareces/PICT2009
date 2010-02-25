@@ -11,11 +11,20 @@
 \usepackage{url}
 \setlength\titlebox{6.5cm}    % Expanding the titlebox
 
-\title{Dialogue systems for virtual environments}
+%% Define a new 'leo' style for the package that will use a smaller font.
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\scriptsize\ttfamily}}}
+\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{leo}
+
+
+\title{Generating Instructions in Virtual Environments}
 
 \author{Luciana Benotti, Paula Estrella, Carlos Areces \\
  Natural Language Processing Group \\
-Computer Science Department \\
+Secci\'on de Ciencias de la Computaci\'on \\
 FaMAF (Facultad de Matem\'atica, Astronom\'ia y F\'isica) \\
 Universidad Nacional de C\'ordoba, Argentina \\
   {\tt surname@famaf.unc.edu.ar}
@@ -34,43 +43,19 @@ Universidad Nacional de C\'ordoba, Argentina \\
 \end{abstract}
 
 \section{Introduction}
-
 \input{3}
 
-
-\section{General Objectives}
-
-\input{4}
-
-\section{Detailed Objectives}
-
+\section{Description of the Project}
 \input{5}
 
-% La secciones 6 (metodologia de trabajo), 7 (cronograma de trabajo) y 10
-% (diseminacion) no las inclui
+\section{Impact of the Project}
+\input{4}
 
-\section{Impact}
-
-\subsection{Scientific impact}
-
-\input{8}
-
-\subsection{Socio-Economic Impact}
-
-\input{9}
-
-\section{Collaborations}
-
-\subsection{Authors' background}
-
+\section{Introducing the Research Group}
 \input{12}
 
-\subsection{Local Collaborations}
-
+\section{Ongoing and Future Collaborations}
 \input{11}
-
-\subsection{International collaboration}
-
 \input{13}
 
 \bibliographystyle{naaclhlt2010}

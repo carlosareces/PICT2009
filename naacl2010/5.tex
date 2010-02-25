@@ -1,170 +1,55 @@
 
-% 
-% En este proyecto prestaremos principal atenci\'on al sistema encargado de la
-% generaci\'on de  instrucciones e interpretaci\'on de las respuestas del
-% usuario.
-% Dicho sistema deber\'a ser capaz de una interacci\'on natural y debe poder
-% adaptarse a
-% posibles errores de interpretaci\'on o ejecuci\'on de las instrucciones, dando
-% instrucciones correctivas cuando sea necesario. El usuario se encontrar\'a
-% en un universo en el que podr\'a interactuar con objetos y explorar el
-% ambiente
-% virtual provisto. En este mundo virtual 3D, el usuario intentar\'a seguir las
-% instrucciones
-% provistas por el sistema realizando acciones f\'isicas.
+%\fixme{C: This intro looks out of place.}
+%Given the nature of the interaction we model, the system must
+%be capable of adapting to possible errors of interpretation
+%or execution of the instructions, giving corrective instructions when necessary.
+%Repairing misinterpretations is challenging, we will face this challenge by
+%designing our system in successive stages of increasing complexity.
+%
+%Initially, the flow of linguistic information will be one-way, from the
+%system to the user, so the user can not ask for any help. At later stages of the
+%project, the unidirectional model will be extended to allow for bidirectional
+%language exchange: for example, the user may request clarifications or redefine
+%the objective to be achieved using natural language.
+%
+%The generation of instructions for a specific domain requires linguistic
+%information at different levels. At the morphological and syntactic level a
+%grammar of the chosen language (Spanish) is required. At the semantic
+%level a repository of lexical information organized ontologically is needed. At
+%the pragmatic level, we need a formal description of the possible actions in the
+%domain (with their preconditions and effects), as well as information about the
+%state of the task.
 
-Given the nature of the interaction we model, the system must
-be capable of adapting to possible errors of interpretation
-or execution of the instructions, giving corrective instructions when necessary.
-Reparing misinterpretations is challenging, we will face this challenge by
-designing our system in sucessive stages of increasing complexity.
+%This domain dependent information is used by various components of the
+%dialogue system that manages the user interaction. In a typical system, this is
+%as detailed below. In the direction system $\rightarrow$ user, the component
+%responsible for \emph{content planning} generates a sequence of instructions
+%relevant to the current moment of the interaction, then the \emph{knowledge
+%management} component updates the contextual information and, finally, the
+%component in charge of \emph{generating the instruction} transmits the 
+%instructions as natural language expressions. In the
+%opposite direction, i.e. user $\rightarrow$ system, the component called
+%\emph{discretized} transforms the continuous flow of information obtained from
+%user behavior in discrete actions relevant to the task at hand, while the
+%components of content planning and knowledge management are concerned with
+%managing the current context and detecting possible errors.
 
-% En una primera etapa, el modelo a utilizar permitir\'a el flujo de
-% informaci\'on
-% ling\"u\'istica de manera unidireccional, desde el sistema hacia el usuario,
-% por lo que
-% el usuario no podr\'a pedir ning\'un tipo de ayuda.  La restricci\'on a un
-% modelo unidireccional tiene como objetivo
-% simplificar la representaci\'on y el manejo del contexto de la interacci\'on.
-% En etapas m\'as avanzadas del proyecto, el modelo unidireccional ser\'a
-% extendido para
-% permitir intercambio ling\"u\'istico bidireccional: por ejemplo, el usuario
-% podr\'a
-% pedir clarificaciones o redefinir el objetivo a alcanzar, en ambos casos
-% usando
-% lenguaje natural.
+%\subsection{Main Tasks of the Project}
 
-Initially, the flow of linguistic information will be one-way, from the
-system to the user, so the user can not ask for any help. At later stages of the
-project, the unidirectional model will be extended to allow for bidirectional
-language exchange: for example, the user may request clarifications or redefine
-the objective to be achieved using natural language.
-
-% La generaci\'on de instrucciones para un dominio espec\'ifico requiere
-% informaci\'on  ling\"u\'istica a distintos niveles.
-% A nivel morfol\'ogico y sint\'actico se requiere una
-% gram\'atica del lenguaje seleccionado (Espa\~nol en este caso). A nivel
-% sem\'antico se necesita un repositorio de informaci\'on l\'exica organizada en
-% forma ontol\'ogica. A nivel pragm\'atico es necesaria una descripci\'on formal
-% de
-% las
-% acciones posibles en el dominio (con sus precondiciones y efectos), e
-% informaci\'on del estado de la interacci\'on.
-
-The generation of instructions for a specific domain requires linguistic
-information at different levels. At the morphological and syntactic level a
-grammar of the choosen language is required (namely, Spanish). At the semantic
-level a repository of lexical information organized ontologically is needed. At
-the pragmatic level, we need a formal description of the possible actions in the
-domain (with their preconditions and effects), as well as information about the
-state of the task.
-
-% Esta informaci\'on relacionada a un dominio dado es utilizada por distintos
-% componentes del sistema de di\'alogo que
-% gestiona la interacci\'on con el usuario. En un sistema t\'ipico, esto
-% sucede como se detalla a continuaci\'on.  En la direcci\'on sistema
-% $\rightarrow$
-% usuario, el componente encargado de \emph{planificar el contenido} genera una
-% secuencia de
-% instrucciones relevantes al momento de la interacci\'on, luego el componente
-% encargado de  \emph{gestionar el conocimiento} actualiza la informaci\'on
-% contextual y,  finalmente, el componente encargado de
-% \emph{generar instrucciones}  transmite las mismas como expresiones
-% de lenguaje natural.  En la direcci\'on opuesta, es decir usuario
-% $\rightarrow$
-% sistema,  el componente denominado \emph{discretizador}
-% transforma el flujo continuo de informaci\'on derivada del comportamiento del
-% usuario, en acciones relevantes a la tarea en cuesti\'on, mientras que
-% los componentes de planificaci\'on del contenido y gesti\'on del conocimiento
-% se ocupan
-% de mantener el contexto actualizado y de detectar posibles errores.
-
-This domain dependent information is used by various components of the
-dialogue system that manages the user interaction. In a typical system, this is
-as detailed below. In the direction system $\rightarrow$ user, the component
-responsible for \emph{content planning} generates a sequence of instructions
-relevant to the current moment of the interaction, then the \emph{knowledge
-management} component updates the contextual information and, finally, the
-component in charge of \emph{generating the instruction} transmits the 
-instructions as natural language expressions. In the
-opposite direction, i.e. user $\rightarrow$ system, the component called
-\emph{discretized} transforms the continuous flow of information obtained from
-user behavior in discrete actions relevant to the task at hand, while the
-components of content planning and knowledge management are concerned with
-managing the current context and detecting possible errors.
-
-% En la siguiente secci\'on se detalla el plan de trabajo propuesto para llevar
-% a
-% cabo los objetivos planteados (la Secci\'on 8
-% provee un cronograma completo), para luego discutir una posible aplicaci\'on
-% del
-% sistema a desarrollar.
-
-In the next sections, we detail the workplan for carrying out the objectives
-stated above and then we discuss a the application of the system that we plan
-to investigate. 
-
-\subsection{Tasks}
-% 
-% Dise\~nar e implementar todos estos componentes empezando desde cero
-% requerir\'ia un esfuerzo prohibitivo, por lo que proponemos utilizar recursos
-% disponibles de forma libre y gratuita. En particular, usaremos la plataforma
-% desarrollada como parte de la competencia \emph{Generating Instructions in
-% Virtual Environments}
-% (GIVE)\footnote{GIVE se encuentra disponible libremente en
-% \url{http://www.give-challenge.org}, y posee el respaldo de los grupos de
-% inter\'es SIGSEM, SIGDIAL, y SIGGEN de la \emph{Association for Computational
-% Linguistics} (ACL).} que
-% provee una plataforma b\'asica para este tipo de sistemas.
-
-Designing and implementing all the necessary components of a
-situated instruction giving system from scratch would require a prohibitive
-effort, therefore we will make use of resources available for free. In
-particular, we will use the platform developed as part of
-the challenge \emph{Generating Instructions in Virtual Environments}
-(GIVE)\footnote{GIVE is freely available at \url{http://www.give-challenge.org}
-and has the support of interest groups SIGSEM, SIGDIAL, and SIGGEN of the
-Association for Computational Linguistics (ACL).} which provides a basic
+We will use the platform developed as part of
+the challenge \emph{GIVE, Generating Instructions in Virtual Environments}\footnote{\url{http://www.give-challenge.org}}~\cite{byron09} which provides a basic
 platform for this type of system.
-
-% El objetivo principal de GIVE~\cite{byron09} es actuar como medio de
-% evaluaci\'on de sistemas de generaci\'on
-% de lenguaje natural. En esta competencia, los sistemas se eval\'uan de forma
-% homog\'enea dado que todos los sistemas participantes utilizan los mismos
-% recursos provistos por los organizadores.
-% En el escenario propuesto por GIVE, el usuario
-% humano lleva acabo una tarea de ``b\'usqueda del tesoro" en un entorno
-% virtual 3D y el trabajo del sistema participante es proveer, en tiempo
-% real, instrucciones en lenguaje natural que ayuden al usuario
-% a encontrar el tesoro escondido.  Por lo tanto, GIVE no s\'olo eval\'ua
-% la generaci\'on de lenguaje natural sino tambi\'en la habilidad del
-% sistema de participar en una interacci\'on situada en un entorno 3D.
-
-The main aim of GIVE~\cite{byron09} is to act as an evaluation framework for
-natural language generation systems. In the GIVE Challenge the systems are
-evaluated homogeneously since all the participating systems use the same
-resources provided by the organizers. In the scenario proposed by GIVE, a
+The main aim of GIVE is to act as an evaluation framework for
+natural language generation systems. 
+%In the GIVE Challenge the systems are
+%evaluated homogeneously since all the participating systems use the same
+%resources provided by the organizers. 
+In the scenario proposed by GIVE, a
 human user carries out a task of ``treasure hunt'' in a 3D virtual environment
 and the task of the generation system is to provide real-time, natural
 language instructions that help the user find the hidden treasure. So GIVE not
 only evaluates the generation of natural language but also the system's ability
 to participate in a real-time interaction situated in a 3D environment.
-% 
-% La plataforma GIVE es, entonces, una herramienta propicia para
-% investigar los distintos aspectos de la interacci\'on situada en un entorno
-% virtual que se enumeran a continuaci\'on: el problema de realizaci\'on
-% sint\'actica y morf\'ogica de las
-% instrucciones (en Ingl\'es, \emph{surface realization});
-% la representaci\'on del conocimiento existente en el contexto de
-% interacci\'on (contexto del discurso, ontolog\'ias, acciones posibles);
-% el tipo de inferencia requerido por las tareas involucradas
-% (planning, construcci\'on y chequeo de modelos); y
-% las reglas pragm\'aticas de interacci\'on requeridas por la tarea
-% (administraci\'on de la carga cognitiva, actualizaci\'on y uso de la
-% informaci\'on contextual). GIVE provee, adem\'as, 
-% herramientas para registrar todos los detalles de la
-% interacci\'on, permitiendo de esta forma obtener f\'acilmente un corpus de
-% interacci\'on en entornos virtuales, anotado autom\'aticamente.
 
 The GIVE platform is thus an appropriate tool for starting to investigate
 various aspects of an interaction situated in a virtual environment: the problem
@@ -178,14 +63,6 @@ Moreover, GIVE provides tools to record all details of the interaction, thus
 allowing to easily obtain a corpus of interaction in virtual environments
 annotated automatically.
 
-% Para la definici\'on correcta de las pol\'iticas de interacci\'on que
-% utilizaremos en nuestro prototipo es necesario
-% contar con un corpus que provea ejemplos de interacci\'on t\'ipica sobre la
-% tarea~\cite{HCRC-93,byron-06}.  Usando herramientas provistas por GIVE,
-% recopilaremos un corpus de interacci\'on humano-humano (uni y bidireccional)
-% que contendr\'a la interacci\'on lig\"u\'istica alineada con las acciones
-% realizadas en el mundo virtual.
-
 For the correct definition of the interaction policies of our prototype we need
 a corpus that provides examples of typical interactions the domain. The GIVE
 platform also provides tools for collecting such corpus, namely a Wizard of Oz
@@ -194,46 +71,11 @@ task in the GIVE domain. The collected corpus is automatically annotated
 aligning the linguistic interaction with the discretized actions in the virtual
 world. 
 
-% A partir del corpus recolectado comenzaremos el dise\~no,
-% implementaci\'on y testing de algoritmos de interacci\'on unidireccionales,
-% los 
-% cuales ser\'an integrados a la plataforma GIVE.
-% Existen tradicionalmente cuatro tareas que un sistema de generaci\'on
-% de instrucciones debe implementar: (1) planificaci\'on del contenido, (2)
-% generaci\'on
-% de expresiones referenciales, (3) gesti\'on del contexto de interacci\'on, y
-% (4) interpretaci\'on de las respuestas del usuario.
-
 From the collected corpus we will begin the design, implementation and testing
 of the unidirectional interaction algorithm. There are traditionally four tasks
 that a generation system must implement: (1) planning the content, (2)
 generation of referring expressions, (3) managing the interaction context, and
 (4) interpretation of user responses. 
-
-% \emph{(1) Planificaci\'on del contenido:} Para planificar el contenido a
-% generar
-% es necesario primero obtener un plan de
-% acciones que alcance el objetivo desde el estado actual. Dicho plan
-% contrendr\'a
-% acciones f\'isicas a ejecutar sobre el entorno. El segundo paso es decidir
-% c\'omo se transmitir\'a al usuario esta secuencia de acciones. Es decir,
-% se debe decidir cu\'antas acciones comunicar
-% por instrucci\'on y c\'omo agregarlas coherentemente. El
-% resultado del proceso de agregaci\'on de acciones (en Ingl\'es, \emph{action
-% agreggation}) 
-% es un \'arbol que describe la
-% estructura de la tarea a diferentes niveles de abstracci\'on. El tercer y
-% \'ultimo paso
-% es decidir c\'omo navegar el \'arbol de acciones para verbalizar las
-% instruciones (por ejemplo, en post o preorden~\cite{foster-etal-ijcai2009}).
-% En
-% este proyecto investigaremos
-% diferentes pol\'iticas de agregaci\'on (e.g., agregando acciones que manipulan
-% el mismo
-% objeto) y pol\'iticas no est\'andard de recorrido del \'arbol de acciones
-% (e.g.,
-% bajando a un
-% nivel menor de abstracci\'on en caso de malentendidos).
 
 \emph{(1) Content planning:} To plan the content to be generated it is first
 necessary to obtain a plan to reach the task goal from the current state.
@@ -249,26 +91,10 @@ different aggregation policies (e.g., aggregating actions that
 manipulate similar object) and non-standard policies of navitation of the tree
 (e.g., moving to a lower level of abstraction in case of misunderstandings).
 
-% Para obtener el plan de acciones, utilizaremos la tarea de inferencia de
-% planning~\cite{nau04}. GIVE provee un sistema de planning muy
-% limitado.  Existen sistemas de planning m\'as avanzandos (en particular,
-% que permiten el manejo de informaci\'on incompleta sobre el dominio)
-% como PKS\footnote{PKS est\'a disponible en
-% \url{http://homepages.inf.ed.ac.uk/rpetrick/research/pks/}}, pero
-% est\'an todav\'ia en desarrollo.  En general, el estado del
-% arte en el \'area de planning no cubre los requerimientos de nuestro
-% sistema.  Si bien existen sistemas optimizados que funcionan adecuadamente
-% en ciertas aplicaciones, ninguno provee servicios como la generaci\'on de
-% planes alternativos, o la generaci\'on de planes incompletos en caso de
-% ausencia de plan. Por lo que deberemos dise\~nar e implementar estas
-% extensiones a los algoritmos de planning. Estudiaremos tambi\'en el
-% comportamiento te\'orico (e.g., complejidad) de estos algoritmos.
-
 In order to get the plan, we use the inference task of planning~\cite{nau04}.
 GIVE provides a very limited planner. There are more advanced planners
 (in particular, to enable the handling of incomplete information on the domain)
-as PKS\footnote{PKS is freely available in
-\url{http://homepages.inf.ed.ac.uk/rpetrick/research/pks/}},
+as PKS\footnote{\url{http://homepages.inf.ed.ac.uk/rpetrick/research/pks/}},
 but such planning techniques are still under research. In general,
 the state of the art in the planning area does not cover the requirements of our
 system. While there are systems that work well when optimized for certain
@@ -277,24 +103,6 @@ plans, or the generation of incomplete plans in case of the absence of plan.
 Hence, we will have to design and implement these extensions to the planning
 algorithms. We will also study the theoretical behavior (e.g., complexity) of
 these new algorithms. 
-
-% \emph{(2) Generaci\'on de Expresiones Referenciales:} Una vez terminada la
-% fase
-% de planificaci\'on de contenido, la siguiente tarea
-% es la generaci\'on de expresiones referenciales. Esta tarea implica producir
-% una
-% frase que describa una entidad referenciable de forma tal que el usuario
-% la pueda identificar (e.g., ``el jarr\'on que est\'a sobre la mesa'').
-% Estas expresiones, para ser aceptables, deben ser similares a las que podr\'ia
-% producir una persona en condiciones normales (por ejemplo, no ser\'ia
-% aceptable,
-% ``el jarr\'on que no est\'a arriba de la silla ni arriba del
-% sof\'a ni abajo de la mesa'').  En~\cite{AKS08} se propone utilizar la
-% minimizaci\'on simb\'olica del modelo que representa
-% el estado del mundo, para as\'i obtener f\'ormulas l\'ogicas que describan
-% un\'ivocamente a cada objeto. En nuestro proyecto implementaremos este
-% m\'etodo
-% y lo evaluaremos dentro del sistema de di\'alogo.
 
 \emph{(2) Generating referring expressions:} Once the content planning is
 complete, the next task is the generation of referring expressions. This task
@@ -308,41 +116,16 @@ do the symbolic minimization model that represents the state of the world, in
 order to obtain logical formulas that describe each object uniquely. In our
 project we
 will implement this method and evaluate within the dialogue system.
-% 
-% \emph{(3) Gesti\'on del Contexto de Interacci\'on:} Para la gesti\'on del
-% contexto de interacci\'on utilizaremos, en un primer
-% momento, sistemas existentes de manejo de conocimiento (\emph{knowledge
-% mantainance
-% systems}) como
-% FaCT++~\cite{horr:fact99},
-% RACER~\cite{haar:race99} o Pellet~\cite{siri:pell06}, que soportan tareas de
-% definici\'on, mantenimiento y consulta de ontolog\'ias.  Estos sistemas
-% han sido utilizados como motores de inferencia
-% en numerosas aplicaciones en el \'area~\cite{franconi03,koller04} y,
-% en particular,  en aplicaciones dise\~nadas por miembros del equipo de
-% investigaci\'on~\cite{benotti09b}.  Una vez observado el
-% comportamiento de
-% estos motores de inferencia en la tarea, se analizar\'an sus limitaciones
-% e investigar\'an extensiones requeridas.
 
 \emph{(3) Management of the Interaction Context:} To manage the use of
-interaction context we will use existing knowledge mantainance systems such as
-RACER~\cite{haar:race99} or Pellet~\cite{siri:pell06}, which support tasks of
+interaction context we will use existing knowledge maintenance systems such as
+RACER\footnote{\url{http://www.racer-systems.com}} or Pellet\footnote{\url{http://clarkparsia.com/pellet}}, which support tasks of
 definition, maintenance and querying of ontologies. These systems have been used
 as inference engines in numerous applications in
-the area~\cite{franconi03,koller04} and, in particular
+the area and, in particular
 in applications designed by the authors~\cite{benotti09b}. Once we
 observe the behavior of these inference engines on the task, we will analyze
 its limitations and investigate the required extensions.
-% 
-% \emph{(4) Interpretaci\'on de las Respuestas del Usuario:} La
-% interpretaci\'on 
-% de las respuestas del usuario en el sistema unidireccional
-% es relativamente simple, y en una primera etapa utilizaremos el m\'odulo
-% discretizador provisto por GIVE.  Luego de la evaluaci\'on del sistema,
-% podremos determinar si este m\'odulo satisface o no los requerimientos de
-% nuestra tarea y cu\'ales son sus limitaciones.  En el sistema bidireccional,
-% en cambio, \'este es el m\'odulo que requerir\'a m\'as atenci\'on.
 
 \emph{(4) Interpretation of User Responses:} The interpretation of user
 responses in the unidirectional system is relatively simple, and in a first
@@ -350,36 +133,6 @@ stage, we will use the discretizer provided by GIVE. After evaluating the
 system, we can determine whether or not this module meets the requirements of
 our task and what are its limitations. In the bidirectional system, however,
 this is the module that will require more attention.
-% 
-% Por empezar, el sistema bidireccional debe ser extendido con capacidades de
-% procesamiento
-% de enunciados provenientes del usuario (an\'alisis sint\'actico,
-% construcci\'on
-% sem\'antica,
-% resoluci\'on de referencias, etc.).  Gracias a que, en este sistema,  los
-% objetos y las acciones
-% a los que el usuario se puede referir son los del entorno virtual,
-% el lenguaje a interpretar est\'a naturalmente restringido y es posible 
-% utilizar recursos para interpretaci\'on de lenguaje natural
-% existentes~\cite{kow06}.  Estudiaremos, en particular, dos
-% tipos espec\'ificios de contribuciones del usuario: pedidos de aclaraci\'on
-% de la \'ultima instrucci\'on dada, y redefinici\'on de objetivos.  Elegimos
-% este tipo de contribuciones dado que representan contribuciones del tipo
-% `reparaci\'on' a corto y largo plazo, respectivamente. Implementaremos las
-% reparaciones a corto plazo extendiendo el trabajo de~\cite{purver06}.  Para
-% las reparaciones a largo plazo utilizaremos los lineamientos
-% de~\cite{blaylock05a,blaylock05b}.  Obviamente, la integraci\'on de
-% capacidades
-% ling\"u\'isticas en la direcci\'on usuario $\to$ sistema implica no s\'olo
-% cambios en el m\'odulo de interpretaci\'on de las respuestas, sino que todos
-% los
-% componentes mencionados
-% anteriormente son afectados.  Por ejemplo, el m\'odulo de gesti\'on de la
-% informaci\'on debe ahora tambi\'en representar y mantener actualizada las
-% contribuciones ling\"u\'isticas del usuario; mientras que el m\'odulo de
-% planificaci\'on del contenido debe reestructurar el \'arbol de acciones
-% de la tarea cuando el usuario requiere una reparaci\'on a largo plazo.
-
 
 To start with, the bidirectional system should be expanded with capabilities
 for  processing statements coming from the user (namely, parsing, semantic
@@ -391,39 +144,11 @@ using Purver~\shortcite{purver06}'s approach. For long-term repairs will use the
 guidelines of~\cite{blaylock05a}. 
 \medskip
 
-% \noindent
-% Para determinar la calidad de los propotipos obtenidos se propone
-% estudiar la creaci\'on de un modelo de la calidad seg\'un los est\'andares de
-% evaluaci\'on de software ISO/IEC 9126 y 14528 \cite{ISO9126-1,ISO14598-1}, los
-% cuales fueron exitosamente aplicados al dominio de la TA, como lo muestra la
-% herramienta FEMTI (Framework for the Evaluation of Machine
-% Translation)\footnote{Disponible libremente en
-% \url{http://www.issco.unige.ch/femti/}}. FEMTI
-% \cite{Est2005} intenta guiar a los evaluadores hacia la creaci\'on de planes
-% de
-% evaluaci\'on parametrizables que incluyen diversos aspectos del sistema a
-% evaluar
-% y ofrece un conjunto de m\'etricas relevantes. La identificaci\'on de
-% m\'etricas
-% relevantes se puede realizar usando distintos m\'etodos, por
-% ejemplo bas\'andose en experiencias previas
-% \cite{paradise06,Chu2000,Litman2002}, realizando encuestas o especificaciones
-% de
-% requerimientos (como en
-% \cite{Lecoeuche98}) o bien recolectando estos datos a trav\'es de experimentos
-% llamados ``mago de Oz" (del Ingl\'es \emph{wizard of Oz}) donde el usuario
-% interact\'ua con un prototipo de sistema (posiblemente incompleto o reducido
-% en
-% funcionalidades) y un humano (el ``mago") detr\'as de la interface
-% responde como si lo hiciera el sistema \cite{Dahlback93,Fabbrizio05}.
-
-\noindent
 To determine the quality of the obtained propotypes we propose to study the
 creation of a model of quality assessment by the standards of software ISO/IEC
 9126 and 14528~\cite{ISO9126-1,ISO14598-1}, which were successfully applied to
 the MT domain, as shown in the tool FEMTI (Framework for the Evaluation of
-Machine Translation)\footnote{Freely available in
-\url{http://www.issco.unige.ch/femti/}}. FEMTI~\cite{Est2005}
+Machine Translation)\footnote{\url{http://www.issco.unige.ch/femti/}}. FEMTI~\cite{Est2005}
 try to guide the evaluators towards creating parameterized evaluation
 plans that include various aspects of the system to evaluate and offer a
 relevant set of metrics. The identification of relevant metrics can be performed
@@ -435,71 +160,20 @@ interacts with a prototype system (possibly incomplete or reduced in
 functionality) and a human (the ``Wizard'') behind the interface responds as if
 he were the system~\cite{Dahlback93,Fabbrizio05}.
 
-% Luego de elaborar un modelo de la calidad, se pueden aplicar diversas
-% metodolog\'ias para evaluar distintos aspectos del sistema. Seg\'un
-% corresponda,
-% se
-% pueden aplicar m\'etricas autom\'aticas, subjetivas (tambi\'en llamadas
-% ``humanas") o basadas en la tarea, tanto para evaluar la contribuci\'on de
-% cada
-% componente como la calidad del sistema en su totalidad.
-% Por otro lado, dado que se usar\'a la plataforma GIVE, se planea la
-% participaci\'on en el evento asociado, lo cual servir\'a como una fuente
-% adicional de informaci\'on acerca de los aspectos del sistema a mejorar.
-
 After developing a quality model, several methodologies to assess
 various aspects of the system can be applied: automatic metrics,
-subjective metrics (also called ``human") or matrics based on the task (both to
+subjective metrics or metrics based on the task (both to
 evaluate the contribution of each component as well as the quality of the whole
 system). On the other hand, since we will use the GIVE platform  we plan to
 participate in the associated Challenge, which will serve as an additional
 source of information about aspects of the system that need
-improvement.\footnote{One of the authors is participating in the current
-edition of the Challenge, namely GIVE-2.}
-
-% Una vez que el sistema de interacci\'on bidireccional fue evaluado y mejorado
-% con los resultados de esta evaluaci\'on,
-% se investigar\'a su utilizaci\'on
-% como tutor virtual de idiomas como describimos en la siguiente secci\'on.
+improvement.
 
 Once the two-way interaction system is evaluated and improved using the results
 of this evaluation, we will investigate its use as a virtual language tutor as
 described in the next section.
 
-% Durante todo el proyecto, nos ocuparemos de la diseminaci\'on de resultados y
-% lecciones aprendidas.  En particular, trabajaremos en la documentaci\'on del
-% sistema obtenido, en forma de manuales del usuario y del desarrollador que
-% incluyan una descripci\'on detallada de los algoritmos implementados con sus
-% puntos fuertes y d\'ebiles.
-% Los resultados te\'oricos y aplicados ser\'an presentados en conferencias
-% locales e internacionales,
-% y en revistas cient\'ificas pertinentes a las \'areas de
-% investigaci\'on afectadas.  Nuestros
-% planes de diseminaci\'on se definen en m\'as detalle en la Seccion~10.
-
-% Throughout the project, we will ensure the dissemination of results and
-% lessons
-% learned. In particular, we will work in your system documentation obtained in
-% the form of user manuals and developer to include a detailed description of
-% the
-% algorithms implemented with their strengths and weaknesses. The theoretical
-% and
-% applied results will be presented at local and international conferences and
-% in
-% journals relevant to the research areas concerned. Our plans to spread more
-% fully defined in Section 10. 
-
-
 \subsection{Aplications}
-
-% El resultado del proyecto ser\'a un sistema capaz de dar instrucciones
-% en lenguaje natural que deben ser llevadas a cabo por el usuario en un
-% entorno virtual 3D.  La tecnolog\'ia y los avances te\'oricos del proyecto
-% pueden utilizarse en distintas aplicaciones (en comercio electr\'onico,
-% soporte t\'ecnico, control de dispositivos por voz, etc.).  Durante el
-% \'ultimo a\~no del proyecto investigaremos su uso para la ense\~nanza a
-% distancia, adaptando el sistema para que funcione como tutor de lenguas
-% extranjeras~\cite{Eskenazi09,Wik09}.
 
 The project outcome will be a system capable of giving natural language
 instructions situated in a virtual 3D environment. The technology and
@@ -512,26 +186,7 @@ the last year of the project will investigate its use for distance learning,
 adapting the system to operate as a foreign language
 tutor~\cite{Eskenazi09,Wik09}.
 
-% Dada la arquitectura del sistema, es posible cambiar el lenguaje de
-% interacci\'on con el sistema (input y output), introduciendo
-% una gram\'atica y dem\'as recursos sint\'acticos (e.g., informaci\'on
-% morfol\'ogica) para el lenguaje correcto.  Es decir, dados los recursos
-% sint\'acticos adecuados para, por ejemplo, el ingl\'es que cubran las
-% estructuras y el vocabulario usados en el sistema, se obtiene un sistema
-% de di\'alogo que interprete y/o produzca instrucciones en ingl\'es.
 
-
-% Un sistema unidireccional que genere instrucciones en ingl\'es puede
-% usarse para testear la comprensi\'on del usuario.  La correcta
-% interpretaci\'on de las instrucciones se puede evaluar a partir de la
-% correcta ejecuci\'on de las instrucciones dadas.  El sistema
-% bidireccional permitir\'a al usuario pedir aclaraciones sobre la
-% \'ultima instrucci\'on (en su lengua natal, en caso de no haber comprendido
-% la instrucci\'on, o en ingl\'es, si desea practicar su
-% capacidad de expresarse en el idioma extranjero).  El usuario tambi\'en
-% podr\'a redefinir el objetivo a alcanzar durante la interacci\'on, y
-% de esta forma seleccionar el vocabulario y el tipo de estructuras que desea
-% practicar.
 
 A one-way system that generates instructions in English can be used to test the
 user understanding of a foreign language. The correct interpretation of the
@@ -541,26 +196,6 @@ native language, or in the foreign language, if they want to practice
 production in the foreign language). The user may also redefine the
 objective to be achieved during the interaction, and thus select the type of
 vocabulary he wants to practice.
-
-% Los mundos virtuales (como Second Life\footnote{Accessible gratuitamente
-% en \url{http://secondlife.com/}}) est\'an siendo incorporados r\'apidamente a
-% la educaci\'on, tanto inicial como
-% universitaria~\cite{Doswell05,molk:lear09}. 
-% Su principal atractivo
-% es el de proveer oportunidades que son dif\'iciles o imposibles de
-% proveer en el mundo actual (por ejemplo, por limitaciones econ\'omicas
-% o porque la experiencia es peligrosa para el observador).
-% Por otra parte, el uso de un tutor virtual tiene ciertas ventajas
-% respecto de un tutor humano. \cite{engwall1020} mencionan las siguientes. (1)
-% \emph{Tiempo de
-% pr\'actica}: la posibilidad de practicar el nuevo lenguaje es esencial
-% para el aprendizaje, y un tutor virtual provee oportunidades de pr\'actica
-% s\'olo limitadas por recursos tecnol\'ogicos. (2) \emph{Prestigio:} un
-% estudiante puede sentirse avergonzado de cometer errores frente a un tutor
-% humano, y de esta forma limitar su capacidad de expresi\'on en el lenguaje
-% extranjero. (3) \emph{Realidad Aumentada}: un tutor virtual puede proveer
-% material adicional (e.g., ejemplos en contexto, im\'agenes explicativas, etc.)
-% con mayor facilidad y menos esfuerzo que un tutor humano.
 
 Virtual worlds (like Second Life) are being rapidly incorporated into
 education, both initial and superior~\cite{Doswell05,molk:lear09}. The use of a
@@ -574,17 +209,6 @@ might limit his willingness to speak in the foreign language. (3) Augmented
 Reality: a virtual
 tutor can provide additional material (eg, examples in context, explanatory
 images, etc.) with less effort than a human tutor.
-
-% Para estimar la eficacia de estos sistemas de tutoring se har\'a una
-% evaluaci\'on comparativa (i.e., con otros
-% sistemas de tutoring existentes) o una evaluaci\'on orientada al usuario al
-% ser
-% utilizado, por ejemplo, por estudiantes de la universidad donde se desarrolla
-% el
-% proyecto.
-% El desaf\'io principal de este
-% estudio es establecer los aspectos del tutor m\'as importantes para un
-% estudiante de idiomas e identificar el conjunto de m\'etricas relevantes.
 
 To estimate the effectiveness of our system we will make a comparative
 evaluation (with other existing tutoring systems) and a user-oriented evaluation

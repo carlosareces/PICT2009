@@ -1,86 +1,38 @@
 
-% En este proyecto se propone implementar un sistema de di\'alogo que genere
-% autom\'aticamente
-% instrucciones en lenguaje natural para ayudar a un usuario a cumplir una tarea
-% determinada en un entorno virtual 
-% en tres dimensiones. Para este fin, se propone investigar temas fundamentales
-% sobre la
-% in\-teracci\'on hombre-m\'aquina 
-% en entornos virtuales. Como resultado de este proyecto, se espera la
-% implementaci\'on, evaluaci\'on y aplicaci\'on de un sistema prototipo. Las
-% tres
-% \'areas principales en las que se pueden clasificar los resultados del
-% proyecto
-% son: (1) pragm\'atica de la interacci\'on, (2) representaci\'on
-% de la informaci\'on e inferencia, (3) evaluaci\'on de sistemas
-% de di\'alogo. Una vez obtenido
-% un prototipo, se planea su aplicaci\'on a la tarea espec\'ifica del 
-% aprendizaje de idiomas, utilizando el sistema como un ``profesor de idiomas"
-% virtual.
-
 The goal of this project is to implement a dialogue system which automatically
-generates natural language instructions, in order to help a user to fulfill a
-particular task in a 3D virtual environment. To this aim, we investigate
+generates instructions in order to help a user to fulfill a
+given task in a 3D virtual environment. In this context, we will investigate
 fundamental issues about human-computer interaction in virtual environments. We
-can classify the expected results of the project in three areas: (1) pragmatics
-of interaction, (2) information representation and inference, (3) evaluation of
-dialogue systems. Once the working prototype is finished we will addapt it to
-the specific task of language learning, using the system as a virtual language
+can classify the expected results of the project in three areas: pragmatics
+of interaction;  information representation and inference; and evaluation of
+dialogue systems. Once a working prototype is finished, we will adapt it to
+the specific task of language learning using the system as a virtual language
 teacher. 
 
-% En una primera etapa investigaremos un modelo de interacci\'on 
-% ling\"u\'istica unidireccional
-% (i.e., el flujo de informaci\'on ling\"u\'istica ser\'a desde el sistema hacia
-% el usuario).
-% En etapas subsiguientes, el modelo ser\'a extendido para
-% permitir intercambio ling\"u\'istico bidireccional, por ejemplo, para que el
-% usuario pida clarificaciones o ayuda al sistema.
-
-In a first stage we will investigate a model of unidirectional linguistic
+Initially, we will investigate a model of unidirectional linguistic
 interaction (i.e., linguistic information flows only from the system to the
 user). In subsequent stages, the model will be extended to allow bidirectional
-language exchange, for example, the user may ask for clarification or help to
-the system.
+language exchange. For example, the user may query the system for clarifications or help.
 
-% Dise\~nar la arquitectura de un sistema de di\'alogo presenta
-% desaf\'ios tanto te\'oricos como pr\'acticos. En lo te\'orico, se necesitan
-% heur\'isticas que gobiernen la interacci\'on en cuanto a qu\'e decir,
-% cu\'ando, y c\'omo (teniendo en cuenta el contexto actual). Adem\'as, se debe
-% contar con m\'etodos
-% de inferencia que permitan al sistema adaptarse en funci\'on de la situaci\'on
-% actual, para alcanzar un objetivo predefinido.
-% La complejidad del problema te\'orico se
-% refleja, en lo pr\'actico, en un sistema de m\'ultiples componentes: un
-% generador de lenguaje natural, un sistema de planning, un entorno de 
-% interacci\'on en tres dimensiones, etc.
-% Dise\~nar e implementar todos estos componentes requerir\'ia un esfuerzo
-% prohibitivo. En este proyecto adaptaremos herramientas ya
-% implementadas y disponibles libremente para el prototipado de sistemas de este
-% tipo, como la plataforma \emph{Generating Instructions in Virtual
-% Environments} (GIVE).
+The quality of each of the capabilities of the system affects the perception
+users will have of it. It is imperative to perform extensive evaluation. 
+We plan to adapt and apply different evaluation techniques and
+metrics from the area of software engineering and various areas of
+natural language processing (e.g. machine translation) to assess the proper 
+performance of the system.
 
-Designing the architecture of a dialogue system presents both theoretical and
+The architecture of the envisioned dialogue system presents both theoretical and
 practical challenges. On the theoretical side, heuristics are needed to govern
 the interaction in terms of what to say, when, and how (given the current
-context). In addition, there must be inference methods that allow the system to
-adapt to the current situation, to reach a predefined goal. The complexity of
+context). In addition, the system should implement inference methods to 
+adapt to the current situation and reach a predefined goal. The complexity of
 the theoretical issues is reflected, in practice, in a system of
 multiple components: a natural language generator, a planner,
 a 3D interactive environment, to mention a few. Designing
-and implementing all these components require a prohibitive effort. This project
-will adapt tools already implemented and freely available for prototyping such
-systems, such as the platform \emph{Generating Instructions in Virtual
-Environments (GIVE)}\cite{byron09}. 
+and implementing all these components from scratch would 
+require a prohibitive effort. Instead we will adapt tools already implemented 
+and freely available for prototyping this kind of 
+systems, such as the platform \emph{GIVE, Generating Instructions in Virtual
+Environments}~\cite{byron09}. 
 
-% La calidad de cada una de las capacidades del sistema afecta la
-% percepci\'on que el usuario tiene de \'este. Por lo tanto, es imperativo
-% evaluar cada una de ellas.
-% Se planean adaptar y aplicar distintas t\'ecnicas y m\'etricas de evaluaci\'on
-% del \'area de ingenier\'ia de software y de diversas \'areas del procesamiento
-% de lenguaje natural (por ejemplo, la traducci\'on autom\'atica).
 
-The quality of each of the capabilities of the system affects the perception
-that users have of it. Therefore, it is imperative to evaluate each of such
-capabilities. We plan to adapt and apply different evaluation techniques and
-metrics from the area of software engineering and various areas of
-natural language processing (e.g. machine translation).
