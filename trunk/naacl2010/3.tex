@@ -2,37 +2,41 @@
 The goal of this project is to implement a dialogue system which automatically
 generates instructions in order to help a user to fulfill a
 given task in a 3D virtual environment. In this context, we will investigate
-fundamental issues about human-computer interaction in virtual environments. We
-can classify the expected results of the project in three areas: pragmatics
+fundamental issues about human-computer interaction. The expected results of the
+project can be classified in three areas: pragmatics
 of interaction;  information representation and inference; and evaluation of
 dialogue systems. Once a working prototype is finished, we will adapt it to
 the specific task of language learning using the system as a virtual language
-teacher. 
+teacher. Our prototype will teach English to native Spanish speakers and then it
+will need to understand and produce both languages.
 
 Initially, we will investigate a model of unidirectional linguistic
 interaction (i.e., linguistic information flows only from the system to the
-user). In subsequent stages, the model will be extended to allow bidirectional
-language exchange. For example, the user may query the system for clarifications or help.
-
-The quality of each of the capabilities of the system affects the perception
-users will have of it. It is imperative to perform extensive evaluation. 
-We plan to adapt and apply different evaluation techniques and
-metrics from the area of software engineering and various areas of
-natural language processing (e.g. machine translation) to assess the proper 
-performance of the system.
+user). In subsequent stages, the model will be
+extended to allow bidirectional language exchange. For example, the user may
+ask clarifications to the system or redefine the task goal.
 
 The architecture of the envisioned dialogue system presents both theoretical and
-practical challenges. On the theoretical side, heuristics are needed to govern
-the interaction in terms of what to say, when, and how (given the current
-context). In addition, the system should implement inference methods to 
-adapt to the current situation and reach a predefined goal. The complexity of
+practical challenges. On the theoretical side, heuristics are needed in order to
+govern
+decisions such as what to say, when, and how (given the current
+context). In addition, the system should implement inference methods in order
+to figure out how to modify the current situation and reach the task goal.
+The complexity of
 the theoretical issues is reflected, in practice, in a system of
 multiple components: a natural language generator, a planner,
 a 3D interactive environment, to mention a few. Designing
 and implementing all these components from scratch would 
 require a prohibitive effort. Instead we will adapt tools already implemented 
 and freely available for prototyping this kind of 
-systems, such as the platform \emph{GIVE, Generating Instructions in Virtual
+systems, such as the platform
+\emph{GIVE\footnote{\url{http://www.give-challenge.org}}, Generating
+Instructions in Virtual
 Environments}~\cite{byron09}. 
 
-
+The quality of each of the components of the system will affect how
+users will perceive the system. It is imperative to perform extensive
+evaluation. 
+We plan to adapt and apply different evaluation techniques and
+metrics from the area of Machine Translation (MT) to assess the  
+performance of the system.
