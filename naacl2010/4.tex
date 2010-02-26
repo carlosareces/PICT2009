@@ -1,18 +1,11 @@
-This project aims to achieve a balance between a system which is at the 
-same time sufficiently generic to be applicable in different areas, and 
-specific enough in order to benefit from the efficient use of existing 
+This project aims to achieve a balance between a system which is 
+ sufficiently generic to be applicable in different areas, and 
+specific enough to benefit from the efficient use of existing 
 techniques for knowledge management, planning and natural language processing.
+Designing and implementing such a system is a multidisciplinary effort leading 
+to research in diverse scientific areas:
 
-The resulting system could be used in different applications. It could be used, 
-for example, in electronic commerce providing 
-assistance on the web for buying a product; in technical support helping a
-novice user to fix a problem; or as a virtual tutor for learning foreign 
-languages. 
-
-Implementing a dialogue system is a multidisciplinary effort. In this project
-we will focus our research efforts in the following areas:
-
-\paragraph{Pragmatics} is an interdisciplinary field which
+\paragraph{Pragmatics}$\hspace*{-.4cm}$ is an interdisciplinary field which
 integrates insights from linguistics (e.g., 
 conversational implicatures~\cite{grice75}),
 sociology (e.g., conversational analysis~\cite{schegloff87b}) and
@@ -47,140 +40,124 @@ laboratory for pragmatic theories that consist of a controlled environment
 for studying the
 interaction set in a world where physical actions and language intermingle.
 
-The prototype will allow unidirectional investigate the impact of different
-policies to give instructions (post or pre-order on the tree structure of the task)
-on the successful completion of the task. Such studies have been performed
-previously (e.g.,~\cite{foster-etal-ijcai2009}) but assuming a predetermined
-task. Since our prototype allows the specification of the virtual world,
-possible actions and the goal to achieve, we can determine when the impact
-resulting from the use of a particular policy is dependent on the task.
+The prototype will let us investigate the impact that different
+intruction giving policies (e.g., post order on the tree structure of the task)
+have on the successful completion of the task. Similar studies have been done
+before (e.g.,~\cite{foster-etal-ijcai2009}) but they usually assume a predetermined
+task. Since our prototype allows for the specification of the virtual world,
+the available actions, and the goal, we will be able to determine when the impact
+associated to a particular policy is dependent on the task or not.
 
-The prototype will allow us to investigate the two-way phenomenon repair the
-short and long term, designing and evaluating a prediction system repairs
-contextualized. These repairs are usually caused by conversational implicatures.
-Modeling these implicatures in a generic dialogue system is difficult. However,
-since the present prototype provides a situated interaction and restricted to
-the virtual world will be possible to test the relationship between
-implicatures, the type of repairs that give rise and inference tasks necessary
-to predict them. 
+We will also investigate short and long term repairs.
+Repairs are usually caused by conversational implicatures~\cite{benotti09c}.
+Modeling these implicatures in a generic dialogue system is difficult because 
+they are too open ended. However, since the present prototype provides a situated 
+interaction, restricted to the virtual world, it will be possible to test the 
+relationship between implicatures, the type of repairs they give rise to, 
+and the inference tasks needed to predict them. 
 
-\paragraph{Inference} can be understood as any operation that
+\paragraph{Inference}$\hspace*{-.4cm}$ can be understood as any operation that
 transforms implicit information in explicit information. This definition is
 general enough to cover tasks ranging from logical inference (i.e., deduction in
 a formal language) to inference tasks common in AI (e.g., planning and
 non-monotonic inference), as well as statistical operations (e.g. obtaining
 estimators on a data set). A dialogue system has to
-continually perform inference operations. On the one hand, inference is needed
-to interpret the information received from the user and incorporate it to 
-the data repository of the system. On the other hand, it is also needed in order 
-to decide how much of the
-available information should be conveyed when addressing the user.
-
+continually perform inference operations. E.g., inference is needed
+to interpret information received from the user, incorporate it to 
+the system's data repository, and then decide what should be conveyed 
+back to the user.
 The very problem of deciding what kind of logical representation and what type
-of inference to use in a given situation is complex (propositional logic vs.
-first-order logic, validity vs. model checking, logical inference vs.
-statistical inference). Independently of which type of inference it is used, they are usually computationally expensive. The challenge here is to find the appropriate
+of inference to use in a given situation is complex (propositional logic vs.\
+first-order logic, validity vs.\ model checking, logical inference vs.\
+statistical inference). Independently of which type of inference is used, they are usually computationally expensive. The challenge here is to find the appropriate
 balance between the expressivity of the representation formalism and the
 cost of the required inference methods.
 
-The main contribution of the project in the area of logic and inference is in
-the design, development and planning study of algorithms. A typical planning
-system takes three inputs - an initial state, a specification of possible
-actions and an expected objective - and returns a sequence of actions (a plan)
-that when applied sequentially to the initial state, ends in a state that
-satisfies the goal order. Different methods to obtain a scheme have been studied
+The main contribution of the project in this area is in
+the design, development and study of planning algorithms. A typical planning
+system takes three inputs --an initial state, a specification of possible
+actions and an expected goal-- and returns a sequence of actions (a plan)
+that when sequentially applied to the initial state, ends in a state that
+satisfies the goal. Different methods to obtain a plan have been studied
 (forward chaining, backward chaining, coding in terms of propositional
-satisfiable, etc..) And are currently deployed systems that can solve this task
-efficiently.
+satisfiability, etc.), and they are currently implemented in systems 
+that can solve many planning tasks efficiently.
+However, most of these systems make assumptions that simplify the problem
+(deterministic atomic time, complete information, absence of a background theory, etc.). And
+most of them return a single plan. We will investigate algorithms
+that eliminate some of these simplifications (in particular, we will 
+study planning with incomplete information and based on a background theory). 
+We will also provide extended planning services: alternative plans, minimal plans, conditional plans, incomplete plans, possible next actions in a give state, etc.
 
-However, most of these systems assume conditions that simplify the problem
-(deterministic atomic time, complete, absence of a background theory, etc.). And
-return a single plan. In the course of the project will investigate algorithms
-that eliminate some of the simplifications (in particular, investigate the case
-of planning with incomplete information and theory based on a background) and
-also provide extended services planning (return on alternative plans, plans
-minimum conditional plans, incomplete plans, possible actions in a given state,
-etc.).
-
-\paragraph{Evaluation:} The evaluation of natural language generation systems
+\paragraph{Evaluation}$\hspace*{-.4cm}$  of natural language generation systems
 is one of the most difficult tasks in the area of NLP. A given concept can be 
 expressed in many different ways, all of them correct. 
 Hence, it is not possible to determining the quality of a
 generated sentence simply by, for example, comparing 
 the result with a gold standard. The problem of absence of gold standards is shared
-with another area of the NLP, namely Machine Translation (MT), for which
+with another area of the NLP, namely Machine Translation, for which
 various evaluation methodologies, both direct and indirect, have been proposed. 
 Direct methods applies a metric to the text
 generated by the system, while indirect methods evaluates the performance of the
-system through the use of the generated text to perform some task. However, 
-none of these methods is a standard and accepted methodology which has
-been generally proven to be effective.
-
+system through the use of the generated text to perform some task. But
+none of these methods is a standard and generally accepted methodology, which has
+been proven to be effective in all cases.
 Since what is being evaluated in this project is a system that interacts via the
 generation of natural language instructions, we can determine its performance
-through quantitative metrics (such as average task completion time), 
+through quantitative metrics (e.g., average task completion time), 
 qualitative metrics (e.g., general user satisfaction) and metrics based on the
-context (how well the system addressed the user needs in particular situations).
-Given our previous experience, it is particularly
-interesting for us to study the portability of evaluation
-techniques from the domain of MT
-and multimodal human-computer interaction to the evaluation of the system
+context (e.g., how well the system addressed the user needs in particular situations).
+We will study the portability of evaluation techniques from the domain of machine
+translation and multimodal human-computer interaction to the evaluation of the system
 proposed in this project.
 
-In this area it is expected that one of the main contributions is the
-integration of assessment techniques from different areas on a methodology for
-evaluating dialog systems for virtual environments so as to estimate its
+One of the main contributions of our project at this respect is the
+integration of assessment techniques from different areas into a methodology for
+evaluating dialog systems for virtual environments, aiming to estimate their
 usability and effectiveness. This methodology could be used both to determine
 whether a system is suitable for a task type and user, and to compare the
 performance of different systems of the same type.
+Another contribution will be the study and application of software evaluation standards
+to the developed systems, creating a standardized quality model and proposing
+a set of appropriate metrics to assess each of the aspects of the model. 
+Finally, the annotated corpus of human-human interaction, together with the corpus of
+human-machine interaction collected during the project will be made public. Such
+corpora will serve, for example, to design more general platforms for evaluating
+dialog systems, going beyond the aspects evaluated by existing
+platforms like GIVE.
 
-Another contribution is the study and application of appraisal standards
-developed software systems, creating a standardized quality model and proposing
-a set of appropriate metrics to assess each of the aspects of the model. This
-work will also include a thorough study of several metrics in late in the model
-include some tips on quality metrics chosen, this study is considered a
-meta-evaluation of the proposed model.
-
-Finally, the annotated corpus of human-human interaction, over the corpus of
-human-machine interaction collected during the project be made public. Such
-corpora will serve, for example, to design more general platform for evaluating
-dialog systems, which go beyond the aspects evaluated by currently existing
-platforms as GIVE.
-
-\paragraph{Impact in the Argentinean Landscape:} The topics investigated in the framework of this project are of relevance in the
+\paragraph{Impact in the Argentinean Landscape:} The topics investigated in the 
+framework of this project are of relevance in the
 current Argentine landscape for at least two reasons.
 
 On the one hand, the project integrates and develops various key aspects of the
 area of computational linguistics (syntax, semantics, pragmatics,
-representation, inference, evaluation). The area of computational linguistics
-and its application to automatic processing of natural language have had a major
-international development in recent years, systems with applications like Web
-search, translation systems and abstract machines, voice interfaces, etc. .
-However, the area is almost nonexistent today in Argentina. This project will be
-among the contributions that aim to reverse this situation. Moreover, the
-ultimate goal of this project is to investigate the use of the platform
-developed in the area of distance education (specifically, as a platform for
-language learning).
+representation, inference, evaluation). Computational linguistics
+and its application to automatic processing of natural language had a major
+development in recent years, but the area is today almost 
+nonexistent in Argentina. This project will be a step towards reversing this situation. 
+Moreover, the ultimate goal of the project is to investigate the use of the 
+developed platform for distance education (specifically, as a tool for
+language learning). Distance education is a valuable resource to overcome the problem of
+centralization of educational resources in the country. 
 
-Clearly, distance education is a valuable resource to overcome the problem of
-centralization of educational resources in the country. However, developing
-appropriate tools in this specific area is difficult.
 
+However, developing appropriate tools in this specific area is difficult.
 To develop distance learning systems is essential to model the user's learning
-progress. This requires a system capable of being aware of the evolution of the
-user, and taking into account their achievements and their problems. This type
+progress. This requires a system aware of the evolution of the
+user, and that takes into account their achievements and their problems. This type
 of interaction between user and system can be modeled as a dialogue, which
-records the acquired knowledge context (the user about the course material, and
-system to user). Managing this kind of dialogue is particularly interesting,
+records the acquired knowledge context (of the user about the course material, and
+of the system about to user). Managing this kind of dialogue is particularly interesting,
 since the system must be able to interpret requirements, and generate
-appropriate responses, non-experts whose knowledge evolves during the
+appropriate responses, for non-experts uses whose knowledge evolves during the
 interaction. Moreover, the system must be able to properly represent both the
-information concerning the course material, such as information concerning the
+information concerning the course material, and information about the
 evolution of the user. For example, the system must be able to diagnose what
 part of the course material should be reviewed from the wrong answers of the
 user. Finally, the system must be able to evaluate the user interaction in order
-to decide which learning objectives were achieved. The theoretical and practical
-results obtained during the project directly contribute to solving these
+to decide which learning objectives have been achieved. The theoretical and practical
+results obtained during the project directly contribute to solving these difficult
 problems.
 
 
