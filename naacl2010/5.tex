@@ -36,67 +36,64 @@
 
 %\subsection{Main Tasks of the Project}
 
-We will use the platform developed as part of
-the challenge \emph{GIVE, Generating Instructions in Virtual Environments}\footnote{\url{http://www.give-challenge.org}}~\cite{byron09} which provides a basic
-platform for this type of system.
-The main aim of GIVE is to act as an evaluation framework for
-natural language generation systems. 
+% We will use the platform developed as part of
+% the challenge \emph{GIVE, Generating Instructions in Virtual
+% Environments}\footnote{\url{http://www.give-challenge.org}}~\cite{byron09}
+% which provides a basic
+% platform for this type of system.
+% The main aim of GIVE is to act as an evaluation framework for
+% natural language generation systems. 
 %In the GIVE Challenge the systems are
 %evaluated homogeneously since all the participating systems use the same
 %resources provided by the organizers. 
-In the scenario proposed by GIVE, a
+
+% The GIVE platform is thus an appropriate tool for starting to investigate
+% various aspects of an interaction situated in a virtual environment: the
+% problem
+% of
+% morpho-syntactic realization of the instructions, knowledge representation of
+% the context of interaction (discourse context, ontologies, possible actions),
+% the type of inference required by the tasks involved (planning, model building
+% and model checking), and the pragmatic rules of interaction required by the
+% task
+% (managing the cognitive load, update and use of contextual information).
+% Moreover, 
+
+For the correct definition of the interaction policies of our prototype we need
+a corpus that provides examples of typical interactions in the domain. The GIVE
+platform provides tools for collecting such corpus, namely a Wizard of Oz
+platform for collecting interactions in which two persons interact to solve a
+task in the GIVE domain. In the scenario proposed by GIVE, a
 human user carries out a task of ``treasure hunt'' in a 3D virtual environment
 and the task of the generation system is to provide real-time, natural
-language instructions that help the user find the hidden treasure. So GIVE not
-only evaluates the generation of natural language but also the system's ability
-to participate in a real-time interaction situated in a 3D environment.
-
-The GIVE platform is thus an appropriate tool for starting to investigate
-various aspects of an interaction situated in a virtual environment: the problem
-of
-morpho-syntactic realization of the instructions, knowledge representation of
-the context of interaction (discourse context, ontologies, possible actions),
-the type of inference required by the tasks involved (planning, model building
-and model checking), and the pragmatic rules of interaction required by the task
-(managing the cognitive load, update and use of contextual information).
-Moreover, GIVE provides tools to record all details of the interaction, thus
+language instructions that help the user find the hidden treasure. GIVE
+provides tools to record all details of the interaction, thus
 allowing to easily obtain a corpus of interaction in virtual environments
 annotated automatically.
 
-For the correct definition of the interaction policies of our prototype we need
-a corpus that provides examples of typical interactions the domain. The GIVE
-platform also provides tools for collecting such corpus, namely a Wizard of Oz
-platform for collecting interactions in which two persons interact to solve a
-task in the GIVE domain. The collected corpus is automatically annotated
-aligning the linguistic interaction with the discretized actions in the virtual
-world. 
-
 From the collected corpus we will begin the design, implementation and testing
-of the unidirectional interaction algorithm. There are traditionally four tasks
-that a generation system must implement: (1) planning the content, (2)
-generation of referring expressions, (3) managing the interaction context, and
+of our dialogue system. There are traditionally four tasks
+that a dialogue system must implement: (1) planning the content, (2)
+generating of referring expressions, (3) managing the interaction context, and
 (4) interpretation of user responses. 
 
-\emph{(1) Content planning:} To plan the content to be generated it is first
-necessary to obtain a plan to reach the task goal from the current state.
+\emph{(1) Content planning:} The first step is to obtain a plan to reach the
+task goal from the current state.
 The plan will contain physical actions on the virtual environment. The second
 step is to decide how to transmit this sequence of actions. That is, to decide
 how many actions to communicate per instruction and how to aggregate them
-coherently. The result of the action aggregation process can be represented is a
+coherently. The result of the action aggregation process can be represented as a
 tree describing the task structure at different levels of abstraction. The third
 and final step is to decide how to navigate the tree of actions to verbalize the
 instructions (for example, post or preorder as
 explored in~\cite{foster-etal-ijcai2009}). This project will investigate
 different aggregation policies (e.g., aggregating actions that
-manipulate similar object) and non-standard policies of navitation of the tree
+manipulate similar objects) and non-standard policies of navigation of the tree
 (e.g., moving to a lower level of abstraction in case of misunderstandings).
 
-In order to get the plan, we use the inference task of planning~\cite{nau04}.
-GIVE provides a very limited planner. There are more advanced planners
-(in particular, to enable the handling of incomplete information on the domain)
-as PKS\footnote{\url{http://homepages.inf.ed.ac.uk/rpetrick/research/pks/}},
-but such planning techniques are still under research. In general,
-the state of the art in the planning area does not cover the requirements of our
+In order to get the plan we use the inference task of planning~\cite{nau04}.
+GIVE provides a very limited planner. The state of the art in the planning area
+does not cover the requirements of our
 system. While there are systems that work well when optimized for certain
 applications, none provides services such as the generation of alternative
 plans, or the generation of incomplete plans in case of the absence of plan.
@@ -107,43 +104,48 @@ these new algorithms.
 \emph{(2) Generating referring expressions:} Once the content planning is
 complete, the next task is the generation of referring expressions. This task
 involves
-producing a phrase that describes a referrable entity so that the user can
-identify it (e.g., `` the vase on the table''). To be
-acceptable these expressions should not be too heavy cognitively (for
-example, `` the vase that is not above the chair or sofa or under the
+producing a phrase that describes a referable entity so that the user can
+identify it (e.g., ``the vase on the table''). To be
+acceptable, these expressions should not be too heavy cognitively (for
+example, ``the vase that is not above the chair or sofa or under the
 table'' would not be acceptable). In~\cite{AKS08} the authors propose to
 do the symbolic minimization model that represents the state of the world, in
 order to obtain logical formulas that describe each object uniquely. In our
 project we
-will implement this method and evaluate within the dialogue system.
+will implement this method and evaluate it within the dialogue system.
 
 \emph{(3) Management of the Interaction Context:} To manage the use of
 interaction context we will use existing knowledge maintenance systems such as
 RACER\footnote{\url{http://www.racer-systems.com}} or Pellet\footnote{\url{http://clarkparsia.com/pellet}}, which support tasks of
 definition, maintenance and querying of ontologies. These systems have been used
 as inference engines in numerous applications in
-the area and, in particular
-in applications designed by the authors~\cite{benotti09b}. Once we
-observe the behavior of these inference engines on the task, we will analyze
+the area and, in particular,
+in applications designed by us~\cite{benotti09b}. Once we
+have studied the behavior of these inference engines on the task, we will
+analyze
 its limitations and investigate the required extensions.
 
 \emph{(4) Interpretation of User Responses:} The interpretation of user
-responses in the unidirectional system is relatively simple, and in a first
-stage, we will use the discretizer provided by GIVE. After evaluating the
-system, we can determine whether or not this module meets the requirements of
+responses in the unidirectional system is relatively simple; it ammounts to
+discretizing the continuos flow of user behaviour in the 3D world into actions
+meaningful for the domain task. In a first
+stage, we will use the discretizer provided by GIVE. After evaluating it we can
+determine whether or not this module meets the requirements of
 our task and what are its limitations. In the bidirectional system, however,
-this is the module that will require more attention.
+the interpretation of user responses is the task that will require more
+attention.
 
 To start with, the bidirectional system should be expanded with capabilities
 for  processing statements coming from the user (namely, parsing, semantic
 construction, resolution of references, etc.). We will study, in particular, two
 types of user contributions: requests for clarification of the instruction
-given (that we call `short term repairs'), and redefinition of goals (that we
-call `short long repairs'). We will implement short-term repairs
+given (that we call `short-term repairs'), and redefinition of goals (that we
+call `long-term repairs'). We will implement short-term repairs
 using Purver~\shortcite{purver06}'s approach. For long-term repairs will use the
 guidelines of~\cite{blaylock05a}. 
 \medskip
 
+\subsection{Evaluation}
 To determine the quality of the obtained propotypes we propose to study the
 creation of a model of quality assessment by the standards of software ISO/IEC
 9126 and 14528~\cite{ISO9126-1,ISO14598-1}, which were successfully applied to
@@ -164,16 +166,22 @@ After developing a quality model, several methodologies to assess
 various aspects of the system can be applied: automatic metrics,
 subjective metrics or metrics based on the task (both to
 evaluate the contribution of each component as well as the quality of the whole
-system). On the other hand, since we will use the GIVE platform  we plan to
-participate in the associated Challenge, which will serve as an additional
+system). 
+
+The GIVE platform is used every year as a unified framework for evaluating
+generation systems. Systems that not only have to generate natural language
+but also have to be able to participate in a real-time interaction situated in a
+3D environment. The GIVE Challenge is one of the shared tasks endorsed by
+ACL's special interests groups in generation, dialogue and semantics. We plan
+to participate in the challenge, which will serve as an additional
 source of information about aspects of the system that need
 improvement.
 
-Once the two-way interaction system is evaluated and improved using the results
+Once the prototype is evaluated and improved using the results
 of this evaluation, we will investigate its use as a virtual language tutor as
 described in the next section.
 
-\subsection{Aplications}
+\subsection{Applications}
 
 The project outcome will be a system capable of giving natural language
 instructions situated in a virtual 3D environment. The technology and
@@ -200,14 +208,14 @@ vocabulary he wants to practice.
 Virtual worlds (like Second Life) are being rapidly incorporated into
 education, both initial and superior~\cite{Doswell05,molk:lear09}. The use of a
 virtual tutor has certain advantages over a human tutor.
-Engwall~\shortcite{engwall1020} mentioned the following. (1) Ammount of
+Engwall~\shortcite{engwall1020} mentioned the following. (1) Amount of
 practice: the chance to practice the new language is essential for learning, and
 a virtual tutor provides opportunities only limited by the
 technological resources. (2) Prestige: a student
 may feel embarrassed about making mistakes with a human tutor, and this
 might limit his willingness to speak in the foreign language. (3) Augmented
 Reality: a virtual
-tutor can provide additional material (eg, examples in context, explanatory
+tutor can provide additional material (e.g., examples in context, explanatory
 images, etc.) with less effort than a human tutor.
 
 To estimate the effectiveness of our system we will make a comparative
