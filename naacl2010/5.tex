@@ -20,7 +20,7 @@ generation of referring expressions, (3) management the the interaction context,
 
 \emph{(1) Content Planning:} Given the envisioned setup we described in \S\ref{intro},
 the first task of the system is to obtain a plan to reach the desired goal, from the current state.
-The plan will contain physical actions on the virtual environment. The second
+The plan will contain physical actions to be performed in the virtual environment. The second
 step is to decide how to transmit this sequence of actions to the user. E.g, to decide
 how many actions to communicate per instruction, and how to aggregate them
 coherently. The result of the action aggregation process can be represented as a
@@ -65,7 +65,7 @@ have studied the behavior of these inference engines on the task, we will
 analyze its limitations and investigate the required extensions.
 
 \emph{(4) Interpretation of User Responses:} The interpretation of user
-responses in the unidirectional system is relatively simple; it amounts to
+responses in the unidirectional system is relatively simple: it amounts to
 discretizing the continuous flow of user behavior in the 3D world into actions
 meaningful for the domain task. In a first
 stage, we will use the discretizer provided by GIVE. After evaluating it we can
@@ -78,24 +78,24 @@ To start with, the bidirectional system should be expanded with capabilities
 for  processing statements coming from the user (namely, parsing, semantic
 construction, resolution of references, etc.). We will study, in particular, two
 types of user contributions: requests for clarification of the instruction
-given (that we call `short-term repairs'), and redefinition of goals (that we
+given (what we call `short-term repairs'), and for redefinition of goals (what we
 call `long-term repairs'). We will implement short-term repairs
 using the approach describe in~\cite{purver06}. For long-term repairs we will use the
 guidelines of~\cite{blaylock05a}. 
 
 \subsection{Evaluation}
 To determine the quality of the obtained prototypes we propose to study the
-creation of a model of quality assessment by the standards of software ISO/IEC
-9126 and 14528~\cite{ISO9126-1,ISO14598-1}, which were successfully applied to
-the Machine Trasnlation domain, as shown in the tool \emph{FEMTI\footnote{\url{http://www.issco.unige.ch/femti/}}, Framework for the Evaluation of
+creation of a quality model following the ISO/IEC
+9126 and 14528 standards for the evaluation of software products~\cite{ISO9126-1,ISO14598-1}. These standards were successfully applied to
+the Machine Trasnlation domain, resulting in the  \emph{FEMTI\footnote{\url{http://www.issco.unige.ch/femti/}}, Framework for the Evaluation of
 Machine Translation}~\cite{Est2005}. FEMTI
-guides the evaluator towards creating parameterized evaluation
+guides evaluators towards creating parameterized evaluation
 plans that include various aspects of the to-be-evaluated system and offer a
 relevant set of metrics. The identification of relevant metrics can be performed
 using various methods, e.g., based on previous
-experience~\cite{paradise06,Chu2000}, conducting
+experience~\cite{paradise06,Litman2002}, conducting
 surveys or requirement specifications~\cite{Lecoeuche98}, or
-collecting such data through Wizard of Oz experiments~\cite{Dahlback93}.
+collecting such data through Wizard of Oz experiments~\cite{Dahlback93,Fabbrizio05}.
 After developing a quality model, several methodologies to assess
 various aspects of the system can be applied: automatic metrics,
 subjective metrics or metrics based on the task (both to
@@ -145,10 +145,6 @@ might limit his willingness to speak in the foreign language. (3) Augmented
 Reality: a virtual
 tutor can provide additional material (e.g., examples in context, explanatory
 images, etc.) with less effort than a human tutor.
-
-
-
-
 
 
 
