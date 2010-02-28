@@ -18,7 +18,7 @@ system should address: (1) content planning, (2)
 generation of referring expressions, (3) management the the interaction context, and
 (4) interpretation of user responses. 
 
-\emph{(1) Content Planning:} Given the envisioned setup we described in \S\ref{intro},
+\emph{(1) Content Planning:} Given the envisioned setup we described in Section~\ref{intro},
 the first task of the system is to obtain a plan to reach the desired goal, from the current state.
 The plan will contain physical actions to be performed in the virtual environment. The second
 step is to decide how to transmit this sequence of actions to the user. E.g, to decide
@@ -31,12 +31,9 @@ explored in~\cite{foster-etal-ijcai2009}). We will investigate
 different aggregation policies (e.g., aggregating actions that
 manipulate similar objects) and innovative ways in which to navigate the task tree
 (e.g., moving to a lower level of abstraction in case of misunderstandings).
-
-Plan computation can be solved using the traditional planning~\cite{nau04}.
-While GIVE already provides a planner, its capabilities are very limited. 
-Actually, most of the planner currently available fail to fully cover 
-the requirements of our system. While there are systems that work well 
-when optimized for certain applications, none provides services such as the generation of alternative
+Plan computation can be solved using classical planners~\cite{nau04}.
+However, while there are planners that work well when optimized for certain
+applications, none provides services such as the generation of alternative
 plans, or the generation of incomplete plans in case of the absence of plan.
 One of the goals of the project is to design and implement these extensions to 
 classical planning algorithms. We will also study the theoretical behavior (e.g., complexity) of
@@ -73,7 +70,6 @@ determine whether or not this module meets the requirements of
 our task and what are its limitations. In the bidirectional system, however,
 the interpretation of user responses is the task that will require more
 attention.
-
 To start with, the bidirectional system should be expanded with capabilities
 for  processing statements coming from the user (namely, parsing, semantic
 construction, resolution of references, etc.). We will study, in particular, two
@@ -95,7 +91,8 @@ relevant set of metrics. The identification of relevant metrics can be performed
 using various methods, e.g., based on previous
 experience~\cite{paradise06,Litman2002}, conducting
 surveys or requirement specifications~\cite{Lecoeuche98}, or
-collecting such data through Wizard of Oz experiments~\cite{Dahlback93,Fabbrizio05}.
+collecting such data through Wizard of Oz
+experiments~\cite{Dahlback93}.
 After developing a quality model, several methodologies to assess
 various aspects of the system can be applied: automatic metrics,
 subjective metrics or metrics based on the task (both to
@@ -114,7 +111,7 @@ Once the prototype is evaluated and improved using the results
 of this evaluation, we will investigate its use as a virtual language tutor as
 described in the next section.
 
-\subsection{Applications}
+\subsection{Applications}\label{applications}
 
 The project outcome will be a system capable of giving natural language
 instructions situated in a virtual 3D environment. The technology and
@@ -145,6 +142,27 @@ might limit his willingness to speak in the foreign language. (3) Augmented
 Reality: a virtual
 tutor can provide additional material (e.g., examples in context, explanatory
 images, etc.) with less effort than a human tutor.
+
+
+Such a virtual tutor can be used in distance learning. To develop distance learning systems, it is essential to model the user's learning
+progress. This requires a system aware of the evolution of the
+user, and that takes into account their achievements and their problems. This type
+of interaction between user and system can be modeled as a dialogue, which
+records the acquired knowledge context (of the user about the course material, and
+of the system about to user). Managing this kind of dialogue is particularly interesting,
+since the system must be able to interpret requirements, and generate
+appropriate responses, for non-experts uses whose knowledge evolves during the
+interaction. Moreover, the system must be able to properly represent both the
+information concerning the course material, and information about the
+evolution of the user. For example, the system must be able to diagnose what
+part of the course material should be reviewed from the wrong answers of the
+user. Finally, the system must be able to evaluate the user interaction in order
+to decide which learning objectives have been achieved. The theoretical and practical
+results of the project contribute to solving these difficult
+problems.
+
+
+
 
 
 
