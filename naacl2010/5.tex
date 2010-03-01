@@ -7,15 +7,15 @@ language instructions that help the user find the hidden treasure.
 For the correct definition of the interaction policies of our prototype we need
 a corpus that provides examples of typical interactions in the domain. GIVE
 provides tools for collecting such corpus in the form of a Wizard of Oz
-platform. GIVE provides tools to record all details of the interaction, thus
+platform that record all details of the interaction, thus
 allowing to easily obtain a corpus of interaction in virtual environments
 annotated automatically.
 
 From the collected corpus we will begin the design, implementation and testing
 of our dialogue system.  The main components that we will have to design and 
-implement can be organized using the traditional four task that a dialogue 
+implement can be organized using the traditional four tasks that a dialogue 
 system should address: (1) content planning, (2)
-generation of referring expressions, (3) management the the interaction context, and
+generation of referring expressions, (3) management of the interaction context, and
 (4) interpretation of user responses. 
 
 \emph{(1) Content Planning:} Given the envisioned setup we described in Section~\ref{intro},
@@ -45,16 +45,16 @@ This task involves producing a phrase that describes a referable entity so that 
 identify it (e.g., ``the vase on the table''). To be
 acceptable, these expressions should be ``natural:'' they should be at the same time
 sufficiently but not overly constrained, and they should not impose on the user a heavier 
-cognitive load than necessary . For example, producing the expression 
+cognitive load than necessary. For example, producing the expression 
 ``the vase that is not above the chair or sofa or under the
-table'' would would probably not be acceptable. Areces et al.~\shortcite{AKS08} propose to
+table'' would probably not be acceptable. Areces et al.~\shortcite{AKS08} propose to
 use symbolic minimization of the model that represents the state of the world, in
 order to obtain logical formulas that describe each object uniquely. In our
 project we will implement this method and evaluate it within the dialogue system.
 
 \emph{(3) Management of the Interaction Context:} To manage the use of
-interaction context we will use existing knowledge maintenance systems such as
-RACER\footnote{\url{http://www.racer-systems.com}} or Pellet\footnote{\url{http://clarkparsia.com/pellet}}, which support tasks of
+the interaction context we will use existing knowledge maintenance systems such as
+RACER\footnote{\url{http://www.racer-systems.com}} or Pellet\footnote{\url{http://clarkparsia.com/pellet}}, which support inference tasks such as
 definition, maintenance and querying of ontologies. These systems have been used
 as inference engines in numerous applications in
 the area and, in particular, in dialogue systems for text adventures~\cite{benotti09b}. Once we
@@ -76,7 +76,7 @@ construction, resolution of references, etc.). We will study, in particular, two
 types of user contributions: requests for clarification of the instruction
 given (what we call `short-term repairs'), and for redefinition of goals (what we
 call `long-term repairs'). We will implement short-term repairs
-using the approach describe in~\cite{purver06}. For long-term repairs we will use the
+using the approach described in~\cite{purver06}. For long-term repairs we will use the
 guidelines of~\cite{blaylock05a}. 
 
 \subsection{Evaluation}
@@ -99,13 +99,13 @@ collecting such data through Wizard of Oz
 experiments~\cite{Dahlback93}.
 After developing a quality model, several methodologies to assess
 various aspects of the system can be applied: automatic metrics,
-subjective metrics or metrics based on the task (both to
-evaluate the contribution of each component as well as the quality of the whole
+subjective metrics or metrics based on the task (to
+evaluate both the contribution of each component and the quality of the whole
 system). 
 
 The GIVE platform is used every year as a unified framework for evaluating
-generation systems. Systems that not only have to generate natural language
-but also have to be able to participate in a real-time interaction situated in a
+generation systems. Systems have to generate natural language
+instructions and be able to participate in a real-time interaction situated in a
 3D environment. The GIVE Challenge is one of the shared tasks endorsed by
 ACL's special interests groups in generation, dialogue and semantics. We plan
 to participate in the challenge, which will serve as an additional
@@ -115,15 +115,16 @@ Once the prototype is evaluated and improved using the results
 of this evaluation, we will investigate its use as a virtual language tutor as
 described in the next section.
 
-\subsection{Applications}\label{applications}
+\subsection{An Application: A Virtual Tutor}\label{applications}
 
 The project outcome will be a system capable of giving natural language
 instructions situated in a virtual 3D environment. The technology and
 theoretical advances of the project could be used in various applications, but
 one of the most interesting characteristics we plan to investigate is that, 
 a priori, by just changing the linguistic resources, the language of interaction
-with the system (input and output) can be changed as desired. During
-the last year of the project we will investigate its use for distance learning,
+with the system (input and output) can be changed as desired. After obtaining a
+first prototype of an instruction giving dialogue system, 
+ we will investigate its use for distance learning,
 adapting the system to operate as a foreign language tutor~\cite{Wik09}.
 
 A one-way system that generates instructions in English can be used to test the
@@ -153,8 +154,7 @@ progress. This requires a system aware of the evolution of the
 user, and that takes into account their achievements and their problems. This type
 of interaction between user and system can be modeled as a dialogue, which
 records the acquired knowledge context (of the user about the course material, and
-of the system about to user). Managing this kind of dialogue is particularly interesting,
-since the system must be able to interpret requirements, and generate
+of the system about to user). The system must be able to interpret requirements, and generate
 appropriate responses, for non-experts uses whose knowledge evolves during the
 interaction. Moreover, the system must be able to properly represent both the
 information concerning the course material, and information about the
