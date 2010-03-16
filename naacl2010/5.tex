@@ -1,8 +1,48 @@
-As we mentioned above, we will use the GIVE platform as the basic architecture 
-for our dialogue system.  In the scenario proposed by GIVE, a
+This section first introduces the virtual environment in which our dialogue
+system will be situated, namely the GIVE platform. As we mentioned above, we
+will use the GIVE platform as the basic architecture for our dialogue system.  
+Then we explain in detail the tasks that our situated dialogue system will
+implement. Moreover, we spell out the evaluation challenges that such as system
+poses. We close the section discussing the application of our dialogue system
+for the task of second language learning. 
+
+\subsection{The Virtual Environment}
+
+In the scenario proposed by GIVE, a
 human user carries out a ``treasure hunt'' in a 3D virtual environment
 and the task of the generation system is to provide real-time, natural
 language instructions that help the user find the hidden treasure.
+
+In the GIVE setup, the instruction giving system must guide the user
+through a maze of rooms referred to as a `world'. The final
+goal of the GIVE task is to get a trophy which is hidden in a safe. In
+order to achieve this goal, the system instructs the user to perform
+several subtasks such as deactivating alarms and opening the safe
+combination by pressing a sequence of buttons on the walls of the
+rooms. Figure~\ref{3d-world} shows a screen-shot of the user's view on
+the 3D world.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\linewidth]{give-3D.jpg} 
+\end{center}
+\caption{The user's view of the 3D world\label{3d-world}}
+\end{figure}
+
+On the top of the picture, the current instruction given by the
+instruction giving system is displayed. The picture shows a closed
+door and an open door that has an activated alarm (that looks like a
+red tile) in the doorway. There are five visible buttons in this room
+(two yellow, two red and one green) and the instruction giver is
+instructing the user to press a red button. Pressing a button can have
+different effects such as opening a door, deactivating an alarm, etc.
+
+The characteristics of the world, including the functions of the
+buttons, are described in the world specification by the world
+designers. The user can move freely around the world (using the direction keys
+as indicated in the bottom of the screen) but she can loose the game if she
+triggers an alarm. The user can also ask for help pressing `H' if he did not
+manage to read or to understand the last instruction.
 
 For the correct definition of the interaction policies of our prototype we need
 a corpus that provides examples of typical interactions in the domain. GIVE
@@ -10,6 +50,8 @@ provides tools for collecting such corpus in the form of a Wizard of Oz
 platform that record all details of the interaction, thus
 allowing to easily obtain a corpus of interaction in virtual environments
 annotated automatically.
+
+\subsection{The Dialogue System Tasks}
 
 From the collected corpus we will begin the design, implementation and testing
 of our dialogue system.  The main components that we will have to design and 
@@ -79,6 +121,33 @@ call `long-term repairs'). We will implement short-term repairs
 using the approach described in~\cite{purver06}. For long-term repairs we will use the
 guidelines of~\cite{blaylock05a}. 
 
+\medskip
+A sample interaction with the unidirectional system (that we describe
+in~\cite{amoia10}) while guiding the player in
+identifying a particular blue button is as follows:
+\enumsentence{
+System says: Push a blue button. \\
+\emph{The user focuses a blue button.} \\ 
+System says: Not this one, look for another one. \\
+\emph{The user turns and focuses another blue button.} \\
+System says: Yes this one! \\
+\emph{The user pushes the button.}
+}
+
+This interaction illustrates the tasks described above. To begin with, the
+verbalization of the instruction ``Push a blue button'' is making explicit one
+of the steps of the plan that needs to be performed in order to achieve the
+task goal, in this case, taking a trophy from a safe. In order to open the safe
+a sequence of buttons need to be pressed. Moreover, the system illustrated
+implements a referring strategy which does not uniquely identify the referent
+(it's saying ``a blue button'' where there is more than one blue button). We
+plan to compare such underspecified strategy with the one proposed in task (2)
+in this section. Finally, this example makes evident that the interpretation of
+the user responses is crucial even in a linguistically uni-directional system.
+The user cannot make linguistic contributions but can change the context by
+performing physical acts, the correct interpretation of such acts is essential
+if the system is to react coherently to such acts. 
+ 
 \subsection{Evaluation}
 To determine the quality of the obtained prototypes we propose to create a
 quality model following the ISO/IEC
