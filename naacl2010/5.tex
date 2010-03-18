@@ -1,8 +1,7 @@
 This section first introduces the virtual environment in which our dialogue
-system will be situated, namely the GIVE platform. As we mentioned above, we
-will use the GIVE platform as the basic architecture for our dialogue system.  
+system will be situated, namely the GIVE platform, which is the basic architecture of our dialogue system.  
 Then we explain in detail the tasks that our situated dialogue system will
-implement. Moreover, we spell out the evaluation challenges that such as system
+implement, and we spell out the evaluation challenges that such a system
 poses. We close the section discussing the application of our dialogue system
 for the task of second language learning. 
 
@@ -14,13 +13,12 @@ and the task of the generation system is to provide real-time, natural
 language instructions that help the user find the hidden treasure.
 
 In the GIVE setup, the instruction giving system must guide the user
-through a maze of rooms referred to as a `world'. The final
-goal of the GIVE task is to get a trophy which is hidden in a safe. In
+through interconnected rooms. The final
+goal  is to get a trophy which is hidden in a safe. In
 order to achieve this goal, the system instructs the user to perform
 several subtasks such as deactivating alarms and opening the safe
 combination by pressing a sequence of buttons on the walls of the
-rooms. Figure~\ref{3d-world} shows a screen-shot of the user's view on
-the 3D world.
+rooms. 
 
 \begin{figure}[h]
 \begin{center}
@@ -29,25 +27,26 @@ the 3D world.
 \caption{The user's view of the 3D world\label{3d-world}}
 \end{figure}
 
-On the top of the picture, the current instruction given by the
-instruction giving system is displayed. The picture shows a closed
+Figure~\ref{3d-world} shows a screen-shot of the user's view on
+the 3D world. On the top of the picture, the current instruction generated 
+by the dialogue system is displayed. The picture shows a closed
 door and an open door that has an activated alarm (that looks like a
 red tile) in the doorway. There are five visible buttons in this room
 (two yellow, two red and one green) and the instruction giver is
 instructing the user to press a red button. Pressing a button can have
-different effects such as opening a door, deactivating an alarm, etc.
+different effects such as opening a door, moving an object, deactivating an alarm, etc.
 
 The characteristics of the world, including the functions of the
 buttons, are described in the world specification by the world
 designers. The user can move freely around the world (using the direction keys
 as indicated in the bottom of the screen) but she can loose the game if she
-triggers an alarm. The user can also ask for help pressing `H' if he did not
-manage to read or to understand the last instruction.
+triggers an alarm. The user can also ask for help pressing `H' if she did not
+manage to read or understand the last instruction.
 
 For the correct definition of the interaction policies of our prototype we need
 a corpus that provides examples of typical interactions in the domain. GIVE
-provides tools for collecting such corpus in the form of a Wizard of Oz
-platform that record all details of the interaction, thus
+provides tools for collecting such a corpus in the form of a Wizard of Oz
+platform that records all details of the interaction, thus
 allowing to easily obtain a corpus of interaction in virtual environments
 annotated automatically.
 
@@ -60,7 +59,7 @@ system should address: (1) content planning, (2)
 generation of referring expressions, (3) management of the interaction context, and
 (4) interpretation of user responses. 
 
-\emph{(1) Content Planning:} Given the envisioned setup we described in Section~\ref{intro},
+\emph{(1) Content Planning:} Given the envisioned setup we described before,
 the first task of the system is to obtain a plan to reach the desired goal, from the current state.
 The plan will contain physical actions to be performed in the virtual environment. The second
 step is to decide how to transmit this sequence of actions to the user. E.g, to decide
@@ -73,7 +72,7 @@ explored in~\cite{foster-etal-ijcai2009}). We will investigate
 different aggregation policies (e.g., aggregating actions that
 manipulate similar objects) and innovative ways in which to navigate the task tree
 (e.g., moving to a lower level of abstraction in case of misunderstandings).
-Plan computation can be solved using classical planners~\cite{nau04}.
+Plan computation can be solved using classical planners~\cite{kautz99,hoffmann01,nau04}.
 However, while there are planners that work well when optimized for certain
 applications, none provides services such as the generation of alternative
 plans, or the generation of incomplete plans in case of the absence of plan.
@@ -91,7 +90,7 @@ cognitive load than necessary. For example, producing the expression
 ``the vase that is not above the chair or sofa or under the
 table'' would probably not be acceptable. Areces et al.~\shortcite{AKS08} propose to
 use symbolic minimization of the model that represents the state of the world, in
-order to obtain logical formulas that describe each object uniquely. In our
+order to obtain a logical representation that describe each object uniquely. In our
 project we will implement this method and evaluate it within the dialogue system.
 
 \emph{(3) Management of the Interaction Context:} To manage the use of
@@ -122,13 +121,13 @@ using the approach described in~\cite{purver06}. For long-term repairs we will u
 guidelines of~\cite{blaylock05a}. 
 
 \medskip
-A sample interaction with the unidirectional system (that we describe
-in~\cite{amoia10}) while guiding the player in
-identifying a particular blue button is as follows:
+A sample interaction with the unidirectional system guiding the player in
+the identification of a particular blue button is as follows:
 \enumsentence{
 System says: Push a blue button. \\
 \emph{The user focuses a blue button.} \\ 
-System says: Not this one, look for another one. \\
+System says: Not this one.\\ 
+\hspace*{2.1cm}Look for another one. \\
 \emph{The user turns and focuses another blue button.} \\
 System says: Yes this one! \\
 \emph{The user pushes the button.}
@@ -137,16 +136,15 @@ System says: Yes this one! \\
 This interaction illustrates the tasks described above. To begin with, the
 verbalization of the instruction ``Push a blue button'' is making explicit one
 of the steps of the plan that needs to be performed in order to achieve the
-task goal, in this case, taking a trophy from a safe. In order to open the safe
-a sequence of buttons need to be pressed. Moreover, the system illustrated
-implements a referring strategy which does not uniquely identify the referent
-(it's saying ``a blue button'' where there is more than one blue button). We
-plan to compare such underspecified strategy with the one proposed in task (2)
-in this section. Finally, this example makes evident that the interpretation of
+task goal. As we can see, the system implements in this case 
+a referring strategy which does not uniquely identify the referent
+(the system generates ``a blue button'' when there is more than one blue button 
+in the domain). But it is capable of producing further details about the referent 
+if the user focus in the wrong object. Finally, this example makes evident that the interpretation of
 the user responses is crucial even in a linguistically uni-directional system.
 The user cannot make linguistic contributions but can change the context by
 performing physical acts, the correct interpretation of such acts is essential
-if the system is to react coherently to such acts. 
+if the system is to react coherently. 
  
 \subsection{Evaluation}
 To determine the quality of the obtained prototypes we propose to create a
@@ -179,9 +177,9 @@ instructions and be able to participate in a real-time interaction situated in a
 ACL's special interests groups in generation, dialogue and semantics. We plan
 to participate in the challenge, which will serve as an additional
 source of information about aspects of the system that need
-improvement. The evaluation metrics used in the Challenge, average reference
-identification time, are described in~\cite{byron09}. In~\cite{amoia10} we
-extend such metrics in order to measure alingment between system and user. 
+improvement. The evaluation metrics used in the Challenge (such as average reference
+identification time) are described in~\cite{byron09}. In~\cite{amoia10} we
+extended such metrics in order to measure alingment between system and user. 
 Once the prototype is evaluated and improved using the results
 of the challenge, we will investigate its use as a virtual language tutor as
 described in the next section.
@@ -222,10 +220,8 @@ images, etc.) with less effort than a human tutor.
 
 Such a virtual tutor can be used in distance learning. To develop distance learning systems, it is essential to model the user's learning
 progress. This requires a system aware of the evolution of the
-user, and that takes into account their achievements and their problems. This type
-of interaction between user and system can be modeled as a dialogue, which
-records the acquired knowledge context (of the user about the course material, and
-of the system about to user). The system must be able to interpret requirements, and generate
+user, and that takes into account their achievements and their problems. 
+ The system must be able to interpret requirements, and generate
 appropriate responses, for non-experts uses whose knowledge evolves during the
 interaction. Moreover, the system must be able to properly represent both the
 information concerning the course material, and information about the
