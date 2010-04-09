@@ -1,0 +1,716 @@
+\documentclass[11pt]{article}
+
+\usepackage{url,latexsym,amssymb,color}
+\usepackage{a4wide}
+\usepackage{xcolor}
+\usepackage{natbib}
+\usepackage{xspace}
+\usepackage[silent,draft]{fixme}
+\usepackage{ifpdf}
+\usepackage{colortbl}
+
+\newcommand{\tup}[1]{\langle #1 \rangle}
+\newcommand{\glyc}{\textsf{GLyC}\xspace}
+\newcommand{\talaris}{\textsf{TALARIS}\xspace}
+\newcommand{\pln}{\textsf{PLN}\xspace}
+
+\newcommand{\hylores}{\textsf{HyLoRes}\xspace}
+\newcommand{\htab}{\textsf{HTab}\xspace}
+
+%\addtolength{\topmargin}{-.6cm}
+%\addtolength{\textheight}{1.2cm}
+
+\renewcommand{\refname}{\normalfont\large\textbf{Referencias}}
+
+\ifpdf % are we compiling via pdflatex?
+  \usepackage[backref=page, pdftex]{hyperref}
+  \pdfadjustspacing=1                %%% force LaTeX-like character spacing
+\else
+  % NO!, it must be latex + dvips + ps2pdf
+  \usepackage{ps2pdf,backref=page,pdfcreator  = {LaTeX with hyperref package},
+pdfproducer = {dvips + ps2pdf}]{hyperref}
+\fi
+
+\hypersetup{
+    colorlinks=true,   % color instead of boxes
+    citecolor=blue,    % cite links in blue
+    linkcolor=gray,    % other internal links in gray
+%    linktocpage,         % in TOC, LOF and LOT, the link is on the page number
+}
+
+
+\renewcommand*{\backref}[1]{
+  % default interface
+  % #1: backref list
+  %
+  % We want to use the alternative interface,
+  % therefore the definition is empty here.
+}
+\renewcommand*{\backreflastsep}{, }
+\renewcommand*{\backreftwosep}{, }
+
+\renewcommand*{\backrefalt}[4]{%
+  % alternative interface
+  % #1: number of distinct back references
+  % #2: backref list with distinct entries
+  % #3: number of back references including duplicates
+  % #4: backref list including duplicates
+  [citado en p\'ag.: #2]
+}
+
+\title{Plan de Trabajo}
+\author{Luciana Benotti}
+%\date{}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{T\'itulo:} 
+Pragm\'atica de Sistemas de Di\'alogo Situados
+
+\section{Objetivos}
+
+Este proyecto investiga desaf\'ios te\'oricos y pr\'acticos del \'area de
+Pragm\'atica de Sistemas de Di\'alogo Situados. La pragm\'atica es un subcampo
+interdisplinatio en el que convergen las \'areas de ling\"u\'istica, filosof\'ia
+del lenguaje y la socio-ling\"u\'istica. El \'area de pragm\'atica
+estudia c\'omo el contexto influye en la interpretaci\'on del significado.
+
+Un sistema de di\'alogo situado es un sistema de di\'alogo que se encuentra
+embebido en un entorno f\'isico que puede ser el mundo real (tal es el caso
+para los robots con capacidades conversacionales) o un mundo virtual. Un
+sistema de di\'alogo situado no s\'olo debe ser capaz de comunicarse mediante
+lenguaje natural con un interlocutor humano sino tambi\'en debe ser conciente
+del estado de su entorno y de los cambios que ocurren en el mismo. 
+
+El objetivo pr\'actico de este proyecto es dise\~nar e implementar un
+sistema de di\'alogo que ayude a un usuario a alcanzar una meta dada en un
+entorno virtual en tres dimensiones (3D). En el marco de este objetivo
+pr\'actico, el objetivo te\'orico principal de este proyecto es
+dise\~nar algoritmos pragm\'aticamente motivados que utilicen el contexto
+conversacional para generar e interpretar oraciones en lenguaje natural. Este
+objetivo te\'orico incluye el estudio y uso de t\'ecnicas de representaci\'on
+del conocimiento e inferencia necesarias para consultar y actualizar el
+contexto conversacional. 
+
+En una primera etapa (el primer a\~no) el prototipo
+implementado tendr\'a capacidades de generaci\'on de lenguaje natural, es decir
+ser\'a capaz de verbalizar instrucciones contextualizadas pero s\'olo podr\'a
+procesar contribuciones f\'isicas (manipulaci\'on del entorno 3D a trav\'es
+del mouse y el teclado) y no ling\"u\'isticas de parte del usuario. En una
+segunda etapa (el segundo a\~no) el prototipo ser\'a extendido para incluir no
+s\'olo generaci\'on sino tambi\'en interpretaci\'on de languaje natural, es
+decir el sistema ser\'a capaz de
+comprender contribuciones ling\"u\'isticas generadas por el usuario. Por
+ejemplo, el usuario podr\'a pedir aclaraciones al sistema o negociar la meta
+de la interacci\'on. La interpretaci\'on de dominio abierto de lenguaje natural
+hablado es un desaf\'io del \'area de ling\"u\'istica computacional que est\'a
+muy lejos de ser resuelto. Nuestros objetivos en esta \'area estar\'an
+restringidos de tres formas motivadas por nuestro foco en el estudio de
+aspectos pragm\'aticos del lenguaje (en contraste con aspectos fonol\'ogicos,
+l\'exicos y sint\'acticos). Para empezar, nuestro sistema de di\'alogo no
+ser\'a basado en habla sino en texto y aceptar\'a contribuciones
+ling\"u\'isticas en un formato al estilo de la mensajer\'ia instant\'anea.
+En segundo lugar, las contribuciones entendidas por el sistema estar\'an
+restringidas al dominio del entorno virtual, por ejemplo, el usuario s\'olo
+podr\'a referirse a objetos f\'isicos presentes en el entorno virtual; 
+simplificando radicalmente el l\'exico y conocimiento del sentido com\'un
+requerido por el sistema. Tercero y \'ultimo, el sistema restringir\'a las
+construcciones sint\'acticas y sem\'anticas entendidas por el sistema a
+fragmentos del lenguaje natural (adaptando t\'ecnicas simb\'olicas como
+\emph{Conceptual Authoring}~\citep{hallett07} o estad\'isticas como
+\emph{Maximum Entropy}~\citep{sagae09}). Finalmente (el tercer a\~no) el sistema
+de di\'alogo
+implementado durante este proyecto ser\'a adaptado como herramienta para la
+tarea de Ense\~nanza de Lenguas Asistida por Computador o CALL.\footnote{CALL es
+el acr\'onimo en ingl\'es de (Computer-Assisted Language
+Learning).}  
+
+\section{Antecedentes y actividades planeadas} \label{antecedentes}
+
+A fin de obtener un sistema como el descripto anteriormente, este proyecto
+se enmarca entonces en el \'area pragm\'atica de lenguaje natural.
+
+El \'area de pragm\'atica de lenguaje natural es un \'area
+interdisciplinaria a
+la que contribuyen teor\'ias ling\"u\'isticas (e.g., implicaturas
+conversacionales~\citep{grice75}), sociol\'ogicas (e.g., an\'alisis
+conversa\-cio\-nal~\citep{schegloff87b}) y filos\'oficas (e.g., teor\'ia de los
+actos de habla~\citep{austin62}). Su objetivo es estudiar c\'omo el contexto en
+el que la conversaci\'on esta situada contribuye al significado de cada cosa
+que se diga durante esa conversaci\'on. La transmisi\'on de significado depende
+no s\'olo de la informaci\'on ling\"u\'istica (entidades en foco, reglas
+gramaticales y morfol\'ogicas, etc.), sino tambien extraling\"u\'istica
+(situaci\'on f\'isica donde la comunicaci\'on est\'a situada, experiencias
+previas de los hablantes, objetivo de la conversaci\'on, etc.). Por lo tanto,
+una misma oraci\'on puede significar cosas diferentes en distintos contextos; el
+\'area de pragm\'atica estudia el proceso por el cual una oraci\'on es
+desambig\"uada usando su contexto. En pragm\'atica se distingue entre oraci\'on
+(forma gramatical que toma el acto ling\"u\'istico) y enunciado (oraci\'on m\'as
+su contexto). La habilidad de entender una oraci\'on usando su contexto, es
+decir, la habilidad de entender un enunciado, se conoce como competencia
+pragm\'atica.
+Explicar la competencia pragm\'atica implica explicar c\'omo una persona hace
+inferencias sobre una oraci\'on y su contexto para interpretar adecuadamente el
+enunciado que el emisor intenta transmitir. 
+
+Para que un sistema de di\'alogo interact\'ue de una forma natural con sus
+usuarios, debe demostrar habilidad pragm\'atica. Por lo tanto, dicho sistema
+debe definir (1) qu\'e tipo de informacion contextual se debe representar y (2)
+qu\'e tareas de inferencia sobre la oraci\'on y el contexto son necesarias para
+interpretar un enunciado. Hacer estas dos tareas de forma correcta tendr\'a un
+impacto crucial sobre el desempe\~no de un sistema como el que proponemos
+desarrollar. En dicho sistema es indispensable que las oraciones hagan
+expl\'icita la cantidad de informaci\'on justa: si la informaci\'on es
+demasiada, se retrasar\'a y aburrir\'a al usuario, si la informaci\'on es muy
+poca, el usuario no sabr\'a c\'omo llevar a cabo la tarea y cometer\'a errores. 
+
+Podemos entender como inferencia toda operaci\'on que transforme informaci\'on
+\emph{impl\'icita} en \emph{expl\'icita}.  Esta definici\'on es lo
+suficientemente general como para cubrir tareas que van desde la inferencia
+l\'ogica (e.g., tareas de inferencia en
+\emph{Description Logics}~\citep{DBLP:conf/dlog/2003handbook}), hasta tareas de
+inferencia habituales en inteligencia artificial (e.g.,
+\emph{Planning}~\citep{nau04}), y modelos de inferencia estad\'isticos (e.g.,
+\emph{Maximum Entropy Models}~\citep{berger96}). Un sistema de di\'alogo realiza
+continuamente operaciones de inferencia. Por un lado, se necesita inferencia
+para interpretar la informaci\'on recibida e incorporarla al repositorio de
+datos. Para interpretar el significado literal de la informaci\'on recibida
+usar\'e \emph{Conceptual Authoring} sobre \emph{Description
+Logics}~\citep{piwek07} en una primera etapa y luego experimentar\'e con
+\emph{Maximum Entropy Models} siguiendo trabajo
+reciente en el area de interpretaci\'on~\citep{sagae09}. Para la
+inferencia de las implicaturas conversacionales necesarias para integrar el
+significado literal en el contexto conversacional continuar\'e investigando el
+uso de t\'ecnicas de planning no
+cl\'asicas~\citep{benotti08, benotti09a, benotti10}. En trabajo previo he
+expermientado con el uso de parsers y constructores sem\'anticos simb\'olicos
+para esta tarea, los cuales son extremadamente costosos de
+configurar para alcanzar una cobertura confiable~\citep{benotti09b,benotti10}. 
+
+Por otro, inferencia es necesaria para decidir qu\'e parte de la informaci\'on
+disponible se debe transmitir y para modelar expectativas de c\'omo el usuario
+reaccionar\'a a la informaci\'on transmitida. Una de las tareas de inferencia
+principales en la selecci\'on del contenido a transmitir que es particularmente
+importante en conversaciones situadas es la generaci\'on de expresiones
+referenciales. Para esta tarea hemos investigado y evaluado el uso de algoritmos
+de inferencia ad-hoc~\citep{amoia10}. En este proyecto planeo investigar el uso
+de algoritmos de inferencia y lenguajes con propiedades y complejidad bien
+estudiadas como el de~\cite{AKS08}, e investigar la extension de dicho
+algoritmo a processos referenciales multi-sentencia (actualmente el algoritmo
+s\'olo soporta generaci\'on de espresiones referenciales
+uni-sentencia)~\citep{areces10,benotti10b}. Para modelar las expectativas de
+c\'omo el usuario reaccionar\'a (ya sea con actos f\'isicos o actos del habla) a
+la informaci\'on transmitida planeo continuar investigando el uso y las
+limitaciones de planning cl\'asico~\citep{benotti09c}. 
+
+La complejidad de los aspectos
+te\'oricos se refleja en un sistema de m\'ultiples componentes: un generador de
+lenguaje natural, un sistema de planificaci\'on, un entorno 3D interactivo,
+entre otros. Dise\~nar e implementar todos estos componentes desde cero
+requerir\'ia un esfuerzo prohibitivo. Uno de los objetivos secundarios de este
+proyecto es es utilizar herramientas de uso general, como sistemas de
+planeamiento, como por ejemplo \emph{FF planner}~\citep{hoffmann01}, y
+entornos virtuales para interacci\'on 3D como
+\emph{GIVE\footnote{\url{http://www.give-challenge.org}}, Generating
+Instructions in Virtual Environments}~\citep{byron09}. 
+
+\section{Cronograma de actividades}
+
+
+
+El cronograma de trabajo se estructura de la siguiente manera:
+
+\paragraph{A\~no 1.} El objetivo de los primeros meses es obtener un
+prototimo del sistema unidireccional.  Comenzaremos con un relevamiento
+de la bibliograf\'ia.  Dado que el grupo de investigaci\'on est\'a
+constitu\'ido de expertos en las distintas \'areas pertinentes al
+proyecto, nos concentraremos en obtener un
+entendimiento com\'un de los distintos aspectos del problema, donde
+cada experto contribuir\'a bibliograf\'ia adecuada de su \'area para los
+dem\'as miembros del grupo.  A continuaci\'on comenzaremos a estudiar
+la plataforma GIVE, y a adaptar sus componentes para nuestro objetivo
+espec\'ifico.  Como parte del proyecto, planeamos participar de la 
+competencia GIVE, lo que nos impondr\'a deadlines concretos para obtener un
+primer prototipo.  La siguiente tarea es la definici\'on  y el dise\~no,
+por un lado, de los par\'ametros de interacci\'on que queremos incorporar
+en el sistema, y por otro, de los esquemas de representaci\'on de la
+informaci\'on que el sistema necesita, y de las tareas de inferencia a
+utilizar.
+Una vez que obtengamos una version del sistema con su
+correspondiente testeo y documentaci\'on, podemos comenzar con
+su evaluaci\'on.  Sin embargo,
+el tipo de evaluaci\'on a realizar debe ser definido
+adecuadamente durante el periodo de desarrollo, para asegurar que el sistema
+es capaz de prover la informaci\'on necesaria requerida durante la evaluaci\'on
+(e.g., logueo de eventos, etc.).
+
+Al final del a\~no comenzar\'a la preparaci\'on de art\'iculos y reportes para
+la presentaci\'on de los resultados obtenidos hasta el momento.
+
+\paragraph{A\~no 2.} El objetivo principal del segundo a\~no del proyecto es,
+por un lado, extender y completar el prototipo de sistema con informaci\'on
+unidireccional en base a la evaluaci\'on realizada al fin del a\~no anterior,
+y utilizando el feedback obtenido de la
+participaci\'on en el GIVE challenge.  Por otro lado, se comenzar\'a a agregar
+capacidades de interacci\'on ling\"u\'istica bidireccional.
+
+Un sistema
+bidireccional es mucho m\'as complejo que un sistema unidireccional.  Por
+empezar, deberemos integrar al sistema un m\'odulo de interpretaci\'on de
+lenguaje natural (e.g., an\'alisis sint\'actico, construcci\'on sem\'antica,
+etc.).
+Gracias a que la interacci\'on con el usuario est\'a limitada por el entorno
+virtual, podemos restringir el lenguaje a interpretar y utilizar recursos ya 
+existentes para resolver las tareas no pragm\'aticas.
+
+Nos concentraremos en dos tipos espec\'ificos de instrucciones que el usuario
+podr\'a dar al sistema: (1) pedidos de aclaraci\'on de la \'ultima
+instrucci\'on dada, y (2) redefinici\'on del objetivo de la interacci\'on. 
+Estos
+dos tipos de instrucci\'on son representativos de `reparaciones' a corto y
+largo plazo.  Cada uno de ellos requerir\'a la redefinici\'on adecuada de
+las reglas pragm\'aticas que gobiernan la interacci\'on y de servicios
+de inferencia.  Una vez m\'as, a medida que
+estas nuevas capacidades sean agregadas al sistema, deberemos llevar a
+cabo testeo y documentaci\'on, para finalmente dar paso a la evaluaci\'on.
+
+
+
+\paragraph{A\~no 3.} El objetivo del \'ultimo a\~no es transformar el prototipo
+de sistema de di\'alogo bidireccional obtenido durante el a\~no anterior, en un
+tutor virtual para el aprendizaje de idiomas.  Dado que
+\'este es un objetivo que incluye nuevos desaf\'ios (e.g., consideraciones
+pedag\'ogicas en la presentaci\'on de la interacci\'on) comenzaremos otra
+vez con un nuevo relevamiento bibliogr\'afico y consultas con expertos en
+el \'area.  Adaptar los sistemas uni y bi direccionales para que permitan
+interacci\'on tanto en castellano como en ingl\'es es una tarea de poca
+complejidad.  El mayor desaf\'io de esta etapa es el dise\~no de
+actividades dentro de las capacidades del prototipo que brinden al
+usuario oportunidades para practicar el nuevo idioma.
+
+\medskip
+
+\noindent
+A continuaci\'on se resumen las tareas a desarrollar en los tres a\~nos de
+trabajo (organizadas trimestralmente):
+
+{\footnotesize
+\begin{center}
+\begin{tabular}{|p{7cm}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||p{2mm}|p{2mm}|p{2mm}|p{2mm
+}||p{2mm}|p{2mm}|p{2mm}|p{2mm}||}
+\hline
+ \rowcolor[rgb]{0.8,0.8,0.8}\hspace{3.5cm}Tarea & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4
+& 1 & 2 & 3 & 4\\
+\hline 1. Relevamiento bibliogr\'afico & $\times$ & $\times$
+&&&&&&&$\times$&&&\\
+\hline 2. Estudio del material bibliogr\'afico & $\times$ & $\times$ & $\times$
+&  &&&&&&&&\\
+\hline 3. Estudio de la plataforma GIVE & & $\times$ &$\times$&&&&&&&&&\\
+\hline 4. Recopilaci\'on corpus de interacci\'on & & & $\times$
+&$\times$&&&&&&&&\\
+\hline 5. Dise\~no, impl., testing alg.\ interacc. unidireccional & & & $\times$
+& $\times$&$\times$&$\times$&&&&&&\\
+\hline 6. Dise\~no, impl., testing alg.\ interacc. bidireccional & & &  &
+&&$\times$&$\times$&$\times$&$\times$&&&\\
+\hline 7. Dise\~no e impl., testing alg.\ inferencia & & & $\times$ &
+$\times$&&&$\times$&$\times$&&&&\\
+%\hline 7. Testing &&&&$\times$&&&&$\times$&&&&$\times$\\
+\hline 8. Desarrollo de tutor virtual &&&&&&&&&$\times$&$\times$&$\times$&\\
+\hline 9. Evaluaci\'on
+&&&&$\times$&$\times$&&&$\times$&$\times$&&$\times$&$\times$\\
+\hline 10. Documentaci\'on &&&&&&&&&&&$\times$&$\times$\\
+\hline 11. Diseminaci\'on de resultados
+&&&&$\times$&$\times$&&&$\times$&$\times$&&&$\times$\\\hline
+%\hline 12. Elaborac.\ y presentaci\'on de resultados aplicados
+&&&&$\times$&$\times$&$\times$&&$\times$&$\times$&$\times$&&$\times$\\\hline
+\end{tabular}\end{center}
+}
+
+\section{Factibilidad y Disponibilidad de Recursos}
+
+La gran mayor parte de los recursos necesarios para llevar a cabo el presente
+proyecto son recursos humanos y no recursos materiales. Por lo tanto la
+colaboraci\'on con expertos en las diferentes \'areas relevantes a este plan
+interdisciplinario es crucial asi como la formaci\'on de recursos humanos y
+promoci\'on del \'area de Ling\"u\'istica Computacional en Argentina, un \'area
+que actualmente esta extremadamente subsdesarrollada en nuestro pa\'is y que
+tiene es necasario desarrollar (como argumento en Secci\'on~\ref{economico}). 
+
+Los recursos materiales necesarios para llevar a cabo este proyecto son
+computadoras (un servidor y unas pocas computadoras personales) y
+bibliograf\'ia que se comprar\'an son los recursos del
+proyecto~\citep{areces10b}. Dicho proyecto cuenta con aproximadamente 15.000
+d\'olares estadounidenses para este fin. 
+
+El resto de los recursos del proyecto~\citep{areces10b} (aproximadamente 100.000
+d\'olares estadounidenses) ser\'an usados para financiar distintos tipos de
+recursos humanos necesarios para este proyecto (incluyendo horas de
+programadores, vi\'aticos para asistir a conferencias y para visitar
+colaboradores en otros pa\'ises, costos de los participantes en experimentos,
+etc.). Dichos recursos ser\'an compartidos en partes iguales con los otros dos
+investigadores responsables del proyecto. 
+
+El recurso m\'as importante para llevar a cabo este proyecto son las \'areas de
+especialidad de los distintos colaboradores con los que interactuar\'e durante
+el mismo. La factibilidad de este
+proyecto est\'a basada en tres fundamentos: mi inter\'es y experiencia en el
+\'area (ver Secci\'on~\ref{antecedentes}), el grupo en el que trabajar\'e en la
+Universidad Nacional de C\'ordoba y las colaboraciones con otros grupos de
+investigaci\'on (vers subsecciones siguientes). 
+
+
+\subsection{Recursos humanos locales}
+
+El grupo de investigaci\'on
+PLN\footnote{\url{http://www.cs.famaf.unc.edu.ar/~pln}} (es decir,
+Procesamiento de Lenguaje Natural), en el cual este plan de trabajo ser\'a
+llevado a cabo, fue fundado en el a\~no 2005. Desde entonces el grupo est\'a
+desarrollando un importante trabajo de formaci\'on de recursos humanos, dando
+cursos de grado y de post-grado a estudiantes de Licenciatura y del Doctorado de
+Ciencias de la Computaci\'on de la Universidad Nacional de C\'ordoba. Adem\'as,
+el grupo PLN trabaja en el desarrollo de varios proyectos de investigaci\'on e
+integraci\'on con otros grupos de investigaci\'on (ver
+Secci\'on~\ref{colaboraciones}). 
+
+Este plan de trabajo se beneficiar\'a principalmente de dos \'areas de
+experiencia de los miembros del grupo PLN: (1) Representaci\'on de conocimiento
+e inferencia y (2) evaluaci\'on de sistemas que procesan lenguaje natural. 
+
+Con respecto a la representaci\'on de conocimiento e inferencia la experiencia
+del grupo es particularmente en el estudio te\'orico y aplicado de lenguajes
+(con publicaciones como~\citep{arec:logi00,arec:reso01,arec:reso10} entre otras)
+para la representaci\'on del conocimiento (e.g. \emph{Description Logics}). Asi
+como la implementaci\'on de motores de inferencia sobre estos lenguajes
+libremente disponibles\footnote{\url{http://www.glyc.dc.uba.ar/intohylo/}}.
+Ademas, han investigado el uso de t\'ecnicas de inferencia no cl\'asicas sobre
+estos lenguajes para la tarea de generaci\'on de expresiones
+referenciales~\citep{AKS08}.
+
+La segunda l\'inea de investigaci\'on del grupo de PLN que es directamente
+relevante para este plan de trabajo es evaluaci\'on de sistemas de lenguaje
+natural dependientes del contexto. El grupo de PLN tiene experiencia en el
+desarrollo de modelos de evaluaci\'on de sistemas de traducci\'on
+autom\'atica (con publicaciones como~\citep{estrella08,estrella10} entre
+otras). Recientement, t\'ecnicas de evaluaci\'on de traducci\'on autom\'atica
+han sido aplicadas con \'exito a la evaluaci\'on de sistemas de generaci\'on
+contextualizada de lenguaje natural como el investigado en este
+plan~\citep{reiter09}. Por lo tanto, la experiencia del grupo PLN en esta
+\'area ser\'a \'util para la evaluaci\'on de nuestro sistema. 
+
+Otras l\'ineas de investigaci\'on del grupo PLN que no estan directamente
+relacionadas con los objetivos esperables dentro de los tres a\~nos de
+investigaci\'on descriptos en este plan pero que pueden ser relevantes en un
+futuro incluyen: inducci\'on de gram\'aticas, poblaci\'on autom\'atica de
+ontolog\'ias desde texto y an\'alisis sint\'actico estad\'istico de
+mon\'ologos.  
+          
+
+
+\subsection{Colaboraciones} \label{colaboraciones}
+
+Los miembros del grupo PLN y en particular, yo misma, tenemos varias
+colaboraciones con grupos de investigaci\'on nacionales e internacionales en
+ling\"u\'istica computacional y campos relacionados que son directamente
+relevantes para este plan. 
+
+Los miembros del grupo PLN han colaborado intensamente con el grupo
+TALARIS\footnote{\url{http://talaris.loria.fr}}
+del \emph{Laboratoire Lorrain de Recherche en Informatique et ses
+Applications (LORIA)}, del que fuimos miembros. El tema de investigaci\'on
+principal de TALARIS es ling\"u\'istica computacional con un fuerte \'enfasis
+en sem\'antica e inferencia. En el marco de esta colaboraci\'on estamos
+participando conjuntamente en la edici\'on 2010 de la competencia GIVE. Durante
+el proceso de dise\~no y desarrollo nuestros dos sistemas que est\'an
+participando en la competencia investigamos conjuntamente el uso de diferentes
+estrategias de generaci\'on de referencias situadas~\citep{amoia10}. 
+
+Adem\'as, he colaborado del grupo de investgaci\'on \emph{Virtual Humans} del
+\emph{Institute for Creative
+Technologies (ICT)}\footnote{\url{http://ict.usc.edu/projects/virtual_humans}}
+de la \emph{University of Southern California} (como investigadora invitada
+durante tres meses). En particular hemos trabajado en la modelizaci\'on
+computacional de implicaturas asociadas a sentencias comparativas usando
+t\'ecnicas de planning no cl\'asicas. Todos los a\~nos ICT ofrece programas de
+intercambio que usar\'e para mandar estudiantes y fortalecer nuestra
+colaboraci\'on. 
+
+
+% All these collaborations are directly related to the main theme of the
+% project 
+% described in this article.  The PLN group has also research collaborations
+% with 
+% other international research teams in the framework of other scientific
+% programs. 
+% For example, the PLN group has being part of a recently finished international
+% project 
+% MICROBIO\footnote{\url{http://www.microbioamsud.net}} on ontology population
+% from raw text.
+% The project was funded by the
+% Stic-Amsud\footnote{\url{http://www.sticamsud.org}} program, 
+% a scientific-technological cooperation program integrated by France,
+% Argentine,
+% Brazil, 
+% Chile, Paraguay, Peru and Uruguay. The expertise obtained during this project
+% might
+% be useful in the future when trying to extend our GIVE ontologies to new
+% domains. 
+
+A nivel nacional PLN colabora con
+GLyC\footnote{\url{http://www.glyc.dc.uba.ar}}, \emph{Grupo de L\'ogica,
+Lenguaje y Computabilidad} en el \'area de representaci\'on del conocimiento e
+inferencia. GLyC es parte del Departamento de Ciencias de la Computaci\'on en
+la Universidad de Buenos Aires. Durante los a\~nos 2008 y 2009 colaboramos bajo
+el marco de un proyecto bilateral financiado por MinCyT-INRIA para investigar
+t\'ecnicas de gesti\'on del conocimiento en sistemas de
+di\'alogo~\cite{benotti10b}. Actualmente, estamos organizando conjuntamente
+ELiC\footnote{\url{http://www.glyc.dc.uba.ar/elic2010}}, 
+la \emph{Primera Escuela en Ling\"u\'istica Computacional} en Argentina, que
+ocurrir\'a en Julio en la Universidad de Buenos Aires.  ELiC 2010 ser\'a
+co-organizada junto con 
+ECI\footnote{\url{http://www.dc.uba.ar/events/eci/2009/eci2009}},
+Escuela de Ciencias Inform\'aticas que se realiza anualmente. 
+El objetivo de ELiC es crear un espacio para introducir el
+campo de ling\"u\'istica computacional a estudiantes en Argentina. Gracias al
+soporte de la \emph{North American Chapter of the Association for
+Computational Linguistics (NAACL)}, y de las Universidades de C\'ordoba y de
+Buenos Aires, ELiC ofrece becas de viaje para estudiantes del interior del
+pa\'is.
+
+Finalmente, junto a la Universidad Nacional de San Luis estamos proponiendo un
+workshop en Ling\"u\'istica computacional como evento sat\'elite de IBERAMIA
+2010\footnote{\url{http://cs.uns.edu.ar/iberamia2010}}, 
+la Conferencia Ibero-Americana en Inteligencia Artificial, que ser\'a
+organizada por primera vez en Argentina en la Universidad del Sur
+en la ciudad de Bah\'ia Blanca.            
+
+
+\section{Impacto Socio-Econ\'omico} \label{economico}
+
+Los temas a investigar en el marco de este proyecto son de relevancia en el
+panorama Argentino actual por, al menos, dos razones de peso.
+
+Por un lado, el proyecto
+integra y desarrolla diferentes aspectos clave del \'area de ling\"u\'istica
+computacional (sintaxis, sem\'antica, pragm\'atica, representaci\'on,
+inferencia, evaluaci\'on). El \'area de ling\"u\'istica computacional y su
+aplicaci\'on al tratamiento autom\'atico del lenguaje natural han tenido un
+gran desarrollo internacional en los \'ultimos a\~nos, con aplicaciones como los
+sistemas de b\'usqueda en la web, los sistemas de traducci\'on y resumen
+autom\'aticos, las interfaces de voz, etc. Sin embargo, el \'area es casi
+inexistente actualmente en Argentina. Este proyecto se contar\'a entre 
+las contribuciones que apuntan a revertir esta situaci\'on.
+Por otro lado, el objetivo \'ultimo de este proyecto es investigar el uso de la
+plataforma
+desarrollada en el \'area de educaci\'on a distancia (concretamente, como
+plataforma de aprendizaje de idiomas).
+
+Claramente, la educaci\'on a distancia es un recurso valioso para superar el 
+problema de la centralizaci\'on de recursos
+educativos en el pa\'is. Sin embargo, desarrollar herramientas adecuadas en
+este \'area espec\'ifica es dif\'icil.
+
+Para desarrollar sistemas de ense\~nanza a distancia es esencial modelar el
+avance del aprendizaje del usuario. Esto requiere un sistema capaz de ser
+consciente de la evoluci\'on del usuario, y que tenga en cuenta sus logros y sus
+problemas. Este tipo de interacci\'on entre usuario y sistema puede modelarse
+como un di\'alogo, cuyo contexto registra el conocimiento adquirido (del usuario
+sobre el material del curso, y del sistema sobre el usuario). La gesti\'on de
+este tipo de di\'alogo es particularmente interesante, ya que el sistema debe
+ser
+capaz de interpretar los requerimientos de, y generar respuestas adecuadas para,
+usuarios no expertos cuyo conocimiento evoluciona durante la interacci\'on.
+Adem\'as, el sistema debe ser capaz de representar apropiadamente tanto la
+informaci\'on concerniente al material del curso, como la informaci\'on
+concerniente a la evoluci\'on del usuario. Por ejemplo, el sistema debe ser
+capaz de diagnosticar qu\'e parte del material del curso debe ser revisada a
+partir de las respuestas err\'oneas del usuario.  Por \'ultimo, el sistema debe
+poder evaluar la interacci\'on con el usuario, para poder decidir
+que objetivos del aprendizaje fueron alcanzados.
+Los resultados te\'oricos y pr\'acticos obtenidos durante el proyecto,
+contribuyen directamente a la soluci\'on de estos problemas.
+
+% \bibliographystyle{named}
+% \bibliography{pict09}
+
+\begin{thebibliography}{} \renewcommand{\itemsep}{1mm}
+
+\bibitem[\protect\citeauthoryear{Amoia \bgroup \em et al.\egroup
+  }{Submitted}]{amoia10}
+M.~Amoia, A.~Denis, L.~Benotti, and C.~Gardent.
+\newblock Evaluating referring strategies in situated instruction giving.
+\newblock {\em Topics in Cognitive Science}, Submitted.
+
+\bibitem[\protect\citeauthoryear{Areces and Figueira}{2010}]{areces10}
+C.~Areces and S.~Figueira.
+\newblock Characterization, complexity and optimized algorithms.
+\newblock Technical Report PICT-2010-0688, Proyectos de Investigación
+  Cient\'ifica y Tecnol\'ogica (PICT), Agencia Nacional de Promoci\'on
+  cient\'ifica y Tecnol\'ogica, Argentina, 2010.
+\newblock Submitido a la convocatoria PICT Bicentenario.
+
+\bibitem[\protect\citeauthoryear{Areces and Gor{\'\i}n}{2010}]{arec:reso10}
+C.~Areces and D.~Gor{\'\i}n.
+\newblock Resolution with order and selection for hybrid logics.
+\newblock {\em Accepted for publication in the Journal of Automated Reasoning},
+  2010.
+
+\bibitem[\protect\citeauthoryear{Areces \bgroup \em et al.\egroup
+  }{2001}]{arec:reso01}
+C.~Areces, H.~de~Nivelle, and M.~de~Rijke.
+\newblock Resolution in modal, description and hybrid logic.
+\newblock {\em Journal of Logic and Computation}, 11(5):717--736, 2001.
+
+\bibitem[\protect\citeauthoryear{Areces \bgroup \em et al.\egroup
+  }{2008}]{AKS08}
+C.~Areces, A.~Koller, and K.~Striegnitz.
+\newblock Referring expressions as formulas of description logic.
+\newblock In {\em Proc.\ of INLG-08}, 2008.
+
+\bibitem[\protect\citeauthoryear{Areces \bgroup \em et al.\egroup
+  }{2010}]{areces10b}
+C.~Areces, L.~Benotti, and P.~Estrella.
+\newblock Sistemas de di\'alogo para entornos virtuales.
+\newblock Technical Report PICT-2010-0306, Agencia Nacional de Promoci\'on
+  cient\'ifica y Tecnol\'ogica, Argentina, 2010.
+\newblock Submitido a la convocatoria PICT asociada al Proyecto de
+  Investigación y Desarrollo para la Radicaci\'on de Investigadores (PIDRI).
+
+\bibitem[\protect\citeauthoryear{Areces}{2000}]{arec:logi00}
+C.~Areces.
+\newblock {\em Logic Engineering: The Case of Description and Hybrid Logics}.
+\newblock PhD thesis, ILLC, University of Amsterdam, 2000.
+
+\bibitem[\protect\citeauthoryear{Austin}{1962}]{austin62}
+J.~Austin.
+\newblock {\em How to do Things with Words}.
+\newblock Oxford University Press, 1962.
+
+\bibitem[\protect\citeauthoryear{Baader \bgroup \em et al.\egroup
+  }{2003}]{DBLP:conf/dlog/2003handbook}
+F.~Baader, D.~Calvanese, D.~McGuinness, D.~Nardi, and P.~Patel-Schneider,
+  editors.
+\newblock {\em The Description Logic Handbook: Theory, Implementation, and
+  Applications}. Cambridge University Press, 2003.
+
+\bibitem[\protect\citeauthoryear{Benotti and Traum}{2009}]{benotti09a}
+L.~Benotti and D.~Traum.
+\newblock A computational account of comparative implicatures for a spoken
+  dialogue agent.
+\newblock In {\em Proc.\ of IWCS-8}, 2009.
+
+\bibitem[\protect\citeauthoryear{Benotti \bgroup \em et al.\egroup
+  }{2010}]{benotti10b}
+L.~Benotti, P.~Estrella, and C.~Areces.
+\newblock Dialogue systems for virtual environments.
+\newblock In {\em Proc.\ of the NAACL-HLT Young Investigators in the Americas
+  Workshop}. Association of Computational Linguistics, 2010.
+
+\bibitem[\protect\citeauthoryear{Benotti}{2008}]{benotti08}
+L.~Benotti.
+\newblock Accommodation through tacit sensing.
+\newblock In {\em Proc.\ of the {SEMDIAL} 2008 Workshop on the Semantics and
+  Pragmatics of Dialogue ({LONDIAL} 2008)}, 2008.
+
+\bibitem[\protect\citeauthoryear{Benotti}{2009a}]{benotti09c}
+L.~Benotti.
+\newblock Clarification potential of instructions.
+\newblock In {\em Proceedings of the SIGDIAL 2009 Conference}, pages 196--205.
+  ACL, 2009.
+
+\bibitem[\protect\citeauthoryear{Benotti}{2009b}]{benotti09b}
+L.~Benotti.
+\newblock Frolog: An accommodating text-adventure game.
+\newblock In {\em Proceedings of the Demonstrations Session at the 12th
+  Conference of the European Chapter of the ACL (EACL 2009)}, pages 1--4. ACL,
+  2009.
+
+\bibitem[\protect\citeauthoryear{Benotti}{2010}]{benotti10}
+L.~Benotti.
+\newblock {\em Implicature as an Interactive Process}.
+\newblock PhD thesis, Universit\'e Henri Poincar\'e, INRIA Nancy Grand Est,
+  Francia, 2010.
+
+\bibitem[\protect\citeauthoryear{Berger \bgroup \em et al.\egroup
+  }{1996}]{berger96}
+A.~Berger, V.~Pietra, and S.~Pietra.
+\newblock A maximum entropy approach to natural language processing.
+\newblock {\em Comput. Linguist.}, 22(1):39--71, 1996.
+
+\bibitem[\protect\citeauthoryear{Byron \bgroup \em et al.\egroup
+  }{2009}]{byron09}
+D.~Byron, A.~Koller, K.~Striegnitz, J.~Cassell, R.~Dale, J.~Moore, and
+  J.~Oberlander.
+\newblock Report on the {1}st {GIVE} challenge.
+\newblock In {\em Proc.\ of ENLG}, pages 165--173, 2009.
+
+\bibitem[\protect\citeauthoryear{Estrella \bgroup \em et al.\egroup
+  }{2010}]{estrella10}
+P.~Estrella, A.~Popescu-Belis, and M.~King.
+\newblock The femti guidelines for contextual mt evaluation: principles and
+  tools.
+\newblock {\em Evaluation of Translation Technology, Linguistica Antverpiensia,
+  New Series}, 2010.
+\newblock Submitted.
+
+\bibitem[\protect\citeauthoryear{Estrella}{2008}]{estrella08}
+P.~Estrella.
+\newblock {\em Evaluation of Machine Translation: towards a user-customised
+  quality model}.
+\newblock PhD thesis, Escuela de Traducción e Interpretación, Universidad de
+  Ginebra, Suiza, 2008.
+\newblock Menci\'on Tr\`es honorable avec f\'elicitation du jury.
+
+\bibitem[\protect\citeauthoryear{Grice}{1975}]{grice75}
+P.~Grice.
+\newblock Logic and conversation.
+\newblock In P.~Cole and J.~Morgan, editors, {\em Syntax and Semantics: Vol. 3:
+  Speech Acts}, pages 41--58. Academic Press, 1975.
+
+\bibitem[\protect\citeauthoryear{Hallett \bgroup \em et al.\egroup
+  }{2007}]{hallett07}
+C.~Hallett, D.~Scott, and R.~Power.
+\newblock Composing questions through conceptual authoring.
+\newblock {\em Comput. Linguist.}, 33(1):105--133, 2007.
+
+\bibitem[\protect\citeauthoryear{Hoffmann and Nebel}{2001}]{hoffmann01}
+J.~Hoffmann and B.~Nebel.
+\newblock The {FF} planning system: Fast plan generation through heuristic
+  search.
+\newblock {\em JAIR}, 14:253--302, 2001.
+
+\bibitem[\protect\citeauthoryear{Nau \bgroup \em et al.\egroup }{2004}]{nau04}
+D.~Nau, M.~Ghallab, and P.~Traverso.
+\newblock {\em Automated Planning: Theory \& Practice}.
+\newblock Morgan Kaufmann Publishers Inc., 2004.
+
+\bibitem[\protect\citeauthoryear{Piwek and Power}{2007}]{piwek07}
+D.~Hardcastle Piwek, P. and R.~Power.
+\newblock Dialogue games for crosslingual communication.
+\newblock In {\em Proc.\ of the {SEMDIAL} Workshop on the Semantics and
+  Pragmatics of Dialogue ({DECALOG} 2007)}, pages 117--124, 2007.
+
+\bibitem[\protect\citeauthoryear{Reiter and Belz}{2009}]{reiter09}
+E.~Reiter and A.~Belz.
+\newblock An investigation into the validity of some metrics for automatically
+  evaluating natural language generation systems.
+\newblock {\em Comput. Linguist.}, 35(4):529--558, 2009.
+
+\bibitem[\protect\citeauthoryear{Sagae \bgroup \em et al.\egroup
+  }{2009}]{sagae09}
+K.~Sagae, G.~Christian, D.~DeVault, and D.~Traum.
+\newblock Towards natural language understanding of partial speech recognition
+  results in dialogue systems.
+\newblock In {\em Proceedings of HLT-NAACL 2009}, pages 53--56. Association for
+  Computational Linguistics, 2009.
+
+\bibitem[\protect\citeauthoryear{Schegloff}{1987}]{schegloff87b}
+E.~Schegloff.
+\newblock Some sources of misunderstanding in talk-in-interaction.
+\newblock {\em Linguistics}, 8:201--218, 1987.
+
+\end{thebibliography}
+
+
+\end{document}
